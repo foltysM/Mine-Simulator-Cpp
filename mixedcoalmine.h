@@ -1,8 +1,9 @@
 #ifndef MIXEDCOALMINE_H
 #define MIXEDCOALMINE_H
 
+#include "mine.h"
 
-class MixedCoalMine
+class MixedCoalMine: public Mine
 {
 public:
     MixedCoalMine();

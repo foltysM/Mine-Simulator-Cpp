@@ -1,8 +1,9 @@
 #ifndef MINERLAMP_H
 #define MINERLAMP_H
 
+#include "mineritem.h"
 
-class MinerLamp
+class MinerLamp: public MinerItem
 {
 private:
     double additionalProductivity();

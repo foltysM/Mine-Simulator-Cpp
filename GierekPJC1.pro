@@ -24,6 +24,7 @@ SOURCES += \
     chair.cpp \
     computer.cpp \
     desk.cpp \
+    game.cpp \
     main.cpp \
     mainwindow.cpp \
     mine.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
     minerlamp.cpp \
     minersuit.cpp \
     mixedcoalmine.cpp \
+    newminerslist.cpp \
     notweatherdependentcompany.cpp \
     officeworker.cpp \
     storage.cpp \
@@ -47,6 +49,7 @@ HEADERS += \
     chair.h \
     computer.h \
     desk.h \
+    game.h \
     mainwindow.h \
     mine.h \
     miner.h \
@@ -55,6 +58,7 @@ HEADERS += \
     minerlamp.h \
     minersuit.h \
     mixedcoalmine.h \
+    newminerslist.h \
     notweatherdependentcompany.h \
     officeworker.h \
     storage.h \
@@ -67,3 +71,11 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    D:/GDrive/Notatki/PJC/moje/Projekt/pliki programu/bru100.png \
+    D:/GDrive/Notatki/PJC/moje/Projekt/pliki programu/kam100.png \
+    D:/GDrive/Notatki/PJC/moje/Projekt/pliki programu/ur100.png
+
+RESOURCES += \
+    res.qrc

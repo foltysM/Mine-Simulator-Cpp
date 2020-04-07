@@ -4,3 +4,8 @@ Computer::Computer()
 {
 
 }
+
+
+void Computer::useItem() {
+    //TODO metoda
+}

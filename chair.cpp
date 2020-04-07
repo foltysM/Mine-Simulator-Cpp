@@ -3,5 +3,7 @@
 Chair::Chair()
 {
 
+}
+void Chair::useItem() {
 
 }

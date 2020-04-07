@@ -4,3 +4,7 @@ Desk::Desk()
 {
 
 }
+
+void Desk::useItem() {
+
+}

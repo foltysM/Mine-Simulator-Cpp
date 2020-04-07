@@ -11,7 +11,7 @@ private:
     double needs;
 public:
     NotWeatherDependentCompany();
-    void setNeeds(double n);B
+    void setNeeds(double n);
 };
 
 #endif // NOTWEATHERDEPENDENTCOMPANY_H

@@ -1,8 +1,9 @@
 #ifndef MINERSUIT_H
 #define MINERSUIT_H
 
+#include "mineritem.h"
 
-class MinerSuit
+class MinerSuit: public MinerItem
 {
 private:
     double additionalProductivity;

@@ -1,8 +1,9 @@
 #ifndef ACCOUNTANT_H
 #define ACCOUNTANT_H
 
+#include "abovegroundworker.h"
 
-class Accountant
+class Accountant:public AboveGroundWorker
 {
 private:
     static int accountants;

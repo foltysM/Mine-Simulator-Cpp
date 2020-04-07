@@ -4,3 +4,7 @@ OfficeWorker::OfficeWorker()
 {
 
 }
+
+void OfficeWorker::work() {
+
+}

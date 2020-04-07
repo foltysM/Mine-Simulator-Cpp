@@ -1,8 +1,9 @@
 #ifndef DESK_H
 #define DESK_H
 
+#include "abovegroundworkeritem.h"
 
-class Desk
+class Desk:public AboveGroundWorkerItem
 {
 public:
     Desk();

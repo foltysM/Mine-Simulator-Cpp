@@ -2,8 +2,9 @@
 #define WEATHERDEPENDENT_H
 
 #include <iostream>
+#include "notweatherdependentcompany.h"
 
-class WeatherDependent
+class WeatherDependent:public NotWeatherDependentCompany
 {
 private:
     std::string season;

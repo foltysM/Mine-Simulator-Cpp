@@ -2,6 +2,9 @@
 #define MINER_H
 
 #include <iostream>
+#include "minerlamp.h"
+#include "minerhat.h"
+#include "minersuit.h"
 
 class Miner
 {
@@ -9,7 +12,6 @@ private:
     MinerHat hat;
     int kids;
     MinerLamp lamp;
-    static int miners;
     double monthSalary;
     std::string name;
     double productivity;
@@ -18,6 +20,7 @@ private:
     MinerSuit suit;
     bool tradeUnion;
 public:
+    static int miners;
     Miner();
     ~Miner();
     int getKids();
@@ -27,7 +30,10 @@ public:
     double getSeniority();
     void promotion();
     void setSeniority(double s);
-    bool strike;
+    bool strike();
+    int getMiners();
+    bool getUnion();
+    int getStrikeOpportunity();
 
 };
 
