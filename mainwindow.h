@@ -27,10 +27,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void nextMonth();
-    void wyswietlListeGornikow(std::vector <Miner> vectorMiners);
+    void showNewMinerList(std::vector <Miner> vectorMiners);
     std::vector <Miner> initializeMiners();
     Game game;
     int which = 0;
+    int months_overall = 100; //TODO wprowadzane przez uzytkownika
     int whichBlack = 0;
     int whichBrown = 0;
     int whichMixed = 0;
@@ -54,35 +55,38 @@ private slots:
 
     void on_disFrBrBtn_clicked();
 
+    void on_disFrBlBtn_clicked();
+
+    void on_minerListLeftBtnMixed_clicked();
+
+    void on_minerListRightBtnMixed_clicked();
+
+    void on_DisFrMBtn_clicked();
+
+    void on_minerListRightBtnBrown_clicked();
+
+    void on_minerListLeftBtnBrown_clicked();
+
+    void on_minerListLeftBtnBlack_clicked();
+
+    void on_minerListRightBtnBlack_clicked();
+
     void on_FrBrtoMBtn_clicked();
 
     void on_FrBrToBlBtn_clicked();
 
-    void on_minerListLeftBtn_4_clicked();
+    void on_FrBlToBBtn_clicked();
 
-    void on_minerListRightBtn_4_clicked();
+    void on_FrBlToMxBtn_clicked();
 
-    void on_minerListLeftBtn_3_clicked();
+    void on_FrMToBlBtn_clicked();
 
-    void on_disFrBlBtn_clicked();
-
-    void on_m1b2_3_clicked();
-
-    void on_m1b3_3_clicked();
-
-    void on_minerListRightBtn_3_clicked();
-
-    void on_minerListLeftBtn_5_clicked();
-
-    void on_m1b1_5_clicked();
-
-    void on_m1b2_5_clicked();
-
-    void on_m1b3_5_clicked();
-
-    void on_minerListRightBtn_5_clicked();
+    void on_FrMToBrBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
+    void displayBlackMineMinersList();
+    void displayBrownMineMinersList();
+    void displayMixedMineMinersList();
 };
 #endif // MAINWINDOW_H

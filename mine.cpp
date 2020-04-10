@@ -29,3 +29,14 @@ void Mine::hireMiner(Miner m)
 
 
 }
+
+void Mine::upSeniority()
+{
+    for(int i = 0;i<(int)miners.size();i++)
+    {
+        // TODO cos tu nie dziala
+        //double s = miners[i].getSeniority();
+       // miners[i].setSeniority(s+1);
+    }
+}
+

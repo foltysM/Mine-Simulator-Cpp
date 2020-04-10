@@ -9,7 +9,6 @@ class Mine
 {
 private:
     std::string coalType;
-
     double productivity;
 public:
     std::vector <Miner> miners;
@@ -21,6 +20,7 @@ public:
     virtual double setProductivity(double p) = 0;
     void updateProductivity();
     void hireMiner(Miner m);
+    void upSeniority();
 };
 
 #endif // MINE_H

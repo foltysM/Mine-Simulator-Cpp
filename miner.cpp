@@ -8,7 +8,6 @@ Miner::Miner()
     miners++; //TODO liczenie górników
     int val;
     /*hat = 0;
-
     lamp = 0;
     suit = NULL;
     TODO NULL
