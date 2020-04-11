@@ -4,5 +4,6 @@
         <file>img/bru100.png</file>
         <file>img/ur100.png</file>
         <file>img/new.png</file>
+        <file>img/question_mark.png</file>
     </qresource>
 </RCC>

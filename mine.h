@@ -21,6 +21,7 @@ public:
     void updateProductivity();
     void hireMiner(Miner m);
     void upSeniority();
+    double coalMined();
 };
 
 #endif // MINE_H

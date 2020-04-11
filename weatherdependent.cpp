@@ -4,3 +4,9 @@ WeatherDependent::WeatherDependent()
 {
 
 }
+
+void WeatherDependent::setSeason(std::string s)
+{
+    season = s;
+}
+

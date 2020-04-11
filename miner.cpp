@@ -7,7 +7,7 @@ Miner::Miner()
 {
     miners++; //TODO liczenie górników
     int val;
-    /*hat = 0;
+    /*hat = NULL;
     lamp = 0;
     suit = NULL;
     TODO NULL
@@ -82,4 +82,6 @@ int Miner::getStrikeOpportunity()
 {
     return strikeOpportunity;
 }
+
+
 

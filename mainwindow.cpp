@@ -6,9 +6,12 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-
     list.generateMinerList();
     vectorMiners = list.getMinersList();
+    MinerHat hat = game.generateHat();
+    MinerSuit suit = game.generateSuit();
+    MinerLamp lamp = game.generateLamp();
+
     // UI init starts from here
     ui->setupUi(this);
     ui->progressBar->setValue(0);
@@ -35,6 +38,15 @@ void MainWindow::nextMonth()
     brownCoalMine.upSeniority();
     // TODO dzialanie po nastepnym miesiacu
     // TODO WYWOLANIE OKNA Z WYBOREM CO Z WEGLEM
+//    NewMonthDialog newMonthDialog;
+    // setting modal to true
+//    newMonthDialog.setModal(true);
+//    dialog.setData(myData);
+//    newMonthDialog.exec();
+    game.setSeason();
+    newMonthDialog = new NewMonthDialog(this);
+    newMonthDialog->initData(blackCoalMine.coalMined(),brownCoalMine.coalMined(),mixedCoalMine.coalMined(),game);
+    newMonthDialog->show();
 
 }
 
@@ -44,7 +56,7 @@ void MainWindow::on_nextMonthBtn_clicked()
      m++;
      game.setMonths(m);
      ui->labelMonths->setText(QString::number(game.getMonths()));
-     nextMonth();
+     nextMonth();     
 }
 
 void MainWindow::showNewMinerList(std::vector <Miner> vectorMiners)

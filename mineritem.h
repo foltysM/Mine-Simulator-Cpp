@@ -5,12 +5,14 @@
 
 class MinerItem
 {
-private:
+protected:
     std::string name;
     int price;
 public:
     MinerItem();
     void listItems();
+    std::string getName();
+    int getPrice();
 };
 
 #endif // MINERITEM_H

@@ -33,7 +33,7 @@ public:
     bool strike();
     int getMiners();
     bool getUnion();
-    int getStrikeOpportunity();
+    int getStrikeOpportunity();    
 };
 
 #endif // MINER_H

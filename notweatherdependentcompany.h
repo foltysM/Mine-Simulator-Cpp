@@ -12,6 +12,9 @@ private:
 public:
     NotWeatherDependentCompany();
     void setNeeds(double n);
+    double getNeeds();
+    double getMoneyPayingAmount();
+
 };
 
 #endif // NOTWEATHERDEPENDENTCOMPANY_H

@@ -6,7 +6,7 @@
 class MinerLamp: public MinerItem
 {
 private:
-    double additionalProductivity();
+    double additionalProductivity;
 public:
     MinerLamp();
 };

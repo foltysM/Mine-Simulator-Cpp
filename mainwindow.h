@@ -10,6 +10,7 @@
 #include "blackcoalmine.h"
 #include "browncoalmine.h"
 #include "mixedcoalmine.h"
+#include "newmonthdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -88,5 +89,6 @@ private:
     void displayBlackMineMinersList();
     void displayBrownMineMinersList();
     void displayMixedMineMinersList();
+    NewMonthDialog *newMonthDialog;
 };
 #endif // MAINWINDOW_H

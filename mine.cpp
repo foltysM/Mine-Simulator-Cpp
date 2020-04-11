@@ -39,4 +39,13 @@ void Mine::upSeniority()
        // miners[i].setSeniority(s+1);
     }
 }
+double Mine::coalMined()
+{
+    double amount = 0;
+    for(int i = 0; i<(int)miners.size();i++)
+    {
+       amount = amount + miners[i].getProductivity();
+    }
+    return amount;
+}
 

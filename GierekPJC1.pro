@@ -35,6 +35,7 @@ SOURCES += \
     minersuit.cpp \
     mixedcoalmine.cpp \
     newminerslist.cpp \
+    newmonthdialog.cpp \
     notweatherdependentcompany.cpp \
     officeworker.cpp \
     storage.cpp \
@@ -59,13 +60,15 @@ HEADERS += \
     minersuit.h \
     mixedcoalmine.h \
     newminerslist.h \
+    newmonthdialog.h \
     notweatherdependentcompany.h \
     officeworker.h \
     storage.h \
     weatherdependent.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    newmonthdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1043</width>
-    <height>548</height>
+    <width>1237</width>
+    <height>718</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -43,83 +43,26 @@
      <string>Last strike</string>
     </property>
    </widget>
-   <widget class="QLabel" name="labelMonths">
-    <property name="geometry">
-     <rect>
-      <x>900</x>
-      <y>140</y>
-      <width>111</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>48</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>000</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="closeBtn">
     <property name="geometry">
      <rect>
-      <x>820</x>
-      <y>440</y>
-      <width>221</width>
-      <height>81</height>
+      <x>860</x>
+      <y>390</y>
+      <width>371</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>EXIT</string>
     </property>
    </widget>
-   <widget class="QLabel" name="labelMonthsText">
-    <property name="geometry">
-     <rect>
-      <x>920</x>
-      <y>120</y>
-      <width>47</width>
-      <height>13</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Months:</string>
-    </property>
-   </widget>
-   <widget class="QProgressBar" name="progressBar">
-    <property name="geometry">
-     <rect>
-      <x>910</x>
-      <y>200</y>
-      <width>118</width>
-      <height>23</height>
-     </rect>
-    </property>
-    <property name="value">
-     <number>24</number>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="nextMonthBtn">
-    <property name="geometry">
-     <rect>
-      <x>880</x>
-      <y>10</y>
-      <width>151</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>NextMonth</string>
-    </property>
-   </widget>
    <widget class="QFrame" name="frameBrown">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>300</y>
+      <y>400</y>
       <width>371</width>
-      <height>221</height>
+      <height>291</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -180,13 +123,6 @@
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_4">
-      <item row="0" column="0">
-       <widget class="QLabel" name="labelNameBrown">
-        <property name="text">
-         <string>No data</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="labelKidsTextBrown">
         <property name="text">
@@ -313,13 +249,20 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="labelNameBrown">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
     <widget class="QWidget" name="gridLayoutWidget_2">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>120</y>
+       <y>200</y>
        <width>191</width>
        <height>80</height>
       </rect>
@@ -366,14 +309,65 @@
       </item>
      </layout>
     </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>200</y>
+       <width>160</width>
+       <height>83</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Buy Hat</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Buy Suit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Buy Lamp</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QFrame" name="frameNew">
     <property name="geometry">
      <rect>
       <x>410</x>
-      <y>300</y>
+      <y>440</y>
       <width>371</width>
-      <height>221</height>
+      <height>211</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -392,13 +386,6 @@
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="labelName">
-        <property name="text">
-         <string>No data</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="labelKidsText">
         <property name="text">
@@ -464,6 +451,13 @@
       </item>
       <item row="5" column="1">
        <widget class="QLabel" name="labelUnion">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="labelName">
         <property name="text">
          <string>No data</string>
         </property>
@@ -581,7 +575,7 @@
       <x>20</x>
       <y>70</y>
       <width>371</width>
-      <height>221</height>
+      <height>291</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -641,14 +635,7 @@
        <height>186</height>
       </rect>
      </property>
-     <layout class="QFormLayout" name="formLayout_3">
-      <item row="0" column="0">
-       <widget class="QLabel" name="labelNameBlack">
-        <property name="text">
-         <string>No data</string>
-        </property>
-       </widget>
-      </item>
+     <layout class="QFormLayout" name="parametersLayoutBlack">
       <item row="1" column="0">
        <widget class="QLabel" name="labelKidsTextBlack">
         <property name="text">
@@ -775,13 +762,20 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="labelNameBlack">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
     <widget class="QWidget" name="gridLayoutWidget_3">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>120</y>
+       <y>200</y>
        <width>191</width>
        <height>80</height>
       </rect>
@@ -828,6 +822,57 @@
       </item>
      </layout>
     </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>200</y>
+       <width>160</width>
+       <height>83</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Buy Hat</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Buy Suit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Buy Lamp</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QFrame" name="frameMixed">
     <property name="geometry">
@@ -835,7 +880,7 @@
       <x>410</x>
       <y>70</y>
       <width>371</width>
-      <height>221</height>
+      <height>291</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -896,13 +941,6 @@
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
-      <item row="0" column="0">
-       <widget class="QLabel" name="labelNameMixed">
-        <property name="text">
-         <string>No data</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="0">
        <widget class="QLabel" name="labelKidsTextMixed">
         <property name="text">
@@ -1029,13 +1067,20 @@
         </property>
        </widget>
       </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="labelNameMixed">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
     <widget class="QWidget" name="gridLayoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>120</y>
+       <y>200</y>
        <width>191</width>
        <height>80</height>
       </rect>
@@ -1077,6 +1122,57 @@
         </property>
         <property name="text">
          <string>Dismiss</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="verticalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>200</y>
+       <width>160</width>
+       <height>83</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_5">
+      <item>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Buy Hat</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Buy Suit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Buy Lamp</string>
         </property>
        </widget>
       </item>
@@ -1182,6 +1278,239 @@
     <property name="text">
      <string>TextLabel</string>
     </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>880</x>
+      <y>0</y>
+      <width>160</width>
+      <height>160</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="monthsLayout">
+     <item>
+      <widget class="QLabel" name="labelMonthsText">
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Months:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelMonths">
+       <property name="font">
+        <font>
+         <pointsize>48</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>000</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="value">
+        <number>24</number>
+       </property>
+       <property name="textVisible">
+        <bool>true</bool>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="textDirection">
+        <enum>QProgressBar::TopToBottom</enum>
+       </property>
+       <property name="format">
+        <string>%p%</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="nextMonthBtn">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="text">
+        <string>NextMonth</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_4">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>10</y>
+      <width>181</width>
+      <height>205</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="psblToBuyLayout">
+     <item row="7" column="1">
+      <widget class="QLabel" name="label_23">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>No data</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLabel" name="label_25">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_24">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_19">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>Hat:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>No data</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>No data</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_18">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>Suit:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Possible to buy</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_22">
+       <property name="text">
+        <string>Price</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>Lamp:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QLabel" name="label_20">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLabel" name="label_21">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string>Price:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="label_26">
+       <property name="text">
+        <string>Price:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLabel" name="label_27">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>

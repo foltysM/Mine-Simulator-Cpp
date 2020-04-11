@@ -12,6 +12,8 @@ public:
     WeatherDependent();
     double setNeeds(double n);
     void setSeason(std::string s);
+    //TODO needs zalezne od pory roku faktycznie
+
 };
 
 #endif // WEATHERDEPENDENT_H
