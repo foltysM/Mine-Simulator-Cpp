@@ -7,11 +7,13 @@ Miner::Miner()
 {
     miners++; //TODO liczenie górników
     int val;
-    /*hat = NULL;
-    lamp = 0;
-    suit = NULL;
-    TODO NULL
-    */
+    hat.setName("No hat");
+    hat.setSalaryReduction(1);
+    lamp.setName("No lamp");
+    lamp.setAdditionalProductivity(1);
+    suit.setName("No suit");
+    suit.setSalaryReduction(1);
+    suit.setAdditionalProductivity(1);
     kids = rand()%4+1;
     //salary from 2k to 3k
     monthSalary = rand()%1000+2000;
@@ -56,32 +58,78 @@ Miner::Miner()
 std::string Miner::getName() {
     return name;
 }
+
 Miner::~Miner() {
     miners--;
 }
+
 int Miner::getMiners() {
     return miners;
 }
+
 bool Miner::getUnion()
 {
     return tradeUnion;
 }
+
 double Miner::getProductivity()
 {
     return productivity;
 }
+
 double Miner::getSalaryAmount()
 {
     return monthSalary;
 }
+
 int Miner::getKids()
 {
     return kids;
 }
+
 int Miner::getStrikeOpportunity()
 {
     return strikeOpportunity;
 }
 
+int Miner::getSeniority()
+{
+    return seniority;
+}
+
+void Miner::setSeniority(int s)
+{
+    seniority = s;
+}
+
+MinerHat Miner::getHat()
+{
+    return hat;
+}
+
+MinerSuit Miner::getSuit()
+{
+    return suit;
+}
+
+MinerLamp Miner::getLamp()
+{
+    return lamp;
+}
+
+void Miner::setHat(MinerHat h)
+{
+    hat = h;
+}
+
+void Miner::setSuit(MinerSuit s)
+{
+    suit = s;
+}
+
+void Miner::setLamp(MinerLamp l)
+{
+    lamp = l;
+}
 
 

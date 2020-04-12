@@ -6,16 +6,17 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
-    list.generateMinerList();
-    vectorMiners = list.getMinersList();
+    game.generateMinerList();
     MinerHat hat = game.generateHat();
     MinerSuit suit = game.generateSuit();
     MinerLamp lamp = game.generateLamp();
 
     // UI init starts from here
     ui->setupUi(this);
+    showNewMinerClothes();
     ui->progressBar->setValue(0);
-    showNewMinerList(vectorMiners);
+    ui->labelMoneyMain->setText(QString::fromStdString("0$"));
+    showNewMinerList(game.getMinersList());
 }
 
 MainWindow::~MainWindow()
@@ -36,16 +37,12 @@ void MainWindow::nextMonth()
     blackCoalMine.upSeniority();
     mixedCoalMine.upSeniority();
     brownCoalMine.upSeniority();
-    // TODO dzialanie po nastepnym miesiacu
-    // TODO WYWOLANIE OKNA Z WYBOREM CO Z WEGLEM
-//    NewMonthDialog newMonthDialog;
-    // setting modal to true
-//    newMonthDialog.setModal(true);
-//    dialog.setData(myData);
-//    newMonthDialog.exec();
+    displayBlackMineMinersList();
+    displayBrownMineMinersList();
+    displayMixedMineMinersList();
     game.setSeason();
     newMonthDialog = new NewMonthDialog(this);
-    newMonthDialog->initData(blackCoalMine.coalMined(),brownCoalMine.coalMined(),mixedCoalMine.coalMined(),game);
+    newMonthDialog->initData(blackCoalMine.coalMined(),brownCoalMine.coalMined(),mixedCoalMine.coalMined(),game,game.getMoney());
     newMonthDialog->show();
 
 }
@@ -82,10 +79,18 @@ void MainWindow::displayBrownMineMinersList()
         ui->labelSalaryBrown->setText(QString::number(brownCoalMine.miners[whichBrown].getSalaryAmount())); // salary
         ui->labelProdBrown->setText(QString::number(brownCoalMine.miners[whichBrown].getProductivity())); // productivity
         ui->labelStrikOpBrown->setText(QString::number(brownCoalMine.miners[whichBrown].getStrikeOpportunity())); // strike opp
+        ui->labelSeniorityBrown->setText(QString::number(brownCoalMine.miners[whichBrown].getSeniority())); // seniority
         if(brownCoalMine.miners[whichBrown].getUnion()==true)         // union
             ui->labelUnionBrown->setText("Yes");
         else
             ui->labelUnionBrown->setText("No");
+        ui->labelHatBrown->setText(QString::fromStdString(brownCoalMine.miners[whichBrown].getHat().getName()));
+        ui->labelHatSalaryBrown->setText(QString::number(brownCoalMine.miners[whichBrown].getHat().getSalaryReduction()));
+        ui->labelSuitBrown->setText(QString::fromStdString(brownCoalMine.miners[whichBrown].getSuit().getName()));
+        ui->labelSalarySuitBrown->setText(QString::number(brownCoalMine.miners[whichBrown].getSuit().getSalaryReduction()));
+        ui->labelProductivitySuitBrown->setText(QString::number(brownCoalMine.miners[whichBrown].getSuit().getAdditionalProductivity()));
+        ui->labelLampBrown->setText(QString::fromStdString(brownCoalMine.miners[whichBrown].getLamp().getName()));
+        ui->labelProductivityLampBrown->setText(QString::number(brownCoalMine.miners[whichBrown].getLamp().getAdditionalProductivity()));
     }else{
         ui->labelNameBrown->setText("No miner");
         ui->labelKidsBrown->setText("No data"); // kids
@@ -93,6 +98,15 @@ void MainWindow::displayBrownMineMinersList()
         ui->labelProdBrown->setText("No data"); // productivity
         ui->labelStrikOpBrown->setText("No data"); // strike opp
         ui->labelUnionBrown->setText("No data");
+        ui->labelSeniorityBrown->setText("No data");
+        ui->labelHatBrown->setText(QString::fromStdString("No data"));
+        ui->labelHatSalaryBrown->setText(QString::fromStdString("No data"));
+        ui->labelSuitBrown->setText(QString::fromStdString("No data"));
+        ui->labelSalarySuitBrown->setText(QString::fromStdString("No data"));
+        ui->labelProductivitySuitBrown->setText(QString::fromStdString("No data"));
+        ui->labelLampBrown->setText(QString::fromStdString("No data"));
+        ui->labelProductivityLampBrown->setText(QString::fromStdString("No data"));
+
     }
 }
 
@@ -105,10 +119,18 @@ void MainWindow::displayBlackMineMinersList()
         ui->labelSalaryBlack->setText(QString::number(blackCoalMine.miners[whichBlack].getSalaryAmount())); // salary
         ui->labelProdBlack->setText(QString::number(blackCoalMine.miners[whichBlack].getProductivity())); // productivity
         ui->labelStrikOpBlack->setText(QString::number(blackCoalMine.miners[whichBlack].getStrikeOpportunity())); // strike opp
+        ui->labelSeniorityBlack->setText(QString::number(blackCoalMine.miners[whichBlack].getSeniority()));
         if(blackCoalMine.miners[whichBlack].getUnion()==true)         // union
             ui->labelUnionBlack->setText("Yes");
         else
             ui->labelUnionBlack->setText("No");
+        ui->labelHatBlack->setText(QString::fromStdString(blackCoalMine.miners[whichBlack].getHat().getName()));
+        ui->labelSalaryHatBlack->setText(QString::number(blackCoalMine.miners[whichBlack].getHat().getSalaryReduction()));
+        ui->labelSuitBlack->setText(QString::fromStdString(blackCoalMine.miners[whichBlack].getSuit().getName()));
+        ui->labelSalarySuitBlack->setText(QString::number(blackCoalMine.miners[whichBlack].getSuit().getSalaryReduction()));
+        ui->labelProdSuitBlack->setText(QString::number(blackCoalMine.miners[whichBlack].getSuit().getAdditionalProductivity()));
+        ui->labelLampBlack->setText(QString::fromStdString(blackCoalMine.miners[whichBlack].getLamp().getName()));
+        ui->labelProdLampBlack->setText(QString::number(blackCoalMine.miners[whichBlack].getLamp().getAdditionalProductivity()));
     }else{
         ui->labelNameBlack->setText("No miner");
         ui->labelKidsBlack->setText("No data"); // kids
@@ -116,6 +138,14 @@ void MainWindow::displayBlackMineMinersList()
         ui->labelProdBlack->setText("No data"); // productivity
         ui->labelStrikOpBlack->setText("No data"); // strike opp
         ui->labelUnionBlack->setText("No data");
+        ui->labelSeniorityBlack->setText("No data");
+        ui->labelHatBlack->setText(QString::fromStdString("No data"));
+        ui->labelSalaryHatBlack->setText(QString::fromStdString("No data"));
+        ui->labelSuitBlack->setText(QString::fromStdString("No data"));
+        ui->labelSalarySuitBlack->setText(QString::fromStdString("No data"));
+        ui->labelProdSuitBlack->setText(QString::fromStdString("No data"));
+        ui->labelLampBlack->setText(QString::fromStdString("No data"));
+        ui->labelProdLampBlack->setText(QString::fromStdString("No data"));
     }
 }
 
@@ -128,10 +158,18 @@ void MainWindow::displayMixedMineMinersList()
         ui->labelSalaryMixed->setText(QString::number(mixedCoalMine.miners[whichMixed].getSalaryAmount())); // salary
         ui->labelProdMixed->setText(QString::number(mixedCoalMine.miners[whichMixed].getProductivity())); // productivity
         ui->labelStrikOpMixed->setText(QString::number(mixedCoalMine.miners[whichMixed].getStrikeOpportunity())); // strike opp
+        ui->labelSeniorityMixed->setText(QString::number(mixedCoalMine.miners[whichMixed].getSeniority()));
         if(mixedCoalMine.miners[whichMixed].getUnion() == true)         // union
             ui->labelUnionMixed->setText("Yes");
         else
             ui->labelUnionMixed->setText("No");
+        ui->labelHatMixed->setText(QString::fromStdString(mixedCoalMine.miners[whichMixed].getHat().getName()));
+        ui->labelSalaryHatMixed->setText(QString::number(mixedCoalMine.miners[whichMixed].getHat().getSalaryReduction()));
+        ui->labelSuitMixed->setText(QString::fromStdString(mixedCoalMine.miners[whichMixed].getSuit().getName()));
+        ui->labelSalarySuitMixed->setText(QString::number(mixedCoalMine.miners[whichMixed].getSuit().getSalaryReduction()));
+        ui->labelProdSuitMixed->setText(QString::number(mixedCoalMine.miners[whichMixed].getSuit().getAdditionalProductivity()));
+        ui->labelLampMixed->setText(QString::fromStdString(mixedCoalMine.miners[whichMixed].getLamp().getName()));
+        ui->labelProdLampMixed->setText(QString::number(mixedCoalMine.miners[whichMixed].getLamp().getAdditionalProductivity()));
     }else{
         ui->labelNameMixed->setText("No miner");
         ui->labelKidsMixed->setText("No data"); // kids
@@ -139,6 +177,14 @@ void MainWindow::displayMixedMineMinersList()
         ui->labelProdMixed->setText("No data"); // productivity
         ui->labelStrikOpMixed->setText("No data"); // strike opp
         ui->labelUnionMixed->setText("No data");
+        ui->labelSeniorityMixed->setText("No data");
+        ui->labelHatMixed->setText(QString::fromStdString("No data"));
+        ui->labelSalaryHatMixed->setText(QString::fromStdString("No data"));
+        ui->labelSuitMixed->setText(QString::fromStdString("No data"));
+        ui->labelSalarySuitMixed->setText(QString::fromStdString("No data"));
+        ui->labelProdSuitMixed->setText(QString::fromStdString("No data"));
+        ui->labelLampMixed->setText(QString::fromStdString("No data"));
+        ui->labelProdLampMixed->setText(QString::fromStdString("No data"));
     }
 }
 
@@ -147,7 +193,7 @@ void MainWindow::on_minerListLeftBtn_2_clicked()
     which--;
     if (which==-1)
         which=9;
-    showNewMinerList(vectorMiners);
+    showNewMinerList(game.getMinersList());
 }
 
 void MainWindow::on_minerListRightBtn_2_clicked()
@@ -155,7 +201,7 @@ void MainWindow::on_minerListRightBtn_2_clicked()
     which++;
     if(which==10)
         which=0;
-    showNewMinerList(vectorMiners);
+    showNewMinerList(game.getMinersList());
 
 }
 
@@ -181,29 +227,27 @@ void MainWindow::on_minerListRightBtnBrown_clicked()
 
 void MainWindow::on_newToBlackBtn_clicked()
 {
-    blackCoalMine.miners.push_back(vectorMiners[which]);
-    vectorMiners.erase(vectorMiners.begin()+which);    
+    blackCoalMine.miners.push_back(game.getMinersList()[which]);
+    game.eraseMiner(which);
     displayBlackMineMinersList();
-    // TODO uzupelnianie do 10 ponownie
-    // Odświeżenie listy do wyboru po usunięciu
+    showNewMinerList(game.getMinersList());
 }
 
 void MainWindow::on_newToBrownBtn_clicked()
 {
-    brownCoalMine.miners.push_back(vectorMiners[which]);
-    vectorMiners.erase(vectorMiners.begin()+which);
+    brownCoalMine.miners.push_back(game.getMinersList()[which]);
+    game.eraseMiner(which);
     displayBrownMineMinersList();
-    // TODO uzupelnianie do 10 ponownie
-    // Odświeżenie listy do wyboru po usunięciu
+    showNewMinerList(game.getMinersList());
+    // TODO odswiezanie i wyswietlanie liczby gornikow
 }
 
 void MainWindow::on_newToUranBtn_clicked()
 {
-    mixedCoalMine.miners.push_back(vectorMiners[which]);
-    vectorMiners.erase(vectorMiners.begin()+which);
+    mixedCoalMine.miners.push_back(game.getMinersList()[which]);
+    game.eraseMiner(which);
     displayMixedMineMinersList();
-    // TODO uzupelnianie do 10 ponownie
-    // Odświeżenie listy do wyboru po usunięciu
+    showNewMinerList(game.getMinersList());
 }
 
 void MainWindow::on_disFrBrBtn_clicked()
@@ -355,4 +399,153 @@ void MainWindow::on_FrMToBrBtn_clicked()
     }
     displayMixedMineMinersList();
     displayBrownMineMinersList();
+}
+
+void MainWindow::showNewMinerClothes()
+{
+    ui->labelPsblHatName->setText(QString::fromStdString(game.getHat().getName()));
+    ui->labelPsblHatSalary->setText(QString::number(game.getHat().getSalaryReduction()));
+    ui->labelPsblHatPrice->setText(QString::number(game.getHat().getPrice()));
+    ui->labelPsblSuitName->setText(QString::fromStdString(game.getSuit().getName()));
+    ui->labelPsblSuitProd->setText(QString::number(game.getSuit().getAdditionalProductivity()));
+    ui->labelPsblSuitSalary->setText(QString::number(game.getSuit().getSalaryReduction()));
+    ui->labelPsblSuitPrice->setText(QString::number(game.getSuit().getPrice()));
+    ui->labelPsblLampName->setText(QString::fromStdString(game.getLamp().getName()));
+    ui->labelPsblLampProd->setText(QString::number(game.getLamp().getAdditionalProductivity()));
+    ui->labelPsblLampPrice->setText(QString::number(game.getLamp().getPrice()));
+}
+
+void MainWindow::on_buyHatBlackBtn_clicked()
+{
+    if(blackCoalMine.miners.size()==0)
+    {
+        QMessageBox::warning(this, "WARNING", "You cannot buy a hat, because 0 miners work there.", "Ok, I'll never do that again");
+    }
+    else
+    {
+        blackCoalMine.miners[whichBlack].setHat(game.getHat());
+        game.setHat(game.generateHat());
+        showNewMinerClothes();
+        displayBlackMineMinersList();
+    }
+}
+
+void MainWindow::on_buySuitBlackBtn_clicked()
+{
+    if(blackCoalMine.miners.size()==0)
+    {
+        QMessageBox::warning(this, "WARNING", "You cannot buy a suit, because 0 miners work there.", "Ok, I'll never do that again");
+    }
+    else
+    {
+        blackCoalMine.miners[whichBlack].setSuit(game.getSuit());
+        game.setSuit(game.generateSuit());
+        showNewMinerClothes();
+        displayBlackMineMinersList();
+    }
+}
+
+void MainWindow::on_buyLampBlackBtn_clicked()
+{
+    if(blackCoalMine.miners.size()==0)
+    {
+        QMessageBox::warning(this, "WARNING", "You cannot buy a lamp, because 0 miners work there.", "Ok, I'll never do that again");
+    }
+    else
+    {
+        blackCoalMine.miners[whichBlack].setLamp(game.getLamp());
+        game.setLamp(game.generateLamp());
+        showNewMinerClothes();
+        displayBlackMineMinersList();
+    }
+}
+
+void MainWindow::on_buyHatBrownBtn_clicked()
+{
+    if(brownCoalMine.miners.size()==0)
+    {
+        QMessageBox::warning(this, "WARNING", "You cannot buy a hat, because 0 miners work there.", "Ok, I'll never do that again");
+    }
+    else
+    {
+        brownCoalMine.miners[whichBrown].setHat(game.getHat());
+        game.setHat(game.generateHat());
+        showNewMinerClothes();
+        displayBrownMineMinersList();
+    }
+}
+
+void MainWindow::on_buySuitBrownBtn_clicked()
+{
+    if(brownCoalMine.miners.size()==0)
+    {
+        QMessageBox::warning(this, "WARNING", "You cannot buy a suit, because 0 miners work there.", "Ok, I'll never do that again");
+    }
+    else
+    {
+        brownCoalMine.miners[whichBrown].setSuit(game.getSuit());
+        game.setSuit(game.generateSuit());
+        showNewMinerClothes();
+        displayBrownMineMinersList();
+    }
+}
+
+void MainWindow::on_buyLampBrownBtn_clicked()
+{
+    if(brownCoalMine.miners.size()==0)
+    {
+        QMessageBox::warning(this, "WARNING", "You cannot buy a lamp, because 0 miners work there.", "Ok, I'll never do that again");
+    }
+    else
+    {
+        brownCoalMine.miners[whichBrown].setLamp(game.getLamp());
+        game.setLamp(game.generateLamp());
+        showNewMinerClothes();
+        displayBrownMineMinersList();
+    }
+}
+
+void MainWindow::on_buyHatMixedBtn_clicked()
+{
+    if(mixedCoalMine.miners.size()==0)
+    {
+        QMessageBox::warning(this, "WARNING", "You cannot buy a hat, because 0 miners work there.", "Ok, I'll never do that again");
+    }
+    else
+    {
+        mixedCoalMine.miners[whichMixed].setHat(game.getHat());
+        game.setHat(game.generateHat());
+        showNewMinerClothes();
+        displayMixedMineMinersList();
+    }
+}
+
+void MainWindow::on_buySuitMixedBtn_clicked()
+{
+    if(mixedCoalMine.miners.size()==0)
+    {
+        QMessageBox::warning(this, "WARNING", "You cannot buy a suit, because 0 miners work there.", "Ok, I'll never do that again");
+    }
+    else
+    {
+        mixedCoalMine.miners[whichMixed].setSuit(game.getSuit());
+        game.setSuit(game.generateSuit());
+        showNewMinerClothes();
+        displayMixedMineMinersList();
+    }
+}
+
+void MainWindow::on_buyLampMixedBtn_clicked()
+{
+    if(mixedCoalMine.miners.size()==0)
+    {
+        QMessageBox::warning(this, "WARNING", "You cannot buy a lamp, because 0 miners work there.", "Ok, I'll never do that again");
+    }
+    else
+    {
+        mixedCoalMine.miners[whichMixed].setLamp(game.getLamp());
+        game.setLamp(game.generateLamp());
+        showNewMinerClothes();
+        displayMixedMineMinersList();
+    }
 }

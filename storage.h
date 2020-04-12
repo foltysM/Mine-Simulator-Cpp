@@ -1,17 +1,21 @@
 #ifndef STORAGE_H
 #define STORAGE_H
 
+#include <iostream>
 
 class Storage
 {
 private:
-    double CoalAmount;
+    double blackCoalAmount;
+    double brownCoalAmount;
     double price;
 public:
     Storage();
-    double getCoalAmount();
+    double getBlackCoalAmount();
+    double getBrownCoalAmount();
     double getPrice();
-    void SetCoalAmount(double a);
+    void SetBlackCoalAmount(double bla);
+    void SetBrownCoalAmount(double bra);
 };
 
 #endif // STORAGE_H

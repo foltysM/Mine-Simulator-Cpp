@@ -9,6 +9,8 @@ private:
     double salaryReduction;
 public:
     MinerHat();
+    void setSalaryReduction(double r);
+    double getSalaryReduction();
 };
 
 #endif // MINERHAT_H

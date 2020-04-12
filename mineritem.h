@@ -13,6 +13,7 @@ public:
     void listItems();
     std::string getName();
     int getPrice();
+    void setName(std::string n);
 };
 
 #endif // MINERITEM_H

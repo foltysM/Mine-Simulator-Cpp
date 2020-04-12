@@ -84,3 +84,64 @@ WeatherDependent Game::getHeatingPlant()
 {
     return heatingPlant;
 }
+
+void Game::generateMinerList() {
+    int list_size = minerList.size();
+    int iter = 10-list_size;
+
+    for(int i = 0; i<iter; i++)
+    {
+        Miner gornik;
+        minerList.push_back(gornik);
+    }
+}
+
+std::vector<Miner> Game::getMinersList(){
+    return minerList;
+}
+
+void Game::eraseMiner(int w)
+{
+    minerList.erase(minerList.begin()+w);
+    generateMinerList();
+}
+
+void Game::setMoney(double m)
+{
+     money = m;
+}
+
+double Game::getMoney()
+{
+    return money;
+}
+
+MinerHat Game::getHat()
+{
+    return hat;
+}
+
+MinerSuit Game::getSuit()
+{
+    return suit;
+}
+
+MinerLamp Game::getLamp()
+{
+    return lamp;
+}
+
+void Game::setHat(MinerHat h)
+{
+    hat = h;
+}
+
+void Game::setSuit(MinerSuit s)
+{
+    suit = s;
+}
+
+void Game::setLamp(MinerLamp l)
+{
+    lamp = l;
+}

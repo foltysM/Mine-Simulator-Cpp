@@ -27,13 +27,18 @@ public:
     std::string getName();
     double getProductivity();
     double getSalaryAmount();
-    double getSeniority();
+    int getSeniority();
     void promotion();
-    void setSeniority(double s);
+    void setSeniority(int s);
     bool strike();
     int getMiners();
     bool getUnion();
-    int getStrikeOpportunity();    
+    int getStrikeOpportunity();
+    MinerHat getHat();
+    MinerSuit getSuit();
+    MinerLamp getLamp();
+    void setHat(MinerHat h);
+    void setSuit(MinerSuit s);
+    void setLamp(MinerLamp l);
 };
-
 #endif // MINER_H

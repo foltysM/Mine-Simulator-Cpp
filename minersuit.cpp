@@ -36,4 +36,25 @@ MinerSuit::MinerSuit()
         price = 1000;
         break;
     }
+} // TODO nazwy
+
+
+void MinerSuit::setAdditionalProductivity(double p)
+{
+    additionalProductivity = p;
+}
+
+void MinerSuit::setSalaryReduction(double r)
+{
+    salaryReduction = r;
+}
+
+double MinerSuit::getSalaryReduction()
+{
+    return salaryReduction;
+}
+
+double MinerSuit::getAdditionalProductivity()
+{
+    return additionalProductivity;
 }

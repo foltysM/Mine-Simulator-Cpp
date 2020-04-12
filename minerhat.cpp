@@ -1,6 +1,6 @@
 #include "minerhat.h"
 
-MinerHat::MinerHat():MinerItem()
+MinerHat::MinerHat()
 {
     int w = rand()%5;
     switch(w)
@@ -31,4 +31,14 @@ MinerHat::MinerHat():MinerItem()
         price = 1000;
         break;
     }
+}
+
+void MinerHat::setSalaryReduction(double r)
+{
+    salaryReduction = r;
+}
+
+double MinerHat::getSalaryReduction()
+{
+    return salaryReduction;
 }

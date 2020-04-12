@@ -13,13 +13,11 @@ private:
 public:
     std::vector <Miner> miners;
     Mine();
-    void addMiner(Miner m);
     bool Failure();
     void moveMiner(Miner m);
     void removeMiner(Miner m);
     virtual double setProductivity(double p) = 0;
     void updateProductivity();
-    void hireMiner(Miner m);
     void upSeniority();
     double coalMined();
 };

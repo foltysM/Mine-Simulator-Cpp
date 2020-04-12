@@ -8,12 +8,16 @@ class NotWeatherDependentCompany
 private:
     double moneyPayingAmount;
     std::string name;
-    double needs;
+
 public:
     NotWeatherDependentCompany();
+    double needs_brown;
+    double needs_black; // TODO zeby dzialao private
     void setNeeds(double n);
-    double getNeeds();
+    double getNeedsBlack();
+    double getNeedsBrown();
     double getMoneyPayingAmount();
+    void randNeedsAndCash();
 
 };
 

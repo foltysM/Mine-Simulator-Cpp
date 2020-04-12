@@ -9,6 +9,8 @@ private:
     double additionalProductivity;
 public:
     MinerLamp();
+    void setAdditionalProductivity(double p);
+    double getAdditionalProductivity();
 };
 
 #endif // MINERLAMP_H

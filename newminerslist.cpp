@@ -5,7 +5,6 @@ NewMinersList::NewMinersList()
 
 }
 
-
 void NewMinersList::generateMinerList() {
     int list_size = minerList.size();
     int iter = 10-list_size;

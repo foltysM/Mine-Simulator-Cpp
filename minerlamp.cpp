@@ -32,3 +32,13 @@ MinerLamp::MinerLamp()
         break;
     }
 }
+
+void MinerLamp::setAdditionalProductivity(double p)
+{
+    additionalProductivity = p;
+}
+
+double MinerLamp::getAdditionalProductivity()
+{
+    return additionalProductivity;
+}

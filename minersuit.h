@@ -10,6 +10,10 @@ private:
     double salaryReduction;
 public:
     MinerSuit();
+    void setAdditionalProductivity(double p);
+    void setSalaryReduction(double r);
+    double getSalaryReduction();
+    double getAdditionalProductivity();
 };
 
 #endif // MINERSUIT_H

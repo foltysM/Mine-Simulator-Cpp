@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1237</width>
-    <height>718</height>
+    <height>781</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -61,8 +61,8 @@
      <rect>
       <x>20</x>
       <y>400</y>
-      <width>371</width>
-      <height>291</height>
+      <width>411</width>
+      <height>311</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -118,8 +118,8 @@
       <rect>
        <x>210</x>
        <y>10</y>
-       <width>160</width>
-       <height>186</height>
+       <width>191</width>
+       <height>262</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_4">
@@ -207,7 +207,7 @@
         </property>
        </widget>
       </item>
-      <item row="8" column="0">
+      <item row="9" column="0">
        <widget class="QLabel" name="labelSuitBrownText">
         <property name="text">
          <string>Suit:</string>
@@ -228,22 +228,22 @@
         </property>
        </widget>
       </item>
-      <item row="9" column="0">
+      <item row="12" column="0">
        <widget class="QLabel" name="labelLampBrownText">
         <property name="text">
          <string>Lamp: </string>
         </property>
        </widget>
       </item>
-      <item row="8" column="1">
+      <item row="9" column="1">
        <widget class="QLabel" name="labelSuitBrown">
         <property name="text">
          <string>No data</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="1">
-       <widget class="QLabel" name="labelLampBrownText_2">
+      <item row="12" column="1">
+       <widget class="QLabel" name="labelLampBrown">
         <property name="text">
          <string>No data</string>
         </property>
@@ -256,13 +256,69 @@
         </property>
        </widget>
       </item>
+      <item row="8" column="1">
+       <widget class="QLabel" name="labelHatSalaryBrown">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QLabel" name="labelSalarySuitBrown">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QLabel" name="labelProductivitySuitBrown">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="1">
+       <widget class="QLabel" name="labelProductivityLampBrown">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_32">
+        <property name="text">
+         <string>Salary reduction</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="label_33">
+        <property name="text">
+         <string>Salary reduction</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="label_34">
+        <property name="text">
+         <string>Productivity</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="0">
+       <widget class="QLabel" name="label_35">
+        <property name="text">
+         <string>Productivity</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
     <widget class="QWidget" name="gridLayoutWidget_2">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>200</y>
+       <y>220</y>
        <width>191</width>
        <height>80</height>
       </rect>
@@ -312,15 +368,15 @@
     <widget class="QWidget" name="verticalLayoutWidget_5">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>200</y>
-       <width>160</width>
+       <x>19</x>
+       <y>130</y>
+       <width>171</width>
        <height>83</height>
       </rect>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_6">
+     <layout class="QVBoxLayout" name="buyBrownLayout">
       <item>
-       <widget class="QPushButton" name="pushButton_7">
+       <widget class="QPushButton" name="buyHatBrownBtn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -333,7 +389,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_8">
+       <widget class="QPushButton" name="buySuitBrownBtn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -346,7 +402,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_9">
+       <widget class="QPushButton" name="buyLampBrownBtn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -364,10 +420,10 @@
    <widget class="QFrame" name="frameNew">
     <property name="geometry">
      <rect>
-      <x>410</x>
-      <y>440</y>
+      <x>450</x>
+      <y>430</y>
       <width>371</width>
-      <height>211</height>
+      <height>221</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -575,7 +631,7 @@
       <x>20</x>
       <y>70</y>
       <width>371</width>
-      <height>291</height>
+      <height>311</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -632,7 +688,7 @@
        <x>210</x>
        <y>10</y>
        <width>160</width>
-       <height>186</height>
+       <height>262</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="parametersLayoutBlack">
@@ -720,14 +776,14 @@
         </property>
        </widget>
       </item>
-      <item row="8" column="0">
+      <item row="9" column="0">
        <widget class="QLabel" name="labelSuitBlackText">
         <property name="text">
          <string>Suit:</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="0">
+      <item row="12" column="0">
        <widget class="QLabel" name="labelLampBlackText">
         <property name="text">
          <string>Lamp:</string>
@@ -748,14 +804,14 @@
         </property>
        </widget>
       </item>
-      <item row="8" column="1">
+      <item row="9" column="1">
        <widget class="QLabel" name="labelSuitBlack">
         <property name="text">
          <string>No data</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="1">
+      <item row="12" column="1">
        <widget class="QLabel" name="labelLampBlack">
         <property name="text">
          <string>No data</string>
@@ -769,13 +825,69 @@
         </property>
        </widget>
       </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_28">
+        <property name="text">
+         <string>Salary reduction</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QLabel" name="labelSalaryHatBlack">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="label_30">
+        <property name="text">
+         <string>Salary reduction</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="label_31">
+        <property name="text">
+         <string>Productivity</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="0">
+       <widget class="QLabel" name="label_36">
+        <property name="text">
+         <string>Productivity</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QLabel" name="labelProdSuitBlack">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QLabel" name="labelSalarySuitBlack">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="1">
+       <widget class="QLabel" name="labelProdLampBlack">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
     <widget class="QWidget" name="gridLayoutWidget_3">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>200</y>
+       <y>220</y>
        <width>191</width>
        <height>80</height>
       </rect>
@@ -825,15 +937,15 @@
     <widget class="QWidget" name="verticalLayoutWidget_3">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>200</y>
-       <width>160</width>
+       <x>20</x>
+       <y>120</y>
+       <width>171</width>
        <height>83</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <widget class="QPushButton" name="pushButton">
+       <widget class="QPushButton" name="buyHatBlackBtn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -846,7 +958,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_2">
+       <widget class="QPushButton" name="buySuitBlackBtn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -859,7 +971,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_3">
+       <widget class="QPushButton" name="buyLampBlackBtn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -872,6 +984,9 @@
        </widget>
       </item>
      </layout>
+     <zorder>buyLampBlackBtn</zorder>
+     <zorder>buyHatBlackBtn</zorder>
+     <zorder>buySuitBlackBtn</zorder>
     </widget>
    </widget>
    <widget class="QFrame" name="frameMixed">
@@ -880,7 +995,7 @@
       <x>410</x>
       <y>70</y>
       <width>371</width>
-      <height>291</height>
+      <height>311</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -937,7 +1052,7 @@
        <x>210</x>
        <y>10</y>
        <width>160</width>
-       <height>186</height>
+       <height>262</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout_2">
@@ -1039,28 +1154,28 @@
         </property>
        </widget>
       </item>
-      <item row="8" column="0">
+      <item row="9" column="0">
        <widget class="QLabel" name="labelSuitMixedText">
         <property name="text">
          <string>Suit:</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="0">
+      <item row="12" column="0">
        <widget class="QLabel" name="labelLampMixedText">
         <property name="text">
          <string>Lamp:</string>
         </property>
        </widget>
       </item>
-      <item row="8" column="1">
+      <item row="9" column="1">
        <widget class="QLabel" name="labelSuitMixed">
         <property name="text">
          <string>No data</string>
         </property>
        </widget>
       </item>
-      <item row="9" column="1">
+      <item row="12" column="1">
        <widget class="QLabel" name="labelLampMixed">
         <property name="text">
          <string>No data</string>
@@ -1074,13 +1189,69 @@
         </property>
        </widget>
       </item>
+      <item row="13" column="0">
+       <widget class="QLabel" name="label_40">
+        <property name="text">
+         <string>Productivity</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="0">
+       <widget class="QLabel" name="label_41">
+        <property name="text">
+         <string>Salary reduction</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="0">
+       <widget class="QLabel" name="label_42">
+        <property name="text">
+         <string>Productivity</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="0">
+       <widget class="QLabel" name="label_43">
+        <property name="text">
+         <string>Salary reduction</string>
+        </property>
+       </widget>
+      </item>
+      <item row="8" column="1">
+       <widget class="QLabel" name="labelSalaryHatMixed">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="10" column="1">
+       <widget class="QLabel" name="labelSalarySuitMixed">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="11" column="1">
+       <widget class="QLabel" name="labelProdSuitMixed">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
+      <item row="13" column="1">
+       <widget class="QLabel" name="labelProdLampMixed">
+        <property name="text">
+         <string>No data</string>
+        </property>
+       </widget>
+      </item>
      </layout>
     </widget>
     <widget class="QWidget" name="gridLayoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>200</y>
+       <y>220</y>
        <width>191</width>
        <height>80</height>
       </rect>
@@ -1130,15 +1301,15 @@
     <widget class="QWidget" name="verticalLayoutWidget_4">
      <property name="geometry">
       <rect>
-       <x>210</x>
-       <y>200</y>
-       <width>160</width>
+       <x>19</x>
+       <y>120</y>
+       <width>171</width>
        <height>83</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QPushButton" name="buyHatMixedBtn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -1151,7 +1322,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_5">
+       <widget class="QPushButton" name="buySuitMixedBtn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -1164,7 +1335,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="pushButton_6">
+       <widget class="QPushButton" name="buyLampMixedBtn">
         <property name="sizePolicy">
          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
           <horstretch>0</horstretch>
@@ -1178,28 +1349,6 @@
       </item>
      </layout>
     </widget>
-   </widget>
-   <widget class="QLabel" name="labelGameTitle">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>20</y>
-      <width>541</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Stencil</family>
-      <pointsize>20</pointsize>
-     </font>
-    </property>
-    <property name="cursor">
-     <cursorShape>ArrowCursor</cursorShape>
-    </property>
-    <property name="text">
-     <string>MINE SIMULATOR: BECOME A MINE BOSS!</string>
-    </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -1364,51 +1513,51 @@
     </property>
     <layout class="QGridLayout" name="psblToBuyLayout">
      <item row="7" column="1">
-      <widget class="QLabel" name="label_23">
+      <widget class="QLabel" name="labelPsblSuitPrice">
        <property name="text">
-        <string>TextLabel</string>
+        <string>No data</string>
        </property>
       </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_14">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Salary reduction</string>
        </property>
       </widget>
      </item>
      <item row="8" column="1">
-      <widget class="QLabel" name="label_13">
+      <widget class="QLabel" name="labelPsblLampName">
        <property name="text">
         <string>No data</string>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLabel" name="label_15">
+      <widget class="QLabel" name="labelPsblHatSalary">
        <property name="text">
-        <string>TextLabel</string>
+        <string>No data</string>
        </property>
       </widget>
      </item>
      <item row="9" column="1">
-      <widget class="QLabel" name="label_25">
+      <widget class="QLabel" name="labelPsblLampProd">
        <property name="text">
-        <string>TextLabel</string>
+        <string>No data</string>
        </property>
       </widget>
      </item>
      <item row="9" column="0">
       <widget class="QLabel" name="label_24">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Productivity</string>
        </property>
       </widget>
      </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_19">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Productivity</string>
        </property>
       </widget>
      </item>
@@ -1420,14 +1569,14 @@
       </widget>
      </item>
      <item row="4" column="1">
-      <widget class="QLabel" name="label_12">
+      <widget class="QLabel" name="labelPsblSuitName">
        <property name="text">
         <string>No data</string>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLabel" name="label_9">
+      <widget class="QLabel" name="labelPsblHatName">
        <property name="text">
         <string>No data</string>
        </property>
@@ -1436,14 +1585,14 @@
      <item row="5" column="0">
       <widget class="QLabel" name="label_18">
        <property name="text">
-        <string>TextLabel</string>
+        <string>Salary reduction</string>
        </property>
       </widget>
      </item>
      <item row="3" column="1">
-      <widget class="QLabel" name="label_17">
+      <widget class="QLabel" name="labelPsblHatPrice">
        <property name="text">
-        <string>TextLabel</string>
+        <string>No data</string>
        </property>
       </widget>
      </item>
@@ -1476,16 +1625,16 @@
       </widget>
      </item>
      <item row="5" column="1">
-      <widget class="QLabel" name="label_20">
+      <widget class="QLabel" name="labelPsblSuitSalary">
        <property name="text">
-        <string>TextLabel</string>
+        <string>No data</string>
        </property>
       </widget>
      </item>
      <item row="6" column="1">
-      <widget class="QLabel" name="label_21">
+      <widget class="QLabel" name="labelPsblSuitProd">
        <property name="text">
-        <string>TextLabel</string>
+        <string>No data</string>
        </property>
       </widget>
      </item>
@@ -1504,9 +1653,81 @@
       </widget>
      </item>
      <item row="10" column="1">
-      <widget class="QLabel" name="label_27">
+      <widget class="QLabel" name="labelPsblLampPrice">
        <property name="text">
-        <string>TextLabel</string>
+        <string>No data</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="labelMinersAmount">
+    <property name="geometry">
+     <rect>
+      <x>850</x>
+      <y>520</y>
+      <width>47</width>
+      <height>13</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>miners</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="horizontalLayoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>0</y>
+      <width>651</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QLabel" name="labelGameTitle">
+       <property name="font">
+        <font>
+         <family>Stencil</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>ArrowCursor</cursorShape>
+       </property>
+       <property name="text">
+        <string>MINE SIMULATOR: BECOME A MINE BOSS!</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Expanding</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>60</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="labelMoneyMain">
+       <property name="font">
+        <font>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>MONEY</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
        </property>
       </widget>
      </item>

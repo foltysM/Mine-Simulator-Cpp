@@ -22,8 +22,7 @@ class MainWindow : public QMainWindow
 
 
 public:
-    NewMinersList list;
-    std::vector <Miner> vectorMiners;
+    //NewMinersList list;
 
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
@@ -39,6 +38,7 @@ public:
     BlackCoalMine blackCoalMine;
     BrownCoalMine brownCoalMine;
     MixedCoalMine mixedCoalMine;
+    void showNewMinerClothes();
 
 private slots:
 
@@ -83,6 +83,24 @@ private slots:
     void on_FrMToBlBtn_clicked();
 
     void on_FrMToBrBtn_clicked();
+
+    void on_buyHatBlackBtn_clicked();
+
+    void on_buySuitBlackBtn_clicked();
+
+    void on_buyLampBlackBtn_clicked();
+
+    void on_buyHatBrownBtn_clicked();
+
+    void on_buySuitBrownBtn_clicked();
+
+    void on_buyLampBrownBtn_clicked();
+
+    void on_buyHatMixedBtn_clicked();
+
+    void on_buySuitMixedBtn_clicked();
+
+    void on_buyLampMixedBtn_clicked();
 
 private:
     Ui::MainWindow *ui;

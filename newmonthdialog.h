@@ -15,7 +15,7 @@ class NewMonthDialog : public QDialog
 public:
     explicit NewMonthDialog(QWidget *parent = nullptr);
     ~NewMonthDialog();
-    void initData(double bl, double br, double mx, Game g);
+    void initData(double bl, double br, double mx, Game g, double m);
 
 private slots:
     void on_acceptButton_clicked();

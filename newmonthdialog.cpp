@@ -13,8 +13,13 @@ NewMonthDialog::~NewMonthDialog()
     delete ui;
 }
 
-void NewMonthDialog::initData(double bl, double br, double mx, Game g)
+void NewMonthDialog::initData(double bl, double br, double mx, Game g, double m) // TODO czy na pewno money potrzebne skoro jest w game?
 {
+//    g.getIronWorks().randNeedsAndCash();
+//    g.getHeatingPlant().randNeedsAndCash();
+//    g.getPowerStation().randNeedsAndCash();
+//    g.getCoalStorageSite().randNeedsAndCash(); TODO to nie dziala trzeba rand w needsach poki co
+
     ui->labelSeason->setText(QString::fromStdString(g.getSeason()));
     double sum_black = 0;
     double sum_brown = 0;
@@ -28,15 +33,21 @@ void NewMonthDialog::initData(double bl, double br, double mx, Game g)
     sum_brown = br + half_mixed;
     ui->labelSumBlack->setText(QString::number(sum_black));
     ui->labelSumBrown->setText(QString::number(sum_brown));
-    ui->labelNeedsIronworks->setText(QString::number(g.getIronWorks().getNeeds())); // TODO pamietac ze to sie losuje z kazdym gettem
-    ui->labelNeedsCoalStorage->setText(QString::number(g.getCoalStorageSite().getNeeds()));
+    ui->labelNeedsBlackIronworks->setText(QString::number(g.getIronWorks().getNeedsBlack())); // TODO pamietac ze to sie losuje z kazdym gettem
+    ui->labelNeedsBrownIronworks->setText(QString::number(g.getIronWorks().getNeedsBrown()));
+    ui->labelNeedsBlackCoalStorage->setText(QString::number(g.getCoalStorageSite().getNeedsBlack()));
+    ui->labelNeedsBrownCoalStorageSite->setText(QString::number(g.getCoalStorageSite().getNeedsBrown()));
     ui->labelCashIronWorks->setText(QString::number(g.getIronWorks().getMoneyPayingAmount()));
     ui->labelCashCoalStorage->setText(QString::number(g.getCoalStorageSite().getMoneyPayingAmount()));
     g.setSeason();
     ui->labelCashHeatingPlant->setText(QString::number(g.getHeatingPlant().getMoneyPayingAmount()));
-    ui->labelNeedsHeatingPlant->setText(QString::number(g.getHeatingPlant().getNeeds()));
+    ui->labelNeedsBrownHeatingPlant->setText(QString::number(g.getHeatingPlant().getNeedsBrown()));
+    ui->labelNeedsBlackHeatingPlant->setText(QString::number(g.getHeatingPlant().getNeedsBlack()));
     ui->labelCashPowerstation->setText(QString::number(g.getPowerStation().getMoneyPayingAmount()));
-    ui->labelNeedsPowerstation->setText(QString::number(g.getPowerStation().getNeeds()));
+    ui->labelNeedsBlackPowerstation->setText(QString::number(g.getPowerStation().getNeedsBlack()));
+    ui->labelNeedsBrownPowerstation->setText(QString::number(g.getPowerStation().getNeedsBrown()));
+    //TODO tu skonczylem
+    //ui->labelMoneyDialog->setText(QString::fromStdString((std::string)m+"$"));
 }
 
 void NewMonthDialog::on_acceptButton_clicked()
