@@ -4,8 +4,8 @@
 #include <vector>
 #include "miner.h"
 #include "storage.h"
-#include "weatherdependent.h"
-#include "notweatherdependentcompany.h"
+#include "seasondependent.h"
+#include "notseasondependentcompany.h"
 
 class Game
 {
@@ -18,10 +18,11 @@ private:
     MinerLamp lamp;
     double money;
     Storage storage;
-    WeatherDependent heatingPlant;
-    WeatherDependent powerStation;
-    NotWeatherDependentCompany coalStorageSite;
-    NotWeatherDependentCompany ironworks;
+    SeasonDependent heatingPlant;
+    SeasonDependent powerStation;
+    NotSeasonDependentCompany coalStorageSite;
+    NotSeasonDependentCompany ironworks;
+    int miners_overall;
 public:
     std::vector <Miner> vectorMiners;
     Game();
@@ -32,10 +33,10 @@ public:
     MinerLamp generateLamp();
     std::string getSeason();
     void setSeason();
-    NotWeatherDependentCompany getIronWorks();
-    NotWeatherDependentCompany getCoalStorageSite();
-    WeatherDependent getPowerStation();
-    WeatherDependent getHeatingPlant();
+    NotSeasonDependentCompany getIronWorks();
+    NotSeasonDependentCompany getCoalStorageSite();
+    SeasonDependent getPowerStation();
+    SeasonDependent getHeatingPlant();
     void eraseMiner(int w);
     void generateMinerList();
     std::vector<Miner> getMinersList();
@@ -47,6 +48,8 @@ public:
     void setHat(MinerHat h);
     void setSuit(MinerSuit s);
     void setLamp(MinerLamp l);
+    void subMoney(double m);
+    Storage getStorage();
 };
 
 #endif // GAME_H

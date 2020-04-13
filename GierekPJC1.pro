@@ -36,10 +36,10 @@ SOURCES += \
     mixedcoalmine.cpp \
     newminerslist.cpp \
     newmonthdialog.cpp \
-    notweatherdependentcompany.cpp \
+    notseasondependentcompany.cpp \
     officeworker.cpp \
     storage.cpp \
-    weatherdependent.cpp
+    seasondependent.cpp
 
 HEADERS += \
     abovegroundworker.h \
@@ -61,10 +61,10 @@ HEADERS += \
     mixedcoalmine.h \
     newminerslist.h \
     newmonthdialog.h \
-    notweatherdependentcompany.h \
+    notseasondependentcompany.h \
     officeworker.h \
     storage.h \
-    weatherdependent.h
+    seasondependent.h
 
 FORMS += \
     mainwindow.ui \

@@ -13,6 +13,7 @@ void Mine::upSeniority()
         miners[i].setSeniority(s+1);
     }
 }
+
 double Mine::coalMined()
 {
     double amount = 0;
@@ -21,5 +22,15 @@ double Mine::coalMined()
        amount = amount + miners[i].getProductivity();
     }
     return amount;
+}
+
+double Mine::getMinerCosts()
+{
+    double sum;
+    for(int i = 0;i<(int)miners.size();i++)
+    {
+        sum = sum + (miners[i].getSalaryAmount()*miners[i].getHat().getSalaryReduction()*miners[i].getSuit().getSalaryReduction());
+    }
+    return sum;
 }
 

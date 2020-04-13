@@ -7,7 +7,12 @@
 
 // TODO przemioty ksiegowych i officeworkerow
 // TODO ksiegowi i office workerzy
-// TODO przedmioty gornikow
+// TODO wydajnosc gornika wzrasta wraz ze stazem
+// TODO pobieranie pensji przez gornika
+// TODO zbugowane przenoszenie a pozniej strzalki
+// TODO pieniadze na dzieci
+// TODO dzialajace przedmioty gornika
+// TODO mozliwosc strajkow
 void initializeApp() {
     NewMinersList list;
     list.generateMinerList();

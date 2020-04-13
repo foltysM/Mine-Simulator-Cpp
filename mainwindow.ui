@@ -33,8 +33,8 @@
    <widget class="QLabel" name="labelLastStrike">
     <property name="geometry">
      <rect>
-      <x>790</x>
-      <y>40</y>
+      <x>1070</x>
+      <y>620</y>
       <width>65</width>
       <height>16</height>
      </rect>
@@ -46,9 +46,9 @@
    <widget class="QPushButton" name="closeBtn">
     <property name="geometry">
      <rect>
-      <x>860</x>
+      <x>1030</x>
       <y>390</y>
-      <width>371</width>
+      <width>201</width>
       <height>41</height>
      </rect>
     </property>
@@ -416,6 +416,45 @@
       </item>
      </layout>
     </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_3">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>280</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QLabel" name="label_9">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Miners:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelMinersCountBrown">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QFrame" name="frameNew">
     <property name="geometry">
@@ -630,7 +669,7 @@
      <rect>
       <x>20</x>
       <y>70</y>
-      <width>371</width>
+      <width>411</width>
       <height>311</height>
      </rect>
     </property>
@@ -687,7 +726,7 @@
       <rect>
        <x>210</x>
        <y>10</y>
-       <width>160</width>
+       <width>191</width>
        <height>262</height>
       </rect>
      </property>
@@ -988,13 +1027,52 @@
      <zorder>buyHatBlackBtn</zorder>
      <zorder>buySuitBlackBtn</zorder>
     </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>280</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <item>
+       <widget class="QLabel" name="label_12">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Miners:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelMinersCountBlack">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QFrame" name="frameMixed">
     <property name="geometry">
      <rect>
-      <x>410</x>
+      <x>450</x>
       <y>70</y>
-      <width>371</width>
+      <width>411</width>
       <height>311</height>
      </rect>
     </property>
@@ -1051,7 +1129,7 @@
       <rect>
        <x>210</x>
        <y>10</y>
-       <width>160</width>
+       <width>191</width>
        <height>262</height>
       </rect>
      </property>
@@ -1349,12 +1427,51 @@
       </item>
      </layout>
     </widget>
+    <widget class="QWidget" name="horizontalLayoutWidget_5">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>280</y>
+       <width>191</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_5">
+      <item>
+       <widget class="QLabel" name="label_13">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Miners:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelMinersCountMixed">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>810</x>
-      <y>60</y>
+      <x>1090</x>
+      <y>640</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -1366,8 +1483,8 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>800</x>
-      <y>80</y>
+      <x>1080</x>
+      <y>660</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -1379,8 +1496,8 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>836</x>
-      <y>240</y>
+      <x>966</x>
+      <y>280</y>
       <width>81</width>
       <height>20</height>
      </rect>
@@ -1392,8 +1509,8 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>930</x>
-      <y>240</y>
+      <x>1060</x>
+      <y>280</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -1405,8 +1522,8 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>880</x>
-      <y>270</y>
+      <x>1010</x>
+      <y>310</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -1418,8 +1535,8 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>940</x>
-      <y>270</y>
+      <x>1070</x>
+      <y>310</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -1664,8 +1781,8 @@
    <widget class="QLabel" name="labelMinersAmount">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>520</y>
+      <x>1130</x>
+      <y>490</y>
       <width>47</width>
       <height>13</height>
      </rect>
@@ -1680,7 +1797,7 @@
       <x>100</x>
       <y>0</y>
       <width>651</width>
-      <height>80</height>
+      <height>61</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -1728,6 +1845,59 @@
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_5">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>470</y>
+      <width>160</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_4">
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_20">
+       <property name="text">
+        <string>Brown coal</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>Black coal</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_21">
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLabel" name="label_23">
+       <property name="text">
+        <string>0</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0" colspan="2">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>In storage:</string>
        </property>
       </widget>
      </item>

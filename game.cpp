@@ -66,21 +66,21 @@ void Game::setSeason()
     }
 }
 
-NotWeatherDependentCompany Game::getIronWorks()
+NotSeasonDependentCompany Game::getIronWorks()
 {
     return ironworks;
 }
-NotWeatherDependentCompany Game::getCoalStorageSite()
+NotSeasonDependentCompany Game::getCoalStorageSite()
 {
     return coalStorageSite;
 }
 
-WeatherDependent Game::getPowerStation()
+SeasonDependent Game::getPowerStation()
 {
     return powerStation;
 }
 
-WeatherDependent Game::getHeatingPlant()
+SeasonDependent Game::getHeatingPlant()
 {
     return heatingPlant;
 }
@@ -144,4 +144,14 @@ void Game::setSuit(MinerSuit s)
 void Game::setLamp(MinerLamp l)
 {
     lamp = l;
+}
+
+void Game::subMoney(double m)
+{
+    money = money - m;
+}
+
+Storage Game::getStorage()
+{
+    return storage;
 }

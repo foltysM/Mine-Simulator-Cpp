@@ -19,7 +19,7 @@ Miner::Miner()
     monthSalary = rand()%1000+2000;
     productivity = ((double)(rand()%5+10))/10;
     seniority = 0;
-    //striking = false;
+    striking = false;
     //value from 1 to 10
     strikeOpportunity = rand()%10+1;
 
@@ -50,9 +50,6 @@ Miner::Miner()
         name = "Anna";
         break;
     }
-
-
-
 }
 
 std::string Miner::getName() {
@@ -131,5 +128,6 @@ void Miner::setLamp(MinerLamp l)
 {
     lamp = l;
 }
+
 
 

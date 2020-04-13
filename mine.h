@@ -20,6 +20,7 @@ public:
     void updateProductivity();
     void upSeniority();
     double coalMined();
+    double getMinerCosts();
 };
 
 #endif // MINE_H

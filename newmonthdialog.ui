@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>906</width>
-    <height>450</height>
+    <height>521</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -120,147 +120,37 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="gridLayoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>300</y>
-     <width>160</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_10">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0">
-     <widget class="QLabel" name="label_8">
-      <property name="text">
-       <string>Miners</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_9">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QLabel" name="labelMoneyDialog">
-   <property name="geometry">
-    <rect>
-     <x>640</x>
-     <y>30</y>
-     <width>47</width>
-     <height>13</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Money</string>
-   </property>
-  </widget>
   <widget class="QPushButton" name="acceptButton">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>380</y>
-     <width>75</width>
-     <height>23</height>
+     <x>760</x>
+     <y>450</y>
+     <width>101</width>
+     <height>41</height>
     </rect>
    </property>
    <property name="text">
     <string>Accept</string>
    </property>
   </widget>
-  <widget class="QLabel" name="labelSeason">
-   <property name="geometry">
-    <rect>
-     <x>440</x>
-     <y>0</y>
-     <width>91</width>
-     <height>31</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>20</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>Season</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="gridLayoutWidget_3">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>50</y>
-     <width>251</width>
-     <height>356</height>
+     <x>300</x>
+     <y>90</y>
+     <width>411</width>
+     <height>421</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_3">
+    <property name="sizeConstraint">
+     <enum>QLayout::SetDefaultConstraint</enum>
+    </property>
+    <item row="13" column="2">
+     <widget class="QDoubleSpinBox" name="doubleSpinBlackHeatingPlant"/>
+    </item>
     <item row="15" column="1">
      <widget class="QLabel" name="labelCashHeatingPlant">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="13" column="1">
-     <widget class="QLabel" name="labelNeedsBlackHeatingPlant">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="0">
-     <widget class="QLabel" name="label_14">
-      <property name="text">
-       <string>Cash / unit</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QLabel" name="label_20">
-      <property name="text">
-       <string>Needs (brown)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="8" column="0" colspan="2">
-     <widget class="QLabel" name="label_21">
-      <property name="text">
-       <string>Power Station</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="1">
-     <widget class="QLabel" name="labelCashCoalStorage">
-      <property name="text">
-       <string>No data</string>
-      </property>
-     </widget>
-    </item>
-    <item row="13" column="0">
-     <widget class="QLabel" name="label_27">
-      <property name="text">
-       <string>Needs (black)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="14" column="1">
-     <widget class="QLabel" name="labelNeedsBrownHeatingPlant">
       <property name="text">
        <string>TextLabel</string>
       </property>
@@ -280,72 +170,24 @@
       </property>
      </widget>
     </item>
-    <item row="4" column="0" colspan="2">
-     <widget class="QLabel" name="label_18">
-      <property name="text">
-       <string>Coal Storage Site</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QLabel" name="labelNeedsBrownCoalStorageSite">
-      <property name="text">
-       <string>No data</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="0">
-     <widget class="QLabel" name="label_19">
-      <property name="text">
-       <string>Needs (black)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_6">
-      <property name="text">
-       <string>Needs (black)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="15" column="0">
-     <widget class="QLabel" name="label_28">
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_14">
       <property name="text">
        <string>Cash / unit</string>
       </property>
      </widget>
     </item>
-    <item row="9" column="0">
-     <widget class="QLabel" name="label_23">
-      <property name="text">
-       <string>Needs (black)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="9" column="1">
-     <widget class="QLabel" name="labelNeedsBlackPowerstation">
+    <item row="13" column="1">
+     <widget class="QLabel" name="labelNeedsBlackHeatingPlant">
       <property name="text">
        <string>TextLabel</string>
       </property>
      </widget>
     </item>
-    <item row="10" column="0">
-     <widget class="QLabel" name="label_24">
+    <item row="1" column="1">
+     <widget class="QLabel" name="labelNeedsBlackIronworks">
       <property name="text">
-       <string>Needs (brown)</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>Ironworks</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <string>No data</string>
       </property>
      </widget>
     </item>
@@ -356,10 +198,57 @@
       </property>
      </widget>
     </item>
-    <item row="10" column="1">
-     <widget class="QLabel" name="labelNeedsBrownPowerstation">
+    <item row="5" column="3">
+     <widget class="QLabel" name="labelMoneyBlackCoalStorageSite">
       <property name="text">
-       <string>No data</string>
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QLabel" name="label_34">
+      <property name="text">
+       <string>Profits</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QLabel" name="label_22">
+      <property name="text">
+       <string>Cash / unit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="0">
+     <widget class="QLabel" name="label_15">
+      <property name="text">
+       <string>Needs (brown)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0" colspan="2">
+     <widget class="QLabel" name="label_21">
+      <property name="text">
+       <string>Power Station</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QLabel" name="labelMoneyBlackIronWorks">
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -373,24 +262,90 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="1">
-     <widget class="QLabel" name="labelNeedsBlackCoalStorage">
+    <item row="6" column="3">
+     <widget class="QLabel" name="labelMoneyBrownCoalStorageSite">
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Needs (black)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QDoubleSpinBox" name="doubleSpinBrownIronWorks"/>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLabel" name="labelNeedsBrownPowerstation">
       <property name="text">
        <string>No data</string>
       </property>
      </widget>
     </item>
-    <item row="11" column="0">
-     <widget class="QLabel" name="label_22">
+    <item row="4" column="0" colspan="2">
+     <widget class="QLabel" name="label_18">
       <property name="text">
-       <string>Cash / unit</string>
+       <string>Coal Storage Site</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QDoubleSpinBox" name="doubleSpinBlackIronWorks"/>
+    </item>
+    <item row="14" column="2">
+     <widget class="QDoubleSpinBox" name="doubleSpinBrownHeatingPlant"/>
+    </item>
+    <item row="5" column="2">
+     <widget class="QDoubleSpinBox" name="doubleSpinBlackCoalStorageSite"/>
     </item>
     <item row="2" column="1">
      <widget class="QLabel" name="labelNeedsBrownIronworks">
       <property name="text">
        <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QDoubleSpinBox" name="doubleSpinBrownCoalStorageSite"/>
+    </item>
+    <item row="15" column="0">
+     <widget class="QLabel" name="label_28">
+      <property name="text">
+       <string>Cash / unit</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Ironworks</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_20">
+      <property name="text">
+       <string>Needs (brown)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLabel" name="labelNeedsBrownCoalStorageSite">
+      <property name="text">
+       <string>No data</string>
       </property>
      </widget>
     </item>
@@ -401,34 +356,39 @@
       </property>
      </widget>
     </item>
-    <item row="14" column="0">
-     <widget class="QLabel" name="label_15">
+    <item row="13" column="0">
+     <widget class="QLabel" name="label_27">
       <property name="text">
-       <string>Needs (brown)</string>
+       <string>Needs (black)</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLabel" name="labelNeedsBlackIronworks">
+    <item row="9" column="1">
+     <widget class="QLabel" name="labelNeedsBlackPowerstation">
       <property name="text">
-       <string>No data</string>
+       <string>TextLabel</string>
       </property>
      </widget>
-    </item>
-    <item row="13" column="2">
-     <widget class="QLineEdit" name="lineEditBlackHeatingPlant"/>
     </item>
     <item row="10" column="2">
-     <widget class="QLineEdit" name="lineEdit"/>
+     <widget class="QDoubleSpinBox" name="doubleSpinBrownPowerStation"/>
     </item>
-    <item row="9" column="2">
-     <widget class="QLineEdit" name="lineEditBlackPowerStation"/>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_19">
+      <property name="text">
+       <string>Needs (black)</string>
+      </property>
+     </widget>
     </item>
-    <item row="14" column="2">
-     <widget class="QLineEdit" name="lineEditBrownHeatingPlant"/>
-    </item>
-    <item row="6" column="2">
-     <widget class="QLineEdit" name="lineEditBrownCoalStorageSite"/>
+    <item row="2" column="3">
+     <widget class="QLabel" name="labelMoneyBrownIronWorks">
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
     </item>
     <item row="0" column="2">
      <widget class="QLabel" name="label_25">
@@ -440,69 +400,426 @@
       </property>
      </widget>
     </item>
-    <item row="5" column="2">
-     <widget class="QLineEdit" name="lineEditBlackCoalStorageSite"/>
+    <item row="5" column="1">
+     <widget class="QLabel" name="labelNeedsBlackCoalStorage">
+      <property name="text">
+       <string>No data</string>
+      </property>
+     </widget>
     </item>
-    <item row="1" column="2">
-     <widget class="QLineEdit" name="lineEditBlackIronWorks"/>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_23">
+      <property name="text">
+       <string>Needs (black)</string>
+      </property>
+     </widget>
     </item>
-    <item row="2" column="2">
-     <widget class="QLineEdit" name="lineEditBrownIronWorks"/>
+    <item row="9" column="2">
+     <widget class="QDoubleSpinBox" name="doubleSpinBlackPowerStation"/>
     </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="gridLayoutWidget_4">
-   <property name="geometry">
-    <rect>
-     <x>700</x>
-     <y>120</y>
-     <width>160</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="storageLayout">
-    <item row="2" column="0">
-     <widget class="QLabel" name="label_33">
+    <item row="14" column="1">
+     <widget class="QLabel" name="labelNeedsBrownHeatingPlant">
       <property name="text">
        <string>TextLabel</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="label_32">
+    <item row="7" column="1">
+     <widget class="QLabel" name="labelCashCoalStorage">
       <property name="text">
-       <string>TextLabel</string>
+       <string>No data</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <widget class="QLabel" name="label_34">
+    <item row="10" column="0">
+     <widget class="QLabel" name="label_24">
       <property name="text">
-       <string>TextLabel</string>
+       <string>Needs (brown)</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QLabel" name="label_35">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QLabel" name="label_31">
+    <item row="16" column="3">
+     <widget class="QLabel" name="labelMoneySum">
       <property name="font">
        <font>
-        <pointsize>12</pointsize>
+        <pointsize>10</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>Storage</string>
+       <string>0</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+    </item>
+    <item row="9" column="3">
+     <widget class="QLabel" name="labelMoneyBlackPowerStation">
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="3">
+     <widget class="QLabel" name="labelMoneyBrownPowerStation">
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="13" column="3">
+     <widget class="QLabel" name="labelMoneyBlackHeatingPlant">
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="16" column="2">
+     <widget class="QLabel" name="label_45">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Sum:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="14" column="3">
+     <widget class="QLabel" name="labelMoneyBrownHeatingPlant">
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="horizontalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>901</width>
+     <height>80</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_16">
+      <property name="font">
+       <font>
+        <family>Stencil</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>You need to decide what to do with mined coal</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelMoneyDialog">
+      <property name="text">
+       <string>Money</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelSeason">
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Season</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <spacer name="horizontalSpacer_3">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Preferred</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>10</width>
+        <height>10</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>170</y>
+     <width>160</width>
+     <height>227</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QGridLayout" name="storageLayout">
+      <item row="1" column="2">
+       <widget class="QLabel" name="labelInStorageBlack">
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_35">
+        <property name="text">
+         <string>Black</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_29">
+        <property name="text">
+         <string>Black</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="3">
+       <widget class="QLabel" name="label_31">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Storage</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="2">
+       <widget class="QLabel" name="labelToStorageBlack">
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="label_30">
+        <property name="text">
+         <string>Brown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="label_36">
+        <property name="text">
+         <string>Brown</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" rowspan="2">
+       <widget class="QLabel" name="label_33">
+        <property name="text">
+         <string>To storage:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="2">
+       <widget class="QLabel" name="labelInStorageBrown">
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="2">
+       <widget class="QLabel" name="labelToStorageBrown">
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" rowspan="2">
+       <widget class="QLabel" name="label_32">
+        <property name="text">
+         <string>In storage:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0" colspan="2">
+       <widget class="QLabel" name="label_43">
+        <property name="text">
+         <string>Price per unit</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="2">
+       <widget class="QLabel" name="label_44">
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item>
+     <layout class="QGridLayout" name="costsLayout">
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_38">
+        <property name="text">
+         <string>Storage</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Miners</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_37">
+        <property name="text">
+         <string>Office workers</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>Accountants</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QLabel" name="label_39">
+        <property name="text">
+         <string>0.0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" colspan="2">
+       <widget class="QLabel" name="label_8">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Costs</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1">
+       <widget class="QLabel" name="label_40">
+        <property name="text">
+         <string>0.0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1">
+       <widget class="QLabel" name="label_41">
+        <property name="text">
+         <string>0.0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1">
+       <widget class="QLabel" name="label_42">
+        <property name="text">
+         <string>0.0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

@@ -1,24 +1,22 @@
-#ifndef NOTWEATHERDEPENDENTCOMPANY_H
-#define NOTWEATHERDEPENDENTCOMPANY_H
+#ifndef NOTSEASONDEPENDENTCOMPANY_H
+#define NOTSEASONDEPENDENTCOMPANY_H
 
 #include <iostream>
 
-class NotWeatherDependentCompany
+class NotSeasonDependentCompany
 {
 private:
     double moneyPayingAmount;
     std::string name;
 
 public:
-    NotWeatherDependentCompany();
+    NotSeasonDependentCompany();
     double needs_brown;
     double needs_black; // TODO zeby dzialao private
     void setNeeds(double n);
     double getNeedsBlack();
     double getNeedsBrown();
     double getMoneyPayingAmount();
-    void randNeedsAndCash();
-
 };
 
 #endif // NOTWEATHERDEPENDENTCOMPANY_H

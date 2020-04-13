@@ -7,27 +7,27 @@ MinerHat::MinerHat()
     {
     case 0:
         name = "Knight's hat";
-        salaryReduction = 0.07;
+        salaryReduction = 0.93;
         price = 1000; // TODO przy ustalaniu finansow
         break;
     case 1:
         name = "Peasant's hat";
-        salaryReduction = 0.01;
+        salaryReduction = 0.99;
         price = 1000;
         break;
     case 2:
         name = "Mongolian helmet";
-        salaryReduction = 0.03;
+        salaryReduction = 0.97;
         price = 1000;
         break;
     case 3:
         name = "Common miner hat";
-        salaryReduction = 0.03;
+        salaryReduction = 0.97;
         price = 1000;
         break;
     case 4:
         name = "Awesome hat";
-        salaryReduction = 0.1;
+        salaryReduction = 0.9;
         price = 1000;
         break;
     }

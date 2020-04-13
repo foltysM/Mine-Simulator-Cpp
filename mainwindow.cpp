@@ -11,12 +11,18 @@ MainWindow::MainWindow(QWidget *parent)
     MinerSuit suit = game.generateSuit();
     MinerLamp lamp = game.generateLamp();
 
+
     // UI init starts from here
     ui->setupUi(this);
+
+
     showNewMinerClothes();
     ui->progressBar->setValue(0);
     ui->labelMoneyMain->setText(QString::fromStdString("0$"));
     showNewMinerList(game.getMinersList());
+    //TODO DEBUG ONLY
+    game.setMoney(9000);
+    ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
 }
 
 MainWindow::~MainWindow()
@@ -42,8 +48,9 @@ void MainWindow::nextMonth()
     displayMixedMineMinersList();
     game.setSeason();
     newMonthDialog = new NewMonthDialog(this);
-    newMonthDialog->initData(blackCoalMine.coalMined(),brownCoalMine.coalMined(),mixedCoalMine.coalMined(),game,game.getMoney());
+    newMonthDialog->initData(blackCoalMine.coalMined(),brownCoalMine.coalMined(),mixedCoalMine.coalMined(),game);
     newMonthDialog->show();
+    ui->labelMoneyMain->setText(QString::fromStdString("$"+std::to_string(game.getMoney())));
 
 }
 
@@ -108,6 +115,7 @@ void MainWindow::displayBrownMineMinersList()
         ui->labelProductivityLampBrown->setText(QString::fromStdString("No data"));
 
     }
+    ui->labelMinersCountBrown->setText(QString::number(brownCoalMine.miners.size()));
 }
 
 void MainWindow::displayBlackMineMinersList()
@@ -147,6 +155,7 @@ void MainWindow::displayBlackMineMinersList()
         ui->labelLampBlack->setText(QString::fromStdString("No data"));
         ui->labelProdLampBlack->setText(QString::fromStdString("No data"));
     }
+    ui->labelMinersCountBlack->setText(QString::number(blackCoalMine.miners.size()));
 }
 
 void MainWindow::displayMixedMineMinersList()
@@ -186,6 +195,7 @@ void MainWindow::displayMixedMineMinersList()
         ui->labelLampMixed->setText(QString::fromStdString("No data"));
         ui->labelProdLampMixed->setText(QString::fromStdString("No data"));
     }
+    ui->labelMinersCountMixed->setText(QString::number(mixedCoalMine.miners.size()));
 }
 
 void MainWindow::on_minerListLeftBtn_2_clicked()
@@ -239,7 +249,6 @@ void MainWindow::on_newToBrownBtn_clicked()
     game.eraseMiner(which);
     displayBrownMineMinersList();
     showNewMinerList(game.getMinersList());
-    // TODO odswiezanie i wyswietlanie liczby gornikow
 }
 
 void MainWindow::on_newToUranBtn_clicked()
@@ -417,135 +426,216 @@ void MainWindow::showNewMinerClothes()
 
 void MainWindow::on_buyHatBlackBtn_clicked()
 {
-    if(blackCoalMine.miners.size()==0)
+    if((blackCoalMine.miners.size()!=0))
     {
-        QMessageBox::warning(this, "WARNING", "You cannot buy a hat, because 0 miners work there.", "Ok, I'll never do that again");
+        if(game.getHat().getPrice()<=game.getMoney())
+        {
+            blackCoalMine.miners[whichBlack].setHat(game.getHat());
+            game.subMoney(game.getHat().getPrice());
+            ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+            game.setHat(game.generateHat());
+            showNewMinerClothes();
+            displayBlackMineMinersList();
+        }
+        else
+        {
+            QMessageBox::warning(this, "WARNING", "You don't have enough money", "Ok");
+        }
     }
     else
-    {
-        blackCoalMine.miners[whichBlack].setHat(game.getHat());
-        game.setHat(game.generateHat());
-        showNewMinerClothes();
-        displayBlackMineMinersList();
+    {        
+        QMessageBox::warning(this, "WARNING", "You cannot buy a hat, because 0 miners work there.", "Ok, I'll never do that again");
     }
 }
 
 void MainWindow::on_buySuitBlackBtn_clicked()
 {
-    if(blackCoalMine.miners.size()==0)
+    if((blackCoalMine.miners.size()!=0))
     {
-        QMessageBox::warning(this, "WARNING", "You cannot buy a suit, because 0 miners work there.", "Ok, I'll never do that again");
+        if(game.getSuit().getPrice()<=game.getMoney())
+        {
+            blackCoalMine.miners[whichBlack].setSuit(game.getSuit());
+            game.subMoney(game.getSuit().getPrice());
+            ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+            game.setSuit(game.generateSuit());
+            showNewMinerClothes();
+            displayBlackMineMinersList();
+        }
+        else
+        {
+            QMessageBox::warning(this, "WARNING", "You don't have enough money", "Ok");
+        }
     }
     else
     {
-        blackCoalMine.miners[whichBlack].setSuit(game.getSuit());
-        game.setSuit(game.generateSuit());
-        showNewMinerClothes();
-        displayBlackMineMinersList();
+        QMessageBox::warning(this, "WARNING", "You cannot buy a suit, because 0 miners work there.", "Ok, I'll never do that again");
     }
 }
 
 void MainWindow::on_buyLampBlackBtn_clicked()
 {
-    if(blackCoalMine.miners.size()==0)
+    if((blackCoalMine.miners.size()!=0))
     {
-        QMessageBox::warning(this, "WARNING", "You cannot buy a lamp, because 0 miners work there.", "Ok, I'll never do that again");
+        if(game.getLamp().getPrice()<=game.getMoney())
+        {
+            blackCoalMine.miners[whichBlack].setLamp(game.getLamp());
+            game.subMoney(game.getLamp().getPrice());
+            ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+            game.setLamp(game.generateLamp());
+            showNewMinerClothes();
+            displayBlackMineMinersList();
+        }
+        else
+        {
+            QMessageBox::warning(this, "WARNING", "You don't have enough money", "Ok");
+        }
     }
     else
     {
-        blackCoalMine.miners[whichBlack].setLamp(game.getLamp());
-        game.setLamp(game.generateLamp());
-        showNewMinerClothes();
-        displayBlackMineMinersList();
+        QMessageBox::warning(this, "WARNING", "You cannot buy a lamp, because 0 miners work there.", "Ok, I'll never do that again");
     }
 }
 
 void MainWindow::on_buyHatBrownBtn_clicked()
 {
-    if(brownCoalMine.miners.size()==0)
+    if((brownCoalMine.miners.size()!=0))
     {
-        QMessageBox::warning(this, "WARNING", "You cannot buy a hat, because 0 miners work there.", "Ok, I'll never do that again");
+        if(game.getHat().getPrice()<=game.getMoney())
+        {
+            brownCoalMine.miners[whichBrown].setHat(game.getHat());
+            game.subMoney(game.getHat().getPrice());
+            ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+            game.setHat(game.generateHat());
+            showNewMinerClothes();
+            displayBrownMineMinersList();
+        }
+        else
+        {
+            QMessageBox::warning(this, "WARNING", "You don't have enough money", "Ok");
+        }
     }
     else
     {
-        brownCoalMine.miners[whichBrown].setHat(game.getHat());
-        game.setHat(game.generateHat());
-        showNewMinerClothes();
-        displayBrownMineMinersList();
+        QMessageBox::warning(this, "WARNING", "You cannot buy a hat, because 0 miners work there.", "Ok, I'll never do that again");
     }
 }
 
 void MainWindow::on_buySuitBrownBtn_clicked()
 {
-    if(brownCoalMine.miners.size()==0)
+    if((brownCoalMine.miners.size()!=0))
     {
-        QMessageBox::warning(this, "WARNING", "You cannot buy a suit, because 0 miners work there.", "Ok, I'll never do that again");
+        if(game.getSuit().getPrice()<=game.getMoney())
+        {
+            brownCoalMine.miners[whichBrown].setSuit(game.getSuit());
+            game.subMoney(game.getSuit().getPrice());
+            ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+            game.setSuit(game.generateSuit());
+            showNewMinerClothes();
+            displayBrownMineMinersList();
+        }
+        else
+        {
+            QMessageBox::warning(this, "WARNING", "You don't have enough money", "Ok");
+        }
     }
     else
     {
-        brownCoalMine.miners[whichBrown].setSuit(game.getSuit());
-        game.setSuit(game.generateSuit());
-        showNewMinerClothes();
-        displayBrownMineMinersList();
+        QMessageBox::warning(this, "WARNING", "You cannot buy a suit, because 0 miners work there.", "Ok, I'll never do that again");
     }
 }
 
 void MainWindow::on_buyLampBrownBtn_clicked()
 {
-    if(brownCoalMine.miners.size()==0)
+    if((brownCoalMine.miners.size()!=0))
     {
-        QMessageBox::warning(this, "WARNING", "You cannot buy a lamp, because 0 miners work there.", "Ok, I'll never do that again");
+        if(game.getLamp().getPrice()<=game.getMoney())
+        {
+            brownCoalMine.miners[whichBrown].setLamp(game.getLamp());
+            game.subMoney(game.getLamp().getPrice());
+            ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+            game.setLamp(game.generateLamp());
+            showNewMinerClothes();
+            displayBrownMineMinersList();
+        }
+        else
+        {
+            QMessageBox::warning(this, "WARNING", "You don't have enough money", "Ok");
+        }
     }
     else
     {
-        brownCoalMine.miners[whichBrown].setLamp(game.getLamp());
-        game.setLamp(game.generateLamp());
-        showNewMinerClothes();
-        displayBrownMineMinersList();
+        QMessageBox::warning(this, "WARNING", "You cannot buy a lamp, because 0 miners work there.", "Ok, I'll never do that again");
     }
 }
 
 void MainWindow::on_buyHatMixedBtn_clicked()
 {
-    if(mixedCoalMine.miners.size()==0)
+    if((mixedCoalMine.miners.size()!=0))
     {
-        QMessageBox::warning(this, "WARNING", "You cannot buy a hat, because 0 miners work there.", "Ok, I'll never do that again");
+        if(game.getHat().getPrice()<=game.getMoney())
+        {
+            mixedCoalMine.miners[whichMixed].setHat(game.getHat());
+            game.subMoney(game.getHat().getPrice());
+            ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+            game.setHat(game.generateHat());
+            showNewMinerClothes();
+            displayMixedMineMinersList();
+        }
+        else
+        {
+            QMessageBox::warning(this, "WARNING", "You don't have enough money", "Ok");
+        }
     }
     else
     {
-        mixedCoalMine.miners[whichMixed].setHat(game.getHat());
-        game.setHat(game.generateHat());
-        showNewMinerClothes();
-        displayMixedMineMinersList();
+        QMessageBox::warning(this, "WARNING", "You cannot buy a hat, because 0 miners work there.", "Ok, I'll never do that again");
     }
 }
 
 void MainWindow::on_buySuitMixedBtn_clicked()
 {
-    if(mixedCoalMine.miners.size()==0)
+    if((mixedCoalMine.miners.size()!=0))
     {
-        QMessageBox::warning(this, "WARNING", "You cannot buy a suit, because 0 miners work there.", "Ok, I'll never do that again");
+        if(game.getSuit().getPrice()<=game.getMoney())
+        {
+            mixedCoalMine.miners[whichMixed].setSuit(game.getSuit());
+            game.subMoney(game.getSuit().getPrice());
+            ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+            game.setSuit(game.generateSuit());
+            showNewMinerClothes();
+            displayMixedMineMinersList();
+        }
+        else
+        {
+            QMessageBox::warning(this, "WARNING", "You don't have enough money", "Ok");
+        }
     }
     else
     {
-        mixedCoalMine.miners[whichMixed].setSuit(game.getSuit());
-        game.setSuit(game.generateSuit());
-        showNewMinerClothes();
-        displayMixedMineMinersList();
+        QMessageBox::warning(this, "WARNING", "You cannot buy a suit, because 0 miners work there.", "Ok, I'll never do that again");
     }
 }
 
 void MainWindow::on_buyLampMixedBtn_clicked()
 {
-    if(mixedCoalMine.miners.size()==0)
+    if((mixedCoalMine.miners.size()!=0))
     {
-        QMessageBox::warning(this, "WARNING", "You cannot buy a lamp, because 0 miners work there.", "Ok, I'll never do that again");
+        if(game.getLamp().getPrice()<=game.getMoney())
+        {
+            mixedCoalMine.miners[whichMixed].setLamp(game.getLamp());
+            game.subMoney(game.getLamp().getPrice());
+            ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+            game.setLamp(game.generateLamp());
+            showNewMinerClothes();
+            displayMixedMineMinersList();
+        }
+        else
+        {
+            QMessageBox::warning(this, "WARNING", "You don't have enough money", "Ok");
+        }
     }
     else
     {
-        mixedCoalMine.miners[whichMixed].setLamp(game.getLamp());
-        game.setLamp(game.generateLamp());
-        showNewMinerClothes();
-        displayMixedMineMinersList();
+        QMessageBox::warning(this, "WARNING", "You cannot buy a lamp, because 0 miners work there.", "Ok, I'll never do that again");
     }
 }

@@ -3,6 +3,7 @@
 
 #include "abovegroundworker.h"
 
+
 class Accountant:public AboveGroundWorker
 {
 private:

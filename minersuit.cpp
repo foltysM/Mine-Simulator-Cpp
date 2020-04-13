@@ -8,35 +8,35 @@ MinerSuit::MinerSuit()
     case 0:
         name = "Pretty good lamp"; // TODO brak dostepu
         additionalProductivity = 1.03;
-        price = 1000; // TODO przy ustalaniu finansow
-        salaryReduction = 0.01;
+        price = 1000;
+        salaryReduction = 0.99;
         break;
     case 1:
-        name = "Grandpa's Lamp";
+        name = "Old miner's suit";
         additionalProductivity = 1.005;
-        salaryReduction = 0.02;
+        salaryReduction = 0.98;
         price = 1000;
         break;
     case 2:
-        name = "Laser Lamp";
+        name = "Suit from future";
         additionalProductivity = 1.015;
-        salaryReduction = 0.03;
+        salaryReduction = 0.97;
         price = 1000;
         break;
     case 3:
-        name = "Common miner lamp";
+        name = "Common miner suit";
         additionalProductivity = 1.015;
-        salaryReduction = 0.04;
+        salaryReduction = 0.96;
         price = 1000;
         break;
     case 4:
-        name = "Lamp bright as sun";
+        name = "Miner's armor";
         additionalProductivity = 1.05;
-        salaryReduction = 0.05;
+        salaryReduction = 0.95;
         price = 1000;
         break;
     }
-} // TODO nazwy
+}
 
 
 void MinerSuit::setAdditionalProductivity(double p)

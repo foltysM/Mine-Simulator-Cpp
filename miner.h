@@ -19,6 +19,7 @@ private:
     int strikeOpportunity;
     MinerSuit suit;
     bool tradeUnion;
+    bool striking;
 public:
     static int miners;
     Miner();

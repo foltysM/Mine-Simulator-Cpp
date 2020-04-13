@@ -30,8 +30,9 @@ public:
     void showNewMinerList(std::vector <Miner> vectorMiners);
     std::vector <Miner> initializeMiners();
     Game game;
-    int which = 0;
+
     int months_overall = 100; //TODO wprowadzane przez uzytkownika
+    int which = 0;
     int whichBlack = 0;
     int whichBrown = 0;
     int whichMixed = 0;
