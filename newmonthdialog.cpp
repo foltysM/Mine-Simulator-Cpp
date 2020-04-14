@@ -13,14 +13,14 @@ NewMonthDialog::~NewMonthDialog()
     delete ui;
 }
 
-void NewMonthDialog::initData(double bl, double br, double mx, Game g)
+void NewMonthDialog::initData(double bl, double br, double mx, Game &g)
 {
     ui->labelSeason->setText(QString::fromStdString(g.getSeason()));
     sum_black = 0;
     sum_brown = 0;
     half_mixed = mx/2;
 
-    // Miners' salary
+
 
 
     ui->labelBlackCoalMined->setText(QString::number(bl));
@@ -48,13 +48,34 @@ void NewMonthDialog::initData(double bl, double br, double mx, Game g)
     ui->labelNeedsBrownPowerstation->setText(QString::number(needsBrownPowerStation));
     //money
     ui->labelMoneyDialog->setText(QString::fromStdString("$"+std::to_string(g.getMoney())));
-    //storage price
-    // TODO ui->labelStoragePrice->setNum(g.getStorage().getPrice());
+
+
+    // Storage init
+    storageInit(g);
+
+    // Miners' salary
+    ui->labelMinersStriking->setNum(g.randomStrike());
+    // Including money for children
+    minersSalary = round(g.blackCoalMine.getMinerCosts())+round(g.brownCoalMine.getMinerCosts())+round(g.mixedCoalMine.getMinerCosts())+g.moneyForChildren();
+    ui->labelCostsMiners->setNum(minersSalary);
+
+    // Office Workers salary - $50 for every worker
+    officeWorkersSalary = (int)g.vectorOfficeWorkers.size()*50;
+    ui->labelCostsOfficeWorkers->setNum(officeWorkersSalary);
+
+    // Accountants salary - $20 for every accountant
+    accountantsSalary = (int)g.vectorAccountants.size()*20;
+    ui->labelCostsAccountants->setNum(accountantsSalary);
+
+    // Final money
+    finalMoney = g.getMoney() - accountantsSalary - minersSalary - officeWorkersSalary - storageSumPrice;
 
 }
 
 void NewMonthDialog::on_acceptButton_clicked()
 {
+    //lastMonthRevenues = 0; TODO ile bylo przychodu
+    //g.refreshAccountantsAmount();
     // TODO przekazanie informacji do mainwindow
     blackIronWorks = ui->doubleSpinBlackIronWorks->value();
     brownIronWorks = ui->doubleSpinBrownIronWorks->value();
@@ -274,4 +295,18 @@ void NewMonthDialog::getStorage(Game g)
     inStorageBeforeBrown = g.getStorage().getBrownCoalAmount();
     ui->labelInStorageBlack->setNum(inStorageBeforeBlack);
     ui->labelInStorageBrown->setNum(inStorageBeforeBrown);
+}
+
+void NewMonthDialog::storageInit(Game g)
+{
+    ui->labelInStorageBlack->setNum(g.getStorage().getBlackCoalAmount());
+    ui->labelInStorageBrown->setNum(g.getStorage().getBrownCoalAmount());
+    ui->labelToStorageBlack->setNum(sum_black);
+    ui->labelToStorageBrown->setNum(sum_brown);
+
+    //storage price
+    storagePrice = g.getStorage().getPrice();
+    ui->labelStoragePerUnitPrice->setNum(storagePrice);
+    storageSumPrice = storagePrice*sum_black+storagePrice*sum_brown;
+    ui->labelCostsStorage->setNum(storageSumPrice);
 }

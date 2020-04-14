@@ -19,7 +19,7 @@ double Mine::coalMined()
     double amount = 0;
     for(int i = 0; i<(int)miners.size();i++)
     {
-       amount = amount + miners[i].getProductivity();
+       amount = amount + miners[i].getProductivity() + (miners[i].getSeniority()/10);
     }
     return amount;
 }
@@ -29,7 +29,8 @@ double Mine::getMinerCosts()
     double sum;
     for(int i = 0;i<(int)miners.size();i++)
     {
-        sum = sum + (miners[i].getSalaryAmount()*miners[i].getHat().getSalaryReduction()*miners[i].getSuit().getSalaryReduction());
+        if(miners[i].getStriking()==false)
+            sum = sum + (miners[i].getSalaryAmount()*miners[i].getHat().getSalaryReduction()*miners[i].getSuit().getSalaryReduction());
     }
     return sum;
 }

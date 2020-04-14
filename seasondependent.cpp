@@ -20,7 +20,7 @@ double SeasonDependent::getNeedsBlack()
         needs_black = rand()%10+20;
     if(season == "Winter")
         needs_black = rand()%10+25;
-    return needs_black; //TODO dostep gdy private:?
+    return needs_black;
 }
 
 double SeasonDependent::getNeedsBrown()

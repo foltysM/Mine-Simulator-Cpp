@@ -1,6 +1,7 @@
 #ifndef CHAIR_H
 #define CHAIR_H
 
+
 #include "abovegroundworkeritem.h"
 
 class Chair: public AboveGroundWorkerItem

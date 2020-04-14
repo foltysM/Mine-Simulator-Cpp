@@ -2,7 +2,9 @@
 
 AboveGroundWorker::AboveGroundWorker()
 {
-
+    chair.setReductionOne();
+    desk.setReductionOne();
+    computer.setReductionOne();
 }
 
 void AboveGroundWorker::setDesk(Desk d)

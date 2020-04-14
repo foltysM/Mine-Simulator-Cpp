@@ -12,7 +12,7 @@ private:
 public:
     NotSeasonDependentCompany();
     double needs_brown;
-    double needs_black; // TODO zeby dzialao private
+    double needs_black;
     void setNeeds(double n);
     double getNeedsBlack();
     double getNeedsBrown();

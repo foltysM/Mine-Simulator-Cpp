@@ -31,7 +31,8 @@ public:
     int getSeniority();
     void promotion();
     void setSeniority(int s);
-    bool strike();
+    bool getStriking();
+    void setStriking(bool s);
     int getMiners();
     bool getUnion();
     int getStrikeOpportunity();

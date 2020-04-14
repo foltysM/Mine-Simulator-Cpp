@@ -155,3 +155,134 @@ Storage Game::getStorage()
 {
     return storage;
 }
+
+void Game::refreshOfficeWorkersAmount()
+{
+    int minersSum = blackCoalMine.miners.size()+brownCoalMine.miners.size()+mixedCoalMine.miners.size();
+    int a = minersSum/5;
+    officeWorkersAmount = a;
+    if(officeWorkersAmount<(int)vectorOfficeWorkers.size())
+    {
+        while(officeWorkersAmount<(int)vectorOfficeWorkers.size())
+        {
+            vectorOfficeWorkers.erase(vectorOfficeWorkers.begin()+((int)vectorOfficeWorkers.size())-1);
+        }
+    }
+    if(officeWorkersAmount>(int)vectorOfficeWorkers.size())
+    {
+        while(officeWorkersAmount>(int)vectorOfficeWorkers.size())
+        {
+            OfficeWorker o;
+            vectorOfficeWorkers.push_back(o);
+        }
+    }
+}
+
+void Game::refreshAccountantsAmount()
+{
+    // for every $10k hires one accountant
+    accountantsAmount = lastMonthRevenues / 10000;
+    if(accountantsAmount<(int)vectorAccountants.size())
+    {
+        while(accountantsAmount<(int)vectorAccountants.size())
+        {
+            vectorAccountants.erase(vectorAccountants.begin()+((int)vectorAccountants.size())-1);
+        }
+    }
+    if(accountantsAmount>(int)vectorAccountants.size())
+    {
+        while(accountantsAmount>(int)vectorAccountants.size())
+        {
+            Accountant a;
+            vectorAccountants.push_back(a);
+        }
+    }
+}
+
+int Game::randomStrike()
+{
+    int sum = 0;
+    for(int i = 0;i<(int)blackCoalMine.miners.size();i++)
+    {
+        // strike probability
+        int sop = blackCoalMine.miners[i].getStrikeOpportunity();
+        int r = rand()%100;
+        switch(r/sop)
+        {
+        case 1:
+            blackCoalMine.miners[i].setStriking(true);
+            sum++;
+            break;
+        default:
+            blackCoalMine.miners[i].setStriking(false);
+            break;
+        }
+    }
+    for(int i = 0;i<(int)brownCoalMine.miners.size();i++)
+    {
+        // strike probability
+        int sop = brownCoalMine.miners[i].getStrikeOpportunity();
+        int r = rand()%100;
+        switch(r/sop)
+        {
+        case 1:
+            brownCoalMine.miners[i].setStriking(true);
+            sum++;
+            break;
+        default:
+            brownCoalMine.miners[i].setStriking(false);
+            break;
+        }
+    }
+    for(int i = 0;i<(int)mixedCoalMine.miners.size();i++)
+    {
+        // strike probability
+        int sop = mixedCoalMine.miners[i].getStrikeOpportunity();
+        int r = rand()%100;
+        switch(r/sop)
+        {
+        case 1:
+            mixedCoalMine.miners[i].setStriking(true);
+            sum++;
+            break;
+        default:
+            mixedCoalMine.miners[i].setStriking(false);
+            break;
+        }
+    }
+    return sum;
+}
+
+double Game::moneyForChildren()
+{
+    double r = 0;
+    if(season=="Autumn")
+    {
+        for(int i = 0;i<(int)blackCoalMine.miners.size();i++)
+        {
+            //$20 for every child every autumn month
+            r = r + 20*blackCoalMine.miners[i].getKids();
+        }
+        for(int i = 0;i<(int)brownCoalMine.miners.size();i++)
+        {
+            //$20 for every child every autumn month
+            r = r + 20*brownCoalMine.miners[i].getKids();
+        }
+        for(int i = 0;i<(int)mixedCoalMine.miners.size();i++)
+        {
+            //$20 for every child every autumn month
+            r = r + 20*mixedCoalMine.miners[i].getKids();
+        }
+    }
+    return r;
+}
+
+int Game::getOfficeWorkersAmount()
+{
+    return officeWorkersAmount;
+}
+
+void Game::setLastMonthRevenues(double r)
+{
+    lastMonthRevenues = r;
+}

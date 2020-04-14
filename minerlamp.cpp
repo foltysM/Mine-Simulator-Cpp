@@ -8,7 +8,7 @@ MinerLamp::MinerLamp()
     case 0:
         name = "Pretty good lamp";
         additionalProductivity = 1.07;
-        price = 1000; // TODO przy ustalaniu finansow
+        price = 1000;
         break;
     case 1:
         name = "Grandpa's Lamp";

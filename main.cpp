@@ -1,29 +1,20 @@
 #include <iostream>
 #include "mainwindow.h"
-#include "newminerslist.h"
 #include "game.h"
 #include <QLabel>
 #include <QApplication>
 
 // TODO przemioty ksiegowych i officeworkerow
 // TODO ksiegowi i office workerzy
-// TODO wydajnosc gornika wzrasta wraz ze stazem
-// TODO pobieranie pensji przez gornika
 // TODO zbugowane przenoszenie a pozniej strzalki
-// TODO pieniadze na dzieci
-// TODO dzialajace przedmioty gornika
-// TODO mozliwosc strajkow
-void initializeApp() {
-    NewMinersList list;
-    list.generateMinerList();
-    std::vector <Miner> wektor;
-    wektor = list.getMinersList();
-}
+// TODO storage
+// TODO faktyczne działanie przedmiotow pracownikow gornych
+// TODO odswiezenie kwoty za storage + final przy zmianie editline
+
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    initializeApp();
     MainWindow w;
     w.show();
     return a.exec();

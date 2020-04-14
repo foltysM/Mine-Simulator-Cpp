@@ -6,7 +6,7 @@ MinerSuit::MinerSuit()
     switch(w)
     {
     case 0:
-        name = "Pretty good lamp"; // TODO brak dostepu
+        name = "Pretty good lamp";
         additionalProductivity = 1.03;
         price = 1000;
         salaryReduction = 0.99;

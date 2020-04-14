@@ -8,7 +8,7 @@ MinerHat::MinerHat()
     case 0:
         name = "Knight's hat";
         salaryReduction = 0.93;
-        price = 1000; // TODO przy ustalaniu finansow
+        price = 1000;
         break;
     case 1:
         name = "Peasant's hat";

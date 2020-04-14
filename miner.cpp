@@ -5,7 +5,6 @@ int Miner::miners = 0;
 
 Miner::Miner()
 {
-    miners++; //TODO liczenie górników
     int val;
     hat.setName("No hat");
     hat.setSalaryReduction(1);
@@ -15,8 +14,8 @@ Miner::Miner()
     suit.setSalaryReduction(1);
     suit.setAdditionalProductivity(1);
     kids = rand()%4+1;
-    //salary from 2k to 3k
-    monthSalary = rand()%1000+2000;
+    //salary
+    monthSalary = rand()%300+100;
     productivity = ((double)(rand()%5+10))/10;
     seniority = 0;
     striking = false;
@@ -127,6 +126,16 @@ void Miner::setSuit(MinerSuit s)
 void Miner::setLamp(MinerLamp l)
 {
     lamp = l;
+}
+
+bool Miner::getStriking()
+{
+    return striking;
+}
+
+void Miner::setStriking(bool s)
+{
+    striking = s;
 }
 
 

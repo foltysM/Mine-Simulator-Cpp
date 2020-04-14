@@ -6,6 +6,11 @@
 #include "storage.h"
 #include "seasondependent.h"
 #include "notseasondependentcompany.h"
+#include "blackcoalmine.h"
+#include "browncoalmine.h"
+#include "mixedcoalmine.h"
+#include "officeworker.h"
+#include "accountant.h"
 
 class Game
 {
@@ -23,8 +28,13 @@ private:
     NotSeasonDependentCompany coalStorageSite;
     NotSeasonDependentCompany ironworks;
     int miners_overall;
+    int officeWorkersAmount;
+    double lastMonthRevenues;
+    int accountantsAmount;
 public:
     std::vector <Miner> vectorMiners;
+    std::vector <Accountant> vectorAccountants;
+    std::vector <OfficeWorker> vectorOfficeWorkers;
     Game();
     void setMonths(int m);
     int getMonths();
@@ -50,6 +60,16 @@ public:
     void setLamp(MinerLamp l);
     void subMoney(double m);
     Storage getStorage();
+    BlackCoalMine blackCoalMine;
+    BrownCoalMine brownCoalMine;
+    MixedCoalMine mixedCoalMine;
+    void refreshOfficeWorkersAmount();
+    void refreshAccountantsAmount();
+    int randomStrike();
+    double moneyForChildren();
+    int getOfficeWorkersAmount();
+    void setLastMonthRevenues(double r);
+
 };
 
 #endif // GAME_H

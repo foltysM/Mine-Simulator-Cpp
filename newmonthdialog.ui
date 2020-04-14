@@ -120,19 +120,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="acceptButton">
-   <property name="geometry">
-    <rect>
-     <x>760</x>
-     <y>450</y>
-     <width>101</width>
-     <height>41</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Accept</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="gridLayoutWidget_3">
    <property name="geometry">
     <rect>
@@ -710,7 +697,7 @@
        </widget>
       </item>
       <item row="5" column="2">
-       <widget class="QLabel" name="label_44">
+       <widget class="QLabel" name="labelStoragePerUnitPrice">
         <property name="text">
          <string>0</string>
         </property>
@@ -765,7 +752,7 @@
        </widget>
       </item>
       <item row="1" column="1">
-       <widget class="QLabel" name="label_39">
+       <widget class="QLabel" name="labelCostsMiners">
         <property name="text">
          <string>0.0</string>
         </property>
@@ -790,7 +777,7 @@
        </widget>
       </item>
       <item row="2" column="1">
-       <widget class="QLabel" name="label_40">
+       <widget class="QLabel" name="labelCostsAccountants">
         <property name="text">
          <string>0.0</string>
         </property>
@@ -800,7 +787,7 @@
        </widget>
       </item>
       <item row="3" column="1">
-       <widget class="QLabel" name="label_41">
+       <widget class="QLabel" name="labelCostsOfficeWorkers">
         <property name="text">
          <string>0.0</string>
         </property>
@@ -810,7 +797,7 @@
        </widget>
       </item>
       <item row="4" column="1">
-       <widget class="QLabel" name="label_42">
+       <widget class="QLabel" name="labelCostsStorage">
         <property name="text">
          <string>0.0</string>
         </property>
@@ -820,6 +807,89 @@
        </widget>
       </item>
      </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>100</y>
+     <width>91</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_39">
+      <property name="text">
+       <string>Miners striking:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelMinersStriking">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_3">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>410</y>
+     <width>160</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label_41">
+        <property name="text">
+         <string>Final money:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_40">
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QPushButton" name="acceptButton">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>Accept</string>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>

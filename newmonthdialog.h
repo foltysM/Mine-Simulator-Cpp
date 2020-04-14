@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QMessageBox>
+#include <cmath>
 #include "game.h"
 
 namespace Ui {
@@ -16,7 +17,7 @@ class NewMonthDialog : public QDialog
 public:
     explicit NewMonthDialog(QWidget *parent = nullptr);
     ~NewMonthDialog();
-    void initData(double bl, double br, double mx, Game g);
+    void initData(double bl, double br, double mx, Game &g);
 
 private slots:
     void on_acceptButton_clicked();
@@ -76,6 +77,12 @@ private:
     double sumProfitsBrownPowerStation;
     double sumProfits;
     double storagePrice;
+    void storageInit(Game g);
+    double officeWorkersSalary;
+    double accountantsSalary;
+    double finalMoney;
+    double minersSalary;
+    double storageSumPrice;
 };
 
 #endif // NEWMONTHDIALOG_H
