@@ -69,6 +69,8 @@ public:
     double moneyForChildren();
     int getOfficeWorkersAmount();
     void setLastMonthRevenues(double r);
+    double itemsReduction();
+    double getAccStorageReduction();
 
 };
 

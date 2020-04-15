@@ -16,7 +16,6 @@ public:
     bool Failure();
     void moveMiner(Miner m);
     void removeMiner(Miner m);
-    virtual double setProductivity(double p) = 0;
     void updateProductivity();
     void upSeniority();
     double coalMined();

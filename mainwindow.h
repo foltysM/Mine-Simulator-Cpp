@@ -7,6 +7,7 @@
 #include "miner.h"
 #include "game.h"
 #include "newmonthdialog.h"
+#include "gamedurationdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -27,7 +28,8 @@ public:
     std::vector <Miner> initializeMiners();
     Game game;
 
-    int months_overall = 100; //TODO wprowadzane przez uzytkownika
+    int months_overall = 40;
+    int y;
     int which = 0;
     int whichBlack = 0;
     int whichBrown = 0;
@@ -119,12 +121,15 @@ private slots:
 
     void on_buyComputerOffBtn_clicked();
 
+    void on_closeBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
     void displayBlackMineMinersList();
     void displayBrownMineMinersList();
     void displayMixedMineMinersList();
     NewMonthDialog *newMonthDialog;
+    GameDurationDialog *gameDurationDialog;
     void displayAccList();
     void displayOffList();
 };

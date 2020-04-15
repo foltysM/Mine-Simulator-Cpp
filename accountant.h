@@ -11,7 +11,7 @@ private:
 public:
     Accountant();
     ~Accountant();
-    void work();
+    double work();
 };
 
 #endif // ACCOUNTANT_H

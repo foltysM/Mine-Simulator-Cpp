@@ -11,10 +11,18 @@ MainWindow::MainWindow(QWidget *parent)
     MinerSuit suit = game.generateSuit();
     MinerLamp lamp = game.generateLamp();
 
+    // Settings dialog
+    GameDurationDialog dial(this,y);
+    dial.setModal(true);
+    if ( dial.exec() == QDialog::Accepted )
+    {
+        y=dial.getMonths();
+
+    }
+    months_overall = y;
 
     // UI init starts from here
     ui->setupUi(this);
-
 
     showNewMinerClothes();
     ui->progressBar->setValue(0);
@@ -39,7 +47,6 @@ void MainWindow::nextMonth()
         ui->progressBar->setValue((game.getMonths()*100)/months_overall);
     }
     // miners seniority up
-    //TODO jakos to polimorfizmem, bo nie dzialalo wczesniej
     game.blackCoalMine.upSeniority();
     game.mixedCoalMine.upSeniority();
     game.brownCoalMine.upSeniority();
@@ -47,9 +54,12 @@ void MainWindow::nextMonth()
     displayBrownMineMinersList();
     displayMixedMineMinersList();
     game.setSeason();
+
     newMonthDialog = new NewMonthDialog(this);
     newMonthDialog->initData(game.blackCoalMine.coalMined(),game.brownCoalMine.coalMined(),game.mixedCoalMine.coalMined(),game);
+
     newMonthDialog->show();
+
     ui->labelMoneyMain->setText(QString::fromStdString("$"+std::to_string(game.getMoney())));
 
 }
@@ -241,7 +251,7 @@ void MainWindow::on_newToBlackBtn_clicked()
     displayBlackMineMinersList();
     showNewMinerList(game.getMinersList());
 
-    //office workers //TODO office workers nie maja miec na poczatku rzeczy
+    //office workers
     game.refreshOfficeWorkersAmount();
     displayOffList();
 }
@@ -840,4 +850,9 @@ void MainWindow::on_buyComputerOffBtn_clicked()
         QMessageBox::warning(this, "WARNING", "There is no Office Worker", "Ok.");
     }
     ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game.getMoney())+"$"));
+}
+
+void MainWindow::on_closeBtn_clicked()
+{
+
 }

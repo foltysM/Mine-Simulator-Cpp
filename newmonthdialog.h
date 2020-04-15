@@ -83,6 +83,8 @@ private:
     double finalMoney;
     double minersSalary;
     double storageSumPrice;
+    double countFinal();
+    double moneyBefore;
 };
 
 #endif // NEWMONTHDIALOG_H

@@ -7,7 +7,7 @@ class Desk:public AboveGroundWorkerItem
 {
 public:
     Desk();
-    void useItem();
+    double useItem();
 };
 
 #endif // DESK_H

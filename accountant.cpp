@@ -8,7 +8,7 @@ Accountant::Accountant()
 Accountant::~Accountant(){
 
 }
-void Accountant::work(){
-    //TODO funkcja
+double Accountant::work(){
 
+   return 0.99;
 }

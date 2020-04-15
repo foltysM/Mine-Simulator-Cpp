@@ -16,7 +16,6 @@ protected:
     double salary;
 public:
     AboveGroundWorker();
-    virtual void work() = 0;
     void setDesk(Desk d);
     void setComputer(Computer c);
     void setChair(Chair c);

@@ -286,3 +286,33 @@ void Game::setLastMonthRevenues(double r)
 {
     lastMonthRevenues = r;
 }
+
+double Game::itemsReduction()
+{
+    double r = 1;
+    for(int i = 0;i<(int)vectorAccountants.size();i++)
+    {
+        r = r * vectorAccountants[i].getDesk().getReduction() * vectorAccountants[i].getChair().getReduction() * vectorAccountants[i].getComputer().getReduction();
+        r = r * vectorAccountants[i].getChair().useItem();
+        r = r * vectorAccountants[i].getDesk().useItem();
+        r = r * vectorAccountants[i].getComputer().useItem();
+    }
+    for(int i =0;i<(int)vectorOfficeWorkers.size();i++)
+    {
+        r = r * vectorOfficeWorkers[i].getDesk().getReduction() * vectorOfficeWorkers[i].getChair().getReduction() * vectorOfficeWorkers[i].getComputer().getReduction();
+        r = r * vectorOfficeWorkers[i].getChair().useItem();
+        r = r * vectorOfficeWorkers[i].getDesk().useItem();
+        r = r * vectorOfficeWorkers[i].getComputer().useItem();
+    }
+    return r;
+}
+
+double Game::getAccStorageReduction()
+{
+    double reduction = 0;
+    for(int i = 0 ;i<(int)vectorAccountants.size();i++)
+    {
+        reduction = reduction * vectorAccountants[i].work();
+    }
+    return reduction;
+}

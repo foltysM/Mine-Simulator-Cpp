@@ -4,13 +4,9 @@
 #include <QLabel>
 #include <QApplication>
 
-// TODO przemioty ksiegowych i officeworkerow
-// TODO ksiegowi i office workerzy
-// TODO zbugowane przenoszenie a pozniej strzalki
-// TODO storage
-// TODO faktyczne działanie przedmiotow pracownikow gornych
+// TODO ksiegowi
 // TODO odswiezenie kwoty za storage + final przy zmianie editline
-
+// Brak mozliwosci uzywania mainwindow po wywolaniu dialogu
 
 int main(int argc, char *argv[])
 {

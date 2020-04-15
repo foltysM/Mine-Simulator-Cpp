@@ -7,7 +7,7 @@ class Computer:public AboveGroundWorkerItem
 {
 public:
     Computer();
-    void useItem();
+    double useItem();
 };
 
 #endif // COMPUTER_H

@@ -19,10 +19,7 @@ void NewMonthDialog::initData(double bl, double br, double mx, Game &g)
     sum_black = 0;
     sum_brown = 0;
     half_mixed = mx/2;
-
-
-
-
+    moneyBefore = g.getMoney();
     ui->labelBlackCoalMined->setText(QString::number(bl));
     ui->labelBrownCoalMined->setText(QString::number(br));
     ui->labelBlackMinedMixed->setText(QString::number(half_mixed));
@@ -56,7 +53,7 @@ void NewMonthDialog::initData(double bl, double br, double mx, Game &g)
     // Miners' salary
     ui->labelMinersStriking->setNum(g.randomStrike());
     // Including money for children
-    minersSalary = round(g.blackCoalMine.getMinerCosts())+round(g.brownCoalMine.getMinerCosts())+round(g.mixedCoalMine.getMinerCosts())+g.moneyForChildren();
+    minersSalary = (round(g.blackCoalMine.getMinerCosts())+round(g.brownCoalMine.getMinerCosts())+round(g.mixedCoalMine.getMinerCosts())+g.moneyForChildren())*g.itemsReduction();
     ui->labelCostsMiners->setNum(minersSalary);
 
     // Office Workers salary - $50 for every worker
@@ -107,6 +104,7 @@ void NewMonthDialog::on_doubleSpinBlackIronWorks_valueChanged(double arg1)
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackIronWorks->setNum(sumProfitsBlackIronWorks);
         }
+        ui->labelFinalMoney->setNum(countFinal());
     }
 }
 
@@ -129,7 +127,8 @@ void NewMonthDialog::on_doubleSpinBlackCoalStorageSite_valueChanged(double arg1)
             sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackCoalStorageSite->setNum(sumProfitsBlackCoalStorageSite);
-        }
+        }       
+        ui->labelFinalMoney->setNum(countFinal());
     }
 }
 
@@ -153,6 +152,7 @@ void NewMonthDialog::on_doubleSpinBlackPowerStation_valueChanged(double arg1)
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackPowerStation->setNum(sumProfitsBlackPowerStation);
         }
+        ui->labelFinalMoney->setNum(countFinal());
     }
 }
 
@@ -176,6 +176,7 @@ void NewMonthDialog::on_doubleSpinBlackHeatingPlant_valueChanged(double arg1)
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackHeatingPlant->setNum(sumProfitsBlackHeatingPlant);
         }
+        ui->labelFinalMoney->setNum(countFinal());
     }
 }
 
@@ -199,6 +200,7 @@ void NewMonthDialog::on_doubleSpinBrownCoalStorageSite_valueChanged(double arg1)
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownCoalStorageSite->setNum(sumProfitsBrownCoalStorageSite);
         }
+        ui->labelFinalMoney->setNum(countFinal());
     }
 }
 
@@ -222,6 +224,7 @@ void NewMonthDialog::on_doubleSpinBrownIronWorks_valueChanged(double arg1)
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownIronWorks->setNum(sumProfitsBrownIronWorks);
         }
+        ui->labelFinalMoney->setNum(countFinal());
     }
 }
 
@@ -245,6 +248,7 @@ void NewMonthDialog::on_doubleSpinBrownHeatingPlant_valueChanged(double arg1)
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownHeatingPlant->setNum(sumProfitsBrownHeatingPlant);
         }
+        ui->labelFinalMoney->setNum(countFinal());
     }
 }
 
@@ -268,6 +272,7 @@ void NewMonthDialog::on_doubleSpinBrownPowerStation_valueChanged(double arg1)
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownPowerStation->setNum(sumProfitsBrownPowerStation);
         }
+        ui->labelFinalMoney->setNum(countFinal());
     }
 }
 
@@ -307,6 +312,11 @@ void NewMonthDialog::storageInit(Game g)
     //storage price
     storagePrice = g.getStorage().getPrice();
     ui->labelStoragePerUnitPrice->setNum(storagePrice);
-    storageSumPrice = storagePrice*sum_black+storagePrice*sum_brown;
+    storageSumPrice = (storagePrice*sum_black+storagePrice*sum_brown)*g.getAccStorageReduction();
     ui->labelCostsStorage->setNum(storageSumPrice);
+}
+
+double NewMonthDialog::countFinal()
+{
+    return moneyBefore - minersSalary - accountantsSalary - officeWorkersSalary - storageSumPrice + sumProfits;
 }

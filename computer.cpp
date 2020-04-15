@@ -15,6 +15,17 @@ Computer::Computer()
     }
 }
 
-void Computer::useItem() {
-    //TODO metoda
+double Computer::useItem() {
+    int random = rand()%12;
+    double r = 0;
+    switch(random)
+    {
+    case 1:
+        r = 0.5;
+        break;
+    default:
+        r = 1;
+        break;
+    }
+    return r;
 }

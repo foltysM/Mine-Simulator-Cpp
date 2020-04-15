@@ -25,6 +25,7 @@ SOURCES += \
     computer.cpp \
     desk.cpp \
     game.cpp \
+    gamedurationdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     mine.cpp \
@@ -51,6 +52,7 @@ HEADERS += \
     computer.h \
     desk.h \
     game.h \
+    gamedurationdialog.h \
     mainwindow.h \
     mine.h \
     miner.h \
@@ -59,7 +61,6 @@ HEADERS += \
     minerlamp.h \
     minersuit.h \
     mixedcoalmine.h \
-    newminerslist.h \
     newmonthdialog.h \
     notseasondependentcompany.h \
     officeworker.h \
@@ -67,6 +68,7 @@ HEADERS += \
     seasondependent.h
 
 FORMS += \
+    gamedurationdialog.ui \
     mainwindow.ui \
     newmonthdialog.ui
 

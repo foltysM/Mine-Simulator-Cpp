@@ -7,7 +7,6 @@ class BrownCoalMine: public Mine
 {
 public:
     BrownCoalMine();
-    double setProductivity(double p);
 };
 
 #endif // BROWNCOALMINE_H

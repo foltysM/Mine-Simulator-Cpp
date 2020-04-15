@@ -7,7 +7,7 @@ class OfficeWorker: public AboveGroundWorker
 {
 public:
     OfficeWorker();
-    void work();
+
 };
 
 #endif // OFFICEWORKER_H

@@ -10,7 +10,7 @@ protected:
 public:
     AboveGroundWorkerItem();
     void listItems();
-    virtual void useItem() = 0;
+    virtual double useItem() = 0;
     double getReduction();
     void setReductionOne();
 };

@@ -8,7 +8,7 @@ class Chair: public AboveGroundWorkerItem
 {
 public:
     Chair();
-    void useItem();
+    double useItem();
 };
 
 #endif // CHAIR_H
