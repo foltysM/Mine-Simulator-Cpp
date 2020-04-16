@@ -12,11 +12,9 @@ class GameDurationDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit GameDurationDialog(QWidget *parent = nullptr, int y = 0);
+    explicit GameDurationDialog(QWidget *parent = nullptr);
     ~GameDurationDialog();
-    void initData(int m);
     int getMonths();
-    int *y;
 
 private slots:
     void on_pushButton_clicked();

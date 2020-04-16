@@ -4,6 +4,7 @@
 #include <sstream>
 #include <QMainWindow>
 #include <QMessageBox>
+#include <cstdlib>
 #include "miner.h"
 #include "game.h"
 #include "newmonthdialog.h"
@@ -29,7 +30,9 @@ public:
     Game game;
 
     int months_overall = 40;
-    int y;
+    double x;
+    double w;
+    double z;
     int which = 0;
     int whichBlack = 0;
     int whichBrown = 0;

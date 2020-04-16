@@ -35,7 +35,6 @@ SOURCES += \
     minerlamp.cpp \
     minersuit.cpp \
     mixedcoalmine.cpp \
-    newminerslist.cpp \
     newmonthdialog.cpp \
     notseasondependentcompany.cpp \
     officeworker.cpp \

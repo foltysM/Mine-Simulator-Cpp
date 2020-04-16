@@ -1,20 +1,14 @@
 #include "newmonthdialog.h"
 #include "ui_newmonthdialog.h"
 
-NewMonthDialog::NewMonthDialog(QWidget *parent) :
+NewMonthDialog::NewMonthDialog(QWidget *parent, Game g) :
     QDialog(parent),
     ui(new Ui::NewMonthDialog)
 {
+    double bl = g.blackCoalMine.coalMined();
+    double br = g.brownCoalMine.coalMined();
+    double mx = g.mixedCoalMine.coalMined();
     ui->setupUi(this);
-}
-
-NewMonthDialog::~NewMonthDialog()
-{
-    delete ui;
-}
-
-void NewMonthDialog::initData(double bl, double br, double mx, Game &g)
-{
     ui->labelSeason->setText(QString::fromStdString(g.getSeason()));
     sum_black = 0;
     sum_brown = 0;
@@ -66,14 +60,18 @@ void NewMonthDialog::initData(double bl, double br, double mx, Game &g)
 
     // Final money
     finalMoney = g.getMoney() - accountantsSalary - minersSalary - officeWorkersSalary - storageSumPrice;
+    ui->labelFinalMoney->setText(QString::fromStdString("$"+std::to_string(finalMoney)));
+}
 
+NewMonthDialog::~NewMonthDialog()
+{
+    delete ui;
 }
 
 void NewMonthDialog::on_acceptButton_clicked()
 {
-    //lastMonthRevenues = 0; TODO ile bylo przychodu
-    //g.refreshAccountantsAmount();
-    // TODO przekazanie informacji do mainwindow
+    // STORAGE
+
     blackIronWorks = ui->doubleSpinBlackIronWorks->value();
     brownIronWorks = ui->doubleSpinBrownIronWorks->value();
     blackHeatingPlant = ui->doubleSpinBlackHeatingPlant->value();
@@ -98,13 +96,15 @@ void NewMonthDialog::on_doubleSpinBlackIronWorks_valueChanged(double arg1)
             QMessageBox::warning(this, "WARNING", "You cannot give to storage negative amount of coal", "Ok, I'll never do that again");
             ui->doubleSpinBlackIronWorks->setValue(0);
         }else{
-            ui->labelToStorageBlack->setNum(toSet);
+            toStorageBlack = toSet;
+            ui->labelToStorageBlack->setNum(toStorageBlack);
             sumProfitsBlackIronWorks = priceIronWorks*arg1;
             sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackIronWorks->setNum(sumProfitsBlackIronWorks);
         }
-        ui->labelFinalMoney->setNum(countFinal());
+        ui->labelCostsStorage->setNum((toStorageBlack+toStorageBrown)*storagePrice);
+        ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
     }
 }
 
@@ -122,13 +122,15 @@ void NewMonthDialog::on_doubleSpinBlackCoalStorageSite_valueChanged(double arg1)
             QMessageBox::warning(this, "WARNING", "You cannot give to storage negative amount of coal", "Ok, I'll never do that again");
             ui->doubleSpinBlackCoalStorageSite->setValue(0);
         }else{
-            ui->labelToStorageBlack->setNum(toSet);
+            toStorageBlack = toSet;
+            ui->labelToStorageBlack->setNum(toStorageBlack);
             sumProfitsBlackCoalStorageSite = priceCoalStorageSite*arg1;
             sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackCoalStorageSite->setNum(sumProfitsBlackCoalStorageSite);
-        }       
-        ui->labelFinalMoney->setNum(countFinal());
+        }
+        ui->labelCostsStorage->setNum((toStorageBlack+toStorageBrown)*storagePrice);
+        ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
     }
 }
 
@@ -146,13 +148,15 @@ void NewMonthDialog::on_doubleSpinBlackPowerStation_valueChanged(double arg1)
             QMessageBox::warning(this, "WARNING", "You cannot give to storage negative amount of coal", "Ok, I'll never do that again");
             ui->doubleSpinBlackPowerStation->setValue(0);
         }else{
-            ui->labelToStorageBlack->setNum(toSet);
+            toStorageBlack = toSet;
+            ui->labelToStorageBlack->setNum(toStorageBlack);
             sumProfitsBlackPowerStation = pricePowerStation*arg1;
             sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackPowerStation->setNum(sumProfitsBlackPowerStation);
         }
-        ui->labelFinalMoney->setNum(countFinal());
+        ui->labelCostsStorage->setNum((toStorageBlack+toStorageBrown)*storagePrice);
+        ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
     }
 }
 
@@ -170,13 +174,15 @@ void NewMonthDialog::on_doubleSpinBlackHeatingPlant_valueChanged(double arg1)
             QMessageBox::warning(this, "WARNING", "You cannot give to storage negative amount of coal", "Ok, I'll never do that again");
             ui->doubleSpinBlackHeatingPlant->setValue(0);
         }else{
-            ui->labelToStorageBlack->setNum(toSet);
+            toStorageBlack = toSet;
+            ui->labelToStorageBlack->setNum(toStorageBlack);
             sumProfitsBlackHeatingPlant = priceHeatingPlant*arg1;
             sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackHeatingPlant->setNum(sumProfitsBlackHeatingPlant);
         }
-        ui->labelFinalMoney->setNum(countFinal());
+        ui->labelCostsStorage->setNum((toStorageBlack+toStorageBrown)*storagePrice);
+        ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
     }
 }
 
@@ -194,13 +200,15 @@ void NewMonthDialog::on_doubleSpinBrownCoalStorageSite_valueChanged(double arg1)
             QMessageBox::warning(this, "WARNING", "You cannot give to storage negative amount of coal", "Ok, I'll never do that again");
             ui->doubleSpinBrownCoalStorageSite->setValue(0);
         }else{
-            ui->labelToStorageBrown->setNum(toSet);
+            toStorageBrown = toSet;
+            ui->labelToStorageBrown->setNum(toStorageBrown);
             sumProfitsBrownCoalStorageSite = priceCoalStorageSite*arg1;
             sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownCoalStorageSite->setNum(sumProfitsBrownCoalStorageSite);
         }
-        ui->labelFinalMoney->setNum(countFinal());
+        ui->labelCostsStorage->setNum((toStorageBlack+toStorageBrown)*storagePrice);
+        ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
     }
 }
 
@@ -218,13 +226,15 @@ void NewMonthDialog::on_doubleSpinBrownIronWorks_valueChanged(double arg1)
             QMessageBox::warning(this, "WARNING", "You cannot give to storage negative amount of coal", "Ok, I'll never do that again");
             ui->doubleSpinBrownIronWorks->setValue(0);
         }else{
-            ui->labelToStorageBrown->setNum(toSet);
+            toStorageBrown = toSet;
+            ui->labelToStorageBrown->setNum(toStorageBrown);
             sumProfitsBrownIronWorks = priceIronWorks*arg1;
             sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownIronWorks->setNum(sumProfitsBrownIronWorks);
         }
-        ui->labelFinalMoney->setNum(countFinal());
+        ui->labelCostsStorage->setNum((toStorageBlack+toStorageBrown)*storagePrice);
+        ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
     }
 }
 
@@ -242,13 +252,15 @@ void NewMonthDialog::on_doubleSpinBrownHeatingPlant_valueChanged(double arg1)
             QMessageBox::warning(this, "WARNING", "You cannot give to storage negative amount of coal", "Ok, I'll never do that again");
             ui->doubleSpinBrownHeatingPlant->setValue(0);
         }else{
-            ui->labelToStorageBrown->setNum(toSet);
+            toStorageBrown = toSet;
+            ui->labelToStorageBrown->setNum(toStorageBrown);
             sumProfitsBrownHeatingPlant = priceHeatingPlant*arg1;
             sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownHeatingPlant->setNum(sumProfitsBrownHeatingPlant);
         }
-        ui->labelFinalMoney->setNum(countFinal());
+        ui->labelCostsStorage->setNum((toStorageBlack+toStorageBrown)*storagePrice);
+        ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
     }
 }
 
@@ -266,13 +278,15 @@ void NewMonthDialog::on_doubleSpinBrownPowerStation_valueChanged(double arg1)
             QMessageBox::warning(this, "WARNING", "You cannot give to storage negative amount of coal", "Ok, I'll never do that again");
             ui->doubleSpinBrownPowerStation->setValue(0);
         }else{
-            ui->labelToStorageBrown->setNum(toSet);
+            toStorageBrown = toSet;
+            ui->labelToStorageBrown->setNum(toStorageBrown);
             sumProfitsBrownPowerStation = pricePowerStation*arg1;
             sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownPowerStation->setNum(sumProfitsBrownPowerStation);
         }
-        ui->labelFinalMoney->setNum(countFinal());
+        ui->labelCostsStorage->setNum((toStorageBlack+toStorageBrown)*storagePrice);
+        ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
     }
 }
 
@@ -296,7 +310,7 @@ void NewMonthDialog::getNeedsAndPrice(Game g)
 
 void NewMonthDialog::getStorage(Game g)
 {
-    inStorageBeforeBlack = g.getStorage().getBlackCoalAmount();
+    inStorageBeforeBlack = g.storage.getBlackCoalAmount();
     inStorageBeforeBrown = g.getStorage().getBrownCoalAmount();
     ui->labelInStorageBlack->setNum(inStorageBeforeBlack);
     ui->labelInStorageBrown->setNum(inStorageBeforeBrown);
@@ -304,15 +318,15 @@ void NewMonthDialog::getStorage(Game g)
 
 void NewMonthDialog::storageInit(Game g)
 {
-    ui->labelInStorageBlack->setNum(g.getStorage().getBlackCoalAmount());
-    ui->labelInStorageBrown->setNum(g.getStorage().getBrownCoalAmount());
-    ui->labelToStorageBlack->setNum(sum_black);
-    ui->labelToStorageBrown->setNum(sum_brown);
+    toStorageBlack = sum_black+inStorageBeforeBlack;
+    toStorageBrown = sum_brown+inStorageBeforeBrown;
+    ui->labelToStorageBlack->setNum(toStorageBlack);
+    ui->labelToStorageBrown->setNum(toStorageBrown);
 
     //storage price
     storagePrice = g.getStorage().getPrice();
     ui->labelStoragePerUnitPrice->setNum(storagePrice);
-    storageSumPrice = (storagePrice*sum_black+storagePrice*sum_brown)*g.getAccStorageReduction();
+    storageSumPrice = ((toStorageBlack+toStorageBrown)*storagePrice)*g.getAccStorageReduction();
     ui->labelCostsStorage->setNum(storageSumPrice);
 }
 
@@ -320,3 +334,19 @@ double NewMonthDialog::countFinal()
 {
     return moneyBefore - minersSalary - accountantsSalary - officeWorkersSalary - storageSumPrice + sumProfits;
 }
+
+double NewMonthDialog::getMoneyBack()
+{
+    return countFinal();
+}
+
+double NewMonthDialog::getStorBlack()
+{
+    return toStorageBlack;
+}
+
+double NewMonthDialog::getStorBrown()
+{
+    return toStorageBrown;
+}
+

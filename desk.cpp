@@ -15,8 +15,8 @@ Desk::Desk()
     }
 }
 
-double Desk::useItem() {
-
+double Desk::useItem()
+{
     int random = rand()%30;
     double r = 0;
     switch(random)

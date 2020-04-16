@@ -21,8 +21,7 @@ private:
     MinerHat hat;
     MinerSuit suit;
     MinerLamp lamp;
-    double money;
-    Storage storage;
+    double money;   
     SeasonDependent heatingPlant;
     SeasonDependent powerStation;
     NotSeasonDependentCompany coalStorageSite;
@@ -36,6 +35,7 @@ public:
     std::vector <Accountant> vectorAccountants;
     std::vector <OfficeWorker> vectorOfficeWorkers;
     Game();
+    double getLastMonthRevenues();
     void setMonths(int m);
     int getMonths();
     MinerHat generateHat();
@@ -54,6 +54,7 @@ public:
     double getMoney();
     MinerHat getHat();
     MinerSuit getSuit();
+    Storage storage;
     MinerLamp getLamp();
     void setHat(MinerHat h);
     void setSuit(MinerSuit s);
@@ -71,7 +72,7 @@ public:
     void setLastMonthRevenues(double r);
     double itemsReduction();
     double getAccStorageReduction();
-
+    void createAcc();
 };
 
 #endif // GAME_H

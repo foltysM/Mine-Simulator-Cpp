@@ -159,8 +159,7 @@ Storage Game::getStorage()
 void Game::refreshOfficeWorkersAmount()
 {
     int minersSum = blackCoalMine.miners.size()+brownCoalMine.miners.size()+mixedCoalMine.miners.size();
-    int a = minersSum/5;
-    officeWorkersAmount = a;
+    officeWorkersAmount = minersSum/5;
     if(officeWorkersAmount<(int)vectorOfficeWorkers.size())
     {
         while(officeWorkersAmount<(int)vectorOfficeWorkers.size())
@@ -182,20 +181,14 @@ void Game::refreshAccountantsAmount()
 {
     // for every $10k hires one accountant
     accountantsAmount = lastMonthRevenues / 10000;
-    if(accountantsAmount<(int)vectorAccountants.size())
+    while(accountantsAmount<(int)vectorAccountants.size())
     {
-        while(accountantsAmount<(int)vectorAccountants.size())
-        {
-            vectorAccountants.erase(vectorAccountants.begin()+((int)vectorAccountants.size())-1);
-        }
+        vectorAccountants.erase(vectorAccountants.begin()+((int)vectorAccountants.size())-1);
     }
-    if(accountantsAmount>(int)vectorAccountants.size())
+    while(accountantsAmount>(int)vectorAccountants.size())
     {
-        while(accountantsAmount>(int)vectorAccountants.size())
-        {
-            Accountant a;
-            vectorAccountants.push_back(a);
-        }
+        Accountant a;
+        vectorAccountants.push_back(a);
     }
 }
 
@@ -287,6 +280,12 @@ void Game::setLastMonthRevenues(double r)
     lastMonthRevenues = r;
 }
 
+double Game::getLastMonthRevenues()
+{
+    return lastMonthRevenues;
+}
+
+
 double Game::itemsReduction()
 {
     double r = 1;
@@ -309,10 +308,36 @@ double Game::itemsReduction()
 
 double Game::getAccStorageReduction()
 {
-    double reduction = 0;
+    double reduction = 1;
     for(int i = 0 ;i<(int)vectorAccountants.size();i++)
     {
         reduction = reduction * vectorAccountants[i].work();
     }
     return reduction;
 }
+
+void Game::createAcc()
+{
+    if(lastMonthRevenues>=0)
+    {
+        int accSum = 0;
+        accSum = lastMonthRevenues/10000;
+        while(accSum<(int)vectorAccountants.size())
+        {
+            vectorAccountants.erase(vectorAccountants.begin()+((int)vectorAccountants.size())-1);
+        }
+        while(accSum>(int)vectorAccountants.size())
+        {
+            Accountant a;
+            vectorAccountants.push_back(a);
+        }
+    }else{
+        while(vectorAccountants.size()>0)
+        {
+            vectorAccountants.erase(vectorAccountants.begin()+((int)vectorAccountants.size())-1);
+        }
+    }
+}
+
+
+

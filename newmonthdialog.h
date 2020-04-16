@@ -15,9 +15,11 @@ class NewMonthDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit NewMonthDialog(QWidget *parent = nullptr);
+    explicit NewMonthDialog(QWidget *parent, Game g);
     ~NewMonthDialog();
-    void initData(double bl, double br, double mx, Game &g);
+    double getStorBlack();
+    double getStorBrown();
+    double getMoneyBack();
 
 private slots:
     void on_acceptButton_clicked();
@@ -65,26 +67,29 @@ private:
     double priceCoalStorageSite;
     double pricePowerStation;
     void getStorage(Game g);
-    double inStorageBeforeBlack;
-    double inStorageBeforeBrown;
-    double sumProfitsBlackIronWorks;
-    double sumProfitsBrownIronWorks;
-    double sumProfitsBlackHeatingPlant;
-    double sumProfitsBrownHeatingPlant;
-    double sumProfitsBlackCoalStorageSite;
-    double sumProfitsBrownCoalStorageSite;
-    double sumProfitsBlackPowerStation;
-    double sumProfitsBrownPowerStation;
-    double sumProfits;
+    double sumProfitsBlackIronWorks = 0;
+    double sumProfitsBrownIronWorks = 0;
+    double sumProfitsBlackHeatingPlant = 0;
+    double sumProfitsBrownHeatingPlant = 0;
+    double sumProfitsBlackCoalStorageSite = 0;
+    double sumProfitsBrownCoalStorageSite = 0;
+    double sumProfitsBlackPowerStation = 0;
+    double sumProfitsBrownPowerStation = 0;
+    double sumProfits = 0;
     double storagePrice;
     void storageInit(Game g);
     double officeWorkersSalary;
     double accountantsSalary;
     double finalMoney;
     double minersSalary;
+    double inStorageBeforeBlack = 0;
+    double inStorageBeforeBrown = 0;
     double storageSumPrice;
     double countFinal();
     double moneyBefore;
+    double toStorageBlack = 0;
+    double toStorageBrown = 0;
+
 };
 
 #endif // NEWMONTHDIALOG_H

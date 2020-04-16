@@ -14,8 +14,8 @@ public:
     double getBlackCoalAmount();
     double getBrownCoalAmount();
     double getPrice();
-    void SetBlackCoalAmount(double bla);
-    void SetBrownCoalAmount(double bra);
+    void setBlackCoalAmount(double bla);
+    void setBrownCoalAmount(double bra);
 };
 
 #endif // STORAGE_H

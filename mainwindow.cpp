@@ -12,14 +12,13 @@ MainWindow::MainWindow(QWidget *parent)
     MinerLamp lamp = game.generateLamp();
 
     // Settings dialog
-    GameDurationDialog dial(this,y);
+    GameDurationDialog dial(this);
     dial.setModal(true);
     if ( dial.exec() == QDialog::Accepted )
     {
-        y=dial.getMonths();
+        months_overall=dial.getMonths();
 
     }
-    months_overall = y;
 
     // UI init starts from here
     ui->setupUi(this);
@@ -42,7 +41,10 @@ void MainWindow::nextMonth()
 {
     if(months_overall==game.getMonths())
     {
-        //Todo koniec gry
+        // GAME END
+        QString message = "It's the end of the game. In "+QString::number(months_overall)+" months You earned "+QString::number(game.getMoney())+"$";
+        QMessageBox::information(this, "Congratulations!", message);
+        exit(0);
     }else{
         ui->progressBar->setValue((game.getMonths()*100)/months_overall);
     }
@@ -55,10 +57,28 @@ void MainWindow::nextMonth()
     displayMixedMineMinersList();
     game.setSeason();
 
-    newMonthDialog = new NewMonthDialog(this);
-    newMonthDialog->initData(game.blackCoalMine.coalMined(),game.brownCoalMine.coalMined(),game.mixedCoalMine.coalMined(),game);
 
-    newMonthDialog->show();
+    // new dialog setup
+
+    NewMonthDialog newDialog(this,game);
+    newDialog.setModal(true);
+    if(newDialog.exec()==QDialog::Accepted)
+    {
+        x = newDialog.getStorBlack();
+        w = newDialog.getStorBrown();
+        z = newDialog.getMoneyBack();
+
+    }
+    game.setLastMonthRevenues(z-game.getMoney());
+    game.setMoney(z);
+    game.storage.setBlackCoalAmount(x);
+    game.storage.setBrownCoalAmount(w);
+
+    ui->labelInStorageBlackMain->setNum(x);
+    ui->labelInStorageBrownMain->setNum(w);
+
+    game.createAcc();
+    displayAccList();
 
     ui->labelMoneyMain->setText(QString::fromStdString("$"+std::to_string(game.getMoney())));
 

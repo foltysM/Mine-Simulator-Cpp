@@ -7,7 +7,6 @@ class MixedCoalMine: public Mine
 {
 public:
     MixedCoalMine();
-    double setProductivity(double p);
 };
 
 #endif // MIXEDCOALMINE_H

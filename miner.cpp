@@ -15,7 +15,7 @@ Miner::Miner()
     suit.setAdditionalProductivity(1);
     kids = rand()%4+1;
     //salary
-    monthSalary = rand()%300+100;
+    monthSalary = rand()%300+250;
     productivity = ((double)(rand()%5+10))/10;
     seniority = 0;
     striking = false;

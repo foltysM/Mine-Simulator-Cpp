@@ -4,7 +4,3 @@ MixedCoalMine::MixedCoalMine()
 {
 
 }
-
-double MixedCoalMine::setProductivity(double p) {
-
-}

@@ -897,5 +897,22 @@
  <resources>
   <include location="res.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>acceptButton</sender>
+   <signal>clicked()</signal>
+   <receiver>NewMonthDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>821</x>
+     <y>488</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>901</x>
+     <y>472</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

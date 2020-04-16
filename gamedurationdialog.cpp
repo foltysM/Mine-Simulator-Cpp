@@ -1,7 +1,7 @@
 #include "gamedurationdialog.h"
 #include "ui_gamedurationdialog.h"
 
-GameDurationDialog::GameDurationDialog(QWidget *parent, int y) :
+GameDurationDialog::GameDurationDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::GameDurationDialog)
 {
@@ -14,11 +14,6 @@ GameDurationDialog::~GameDurationDialog()
     delete ui;
 }
 
-void GameDurationDialog::initData(int m)
-{
-
-}
-
 int GameDurationDialog::getMonths()
 {
     return ui->spinBox->value();
@@ -26,6 +21,5 @@ int GameDurationDialog::getMonths()
 
 void GameDurationDialog::on_pushButton_clicked()
 {
-//    this->y = ui->spinBox->value();
 
 }

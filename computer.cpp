@@ -15,7 +15,8 @@ Computer::Computer()
     }
 }
 
-double Computer::useItem() {
+double Computer::useItem()
+{
     int random = rand()%12;
     double r = 0;
     switch(random)

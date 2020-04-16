@@ -1,5 +1,5 @@
 #include "storage.h"
-// TODO storage
+
 Storage::Storage()
 {
     blackCoalAmount = 0;
@@ -22,12 +22,12 @@ double Storage::getPrice()
     return price;
 }
 
-void Storage::SetBlackCoalAmount(double bla)
+void Storage::setBlackCoalAmount(double bla)
 {
     blackCoalAmount = bla;
 }
 
-void Storage::SetBrownCoalAmount(double bra)
+void Storage::setBrownCoalAmount(double bra)
 {
     brownCoalAmount = bra;
 }
