@@ -15,7 +15,7 @@
 class Game
 {
 private:
-    std::vector <Miner> minerList;
+    std::vector <Miner*> minerList;
     int months;
     std::string season;
     MinerHat hat;
@@ -30,40 +30,39 @@ private:
     int officeWorkersAmount;
     double lastMonthRevenues;
     int accountantsAmount;
-public:
-    std::vector <Miner> vectorMiners;
-    std::vector <Accountant> vectorAccountants;
-    std::vector <OfficeWorker> vectorOfficeWorkers;
+    std::vector <Accountant*> vectorAccountants;
+    std::vector <OfficeWorker*> vectorOfficeWorkers;
+    Storage storage;
+    BlackCoalMine blackCoalMine;
+    BrownCoalMine brownCoalMine;
+    MixedCoalMine mixedCoalMine;
+public:   
     Game();
     double getLastMonthRevenues();
     void setMonths(int m);
     int getMonths();
-    MinerHat generateHat();
-    MinerSuit generateSuit();
-    MinerLamp generateLamp();
+    MinerHat* generateHat();
+    MinerSuit* generateSuit();
+    MinerLamp* generateLamp();
     std::string getSeason();
     void setSeason();
-    NotSeasonDependentCompany getIronWorks();
-    NotSeasonDependentCompany getCoalStorageSite();
-    SeasonDependent getPowerStation();
-    SeasonDependent getHeatingPlant();
+    NotSeasonDependentCompany* getIronWorks();
+    NotSeasonDependentCompany* getCoalStorageSite();
+    SeasonDependent* getPowerStation();
+    SeasonDependent* getHeatingPlant();
     void eraseMiner(int w);
     void generateMinerList();
-    std::vector<Miner> getMinersList();
+    std::vector<Miner*> getMinersList();
     void setMoney(double m);
     double getMoney();
-    MinerHat getHat();
-    MinerSuit getSuit();
-    Storage storage;
-    MinerLamp getLamp();
-    void setHat(MinerHat h);
-    void setSuit(MinerSuit s);
-    void setLamp(MinerLamp l);
+    MinerHat* getHat();
+    MinerSuit* getSuit();
+    MinerLamp* getLamp();
+    void setHat(MinerHat *h);
+    void setSuit(MinerSuit *s);
+    void setLamp(MinerLamp *l);
     void subMoney(double m);
-    Storage getStorage();
-    BlackCoalMine blackCoalMine;
-    BrownCoalMine brownCoalMine;
-    MixedCoalMine mixedCoalMine;
+    Storage* getStorage();
     void refreshOfficeWorkersAmount();
     void refreshAccountantsAmount();
     int randomStrike();
@@ -73,6 +72,15 @@ public:
     double itemsReduction();
     double getAccStorageReduction();
     void createAcc();
+    std::vector <Accountant*> getAccountantsVector();
+    std::vector <OfficeWorker*> getOfficeWorkersVector();
+    OfficeWorker* getOneOfficeWorker(int i);
+    Accountant* getOneAccountant(int i);
+    BlackCoalMine* getBlackCoalMine();
+    BrownCoalMine* getBrownCoalMine();
+    MixedCoalMine* getMixedCoalMine();
+    void deleteMinersList();
+    void deleteMines();
 };
 
 #endif // GAME_H

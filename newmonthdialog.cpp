@@ -5,9 +5,9 @@ NewMonthDialog::NewMonthDialog(QWidget *parent, Game g) :
     QDialog(parent),
     ui(new Ui::NewMonthDialog)
 {
-    double bl = g.blackCoalMine.coalMined();
-    double br = g.brownCoalMine.coalMined();
-    double mx = g.mixedCoalMine.coalMined();
+    double bl = g.getBlackCoalMine()->coalMined();
+    double br = g.getBrownCoalMine()->coalMined();
+    double mx = g.getMixedCoalMine()->coalMined();
     ui->setupUi(this);
     ui->labelSeason->setText(QString::fromStdString(g.getSeason()));
     sum_black = 0;
@@ -47,15 +47,15 @@ NewMonthDialog::NewMonthDialog(QWidget *parent, Game g) :
     // Miners' salary
     ui->labelMinersStriking->setNum(g.randomStrike());
     // Including money for children
-    minersSalary = (round(g.blackCoalMine.getMinerCosts())+round(g.brownCoalMine.getMinerCosts())+round(g.mixedCoalMine.getMinerCosts())+g.moneyForChildren())*g.itemsReduction();
+    minersSalary = (round(g.getBlackCoalMine()->getMinerCosts())+round(g.getBrownCoalMine()->getMinerCosts())+round(g.getMixedCoalMine()->getMinerCosts())+g.moneyForChildren())*g.itemsReduction();
     ui->labelCostsMiners->setNum(minersSalary);
 
     // Office Workers salary - $50 for every worker
-    officeWorkersSalary = (int)g.vectorOfficeWorkers.size()*50;
+    officeWorkersSalary = (int)g.getOfficeWorkersVector().size()*50;
     ui->labelCostsOfficeWorkers->setNum(officeWorkersSalary);
 
     // Accountants salary - $20 for every accountant
-    accountantsSalary = (int)g.vectorAccountants.size()*20;
+    accountantsSalary = (int)g.getAccountantsVector().size()*20;
     ui->labelCostsAccountants->setNum(accountantsSalary);
 
     // Final money
@@ -293,25 +293,25 @@ void NewMonthDialog::on_doubleSpinBrownPowerStation_valueChanged(double arg1)
 void NewMonthDialog::getNeedsAndPrice(Game g)
 {
     //needs
-    needsBrownCoalStorageSite = g.getCoalStorageSite().getNeedsBrown();
-    needsBlackCoalStorageSite = g.getCoalStorageSite().getNeedsBlack();
-    needsBlackIronWorks = g.getIronWorks().getNeedsBlack();
-    needsBrownIronWorks = g.getIronWorks().getNeedsBrown();
-    needsBlackHeatingPlant = g.getHeatingPlant().getNeedsBlack();
-    needsBrownHeatingPlant = g.getHeatingPlant().getNeedsBrown();
-    needsBlackPowerStation = g.getPowerStation().getNeedsBlack();
-    needsBrownPowerStation = g.getPowerStation().getNeedsBrown();
+    needsBrownCoalStorageSite = g.getCoalStorageSite()->getNeedsBrown();
+    needsBlackCoalStorageSite = g.getCoalStorageSite()->getNeedsBlack();
+    needsBlackIronWorks = g.getIronWorks()->getNeedsBlack();
+    needsBrownIronWorks = g.getIronWorks()->getNeedsBrown();
+    needsBlackHeatingPlant = g.getHeatingPlant()->getNeedsBlack();
+    needsBrownHeatingPlant = g.getHeatingPlant()->getNeedsBrown();
+    needsBlackPowerStation = g.getPowerStation()->getNeedsBlack();
+    needsBrownPowerStation = g.getPowerStation()->getNeedsBrown();
     //price
-    priceIronWorks = g.getIronWorks().getMoneyPayingAmount();
-    priceHeatingPlant = g.getHeatingPlant().getMoneyPayingAmount();
-    priceCoalStorageSite = g.getCoalStorageSite().getMoneyPayingAmount();
-    pricePowerStation = g.getPowerStation().getMoneyPayingAmount();
+    priceIronWorks = g.getIronWorks()->getMoneyPayingAmount();
+    priceHeatingPlant = g.getHeatingPlant()->getMoneyPayingAmount();
+    priceCoalStorageSite = g.getCoalStorageSite()->getMoneyPayingAmount();
+    pricePowerStation = g.getPowerStation()->getMoneyPayingAmount();
 }
 
 void NewMonthDialog::getStorage(Game g)
 {
-    inStorageBeforeBlack = g.storage.getBlackCoalAmount();
-    inStorageBeforeBrown = g.getStorage().getBrownCoalAmount();
+    inStorageBeforeBlack = g.getStorage()->getBlackCoalAmount();
+    inStorageBeforeBrown = g.getStorage()->getBrownCoalAmount();
     ui->labelInStorageBlack->setNum(inStorageBeforeBlack);
     ui->labelInStorageBrown->setNum(inStorageBeforeBrown);
 }
@@ -324,7 +324,7 @@ void NewMonthDialog::storageInit(Game g)
     ui->labelToStorageBrown->setNum(toStorageBrown);
 
     //storage price
-    storagePrice = g.getStorage().getPrice();
+    storagePrice = g.getStorage()->getPrice();
     ui->labelStoragePerUnitPrice->setNum(storagePrice);
     storageSumPrice = ((toStorageBlack+toStorageBrown)*storagePrice)*g.getAccStorageReduction();
     ui->labelCostsStorage->setNum(storageSumPrice);

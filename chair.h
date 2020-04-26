@@ -6,6 +6,8 @@
 
 class Chair: public AboveGroundWorkerItem
 {
+private:
+    double reduction;
 public:
     Chair();
     double useItem();

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "miner.h"
 
-int Miner::miners = 0;
+//int Miner::miners = 0;
 
 Miner::Miner()
 {
@@ -55,13 +55,9 @@ std::string Miner::getName() {
     return name;
 }
 
-Miner::~Miner() {
-    miners--;
-}
-
-int Miner::getMiners() {
-    return miners;
-}
+//int Miner::getMiners() {
+//    return miners;
+//}
 
 bool Miner::getUnion()
 {
@@ -98,34 +94,34 @@ void Miner::setSeniority(int s)
     seniority = s;
 }
 
-MinerHat Miner::getHat()
+MinerHat* Miner::getHat()
 {
-    return hat;
+    return &hat;
 }
 
-MinerSuit Miner::getSuit()
+MinerSuit* Miner::getSuit()
 {
-    return suit;
+    return &suit;
 }
 
-MinerLamp Miner::getLamp()
+MinerLamp* Miner::getLamp()
 {
-    return lamp;
+    return &lamp;
 }
 
-void Miner::setHat(MinerHat h)
+void Miner::setHat(MinerHat *h)
 {
-    hat = h;
+    hat = *h;
 }
 
-void Miner::setSuit(MinerSuit s)
+void Miner::setSuit(MinerSuit *s)
 {
-    suit = s;
+    suit = *s;
 }
 
-void Miner::setLamp(MinerLamp l)
+void Miner::setLamp(MinerLamp *l)
 {
-    lamp = l;
+    lamp = *l;
 }
 
 bool Miner::getStriking()

@@ -9,21 +9,19 @@
 class Miner
 {
 private:
-    MinerHat hat;
     int kids;
+    MinerHat hat;
     MinerLamp lamp;
+    MinerSuit suit;
     double monthSalary;
     std::string name;
     double productivity;
     int seniority;
-    int strikeOpportunity;
-    MinerSuit suit;
+    int strikeOpportunity;    
     bool tradeUnion;
     bool striking;
 public:
-    static int miners;
     Miner();
-    ~Miner();
     int getKids();
     std::string getName();
     double getProductivity();
@@ -36,11 +34,11 @@ public:
     int getMiners();
     bool getUnion();
     int getStrikeOpportunity();
-    MinerHat getHat();
-    MinerSuit getSuit();
-    MinerLamp getLamp();
-    void setHat(MinerHat h);
-    void setSuit(MinerSuit s);
-    void setLamp(MinerLamp l);
+    MinerHat* getHat();
+    MinerSuit* getSuit();
+    MinerLamp* getLamp();
+    void setHat(MinerHat *h);
+    void setSuit(MinerSuit *s);
+    void setLamp(MinerLamp *l);
 };
 #endif // MINER_H

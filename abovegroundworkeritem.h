@@ -5,7 +5,7 @@
 
 class AboveGroundWorkerItem
 {
-protected:
+private:
     double reduction;
 public:
     AboveGroundWorkerItem();

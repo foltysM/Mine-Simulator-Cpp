@@ -10,8 +10,8 @@ class Mine
 private:
     std::string coalType;
     double productivity;
-public:
-    std::vector <Miner> miners;
+    std::vector <Miner*> miners;
+public:    
     Mine();
     bool Failure();
     void moveMiner(Miner m);
@@ -20,6 +20,11 @@ public:
     void upSeniority();
     double coalMined();
     double getMinerCosts();
+    std::vector <Miner*>* getMiners();
+    void setMiners(std::vector <Miner*>* m);
+    Miner* getOneMiner(int i);
+    void addMinerToList(Miner* m);
+    void eraseMiner(int i);
 };
 
 #endif // MINE_H

@@ -16,20 +16,21 @@ int Game::getMonths()
     return months;
 }
 
-MinerHat Game::generateHat()
-{   MinerHat hat;
+MinerHat* Game::generateHat()
+{
+    MinerHat* hat = new MinerHat;
     return hat;
 }
 
-MinerSuit Game::generateSuit()
+MinerSuit* Game::generateSuit()
 {
-    MinerSuit suit;
+    MinerSuit *suit = new MinerSuit;
     return suit;
 }
 
-MinerLamp Game::generateLamp()
+MinerLamp* Game::generateLamp()
 {
-    MinerLamp lamp;
+    MinerLamp *lamp = new MinerLamp;
     return lamp;
 }
 
@@ -66,23 +67,23 @@ void Game::setSeason()
     }
 }
 
-NotSeasonDependentCompany Game::getIronWorks()
+NotSeasonDependentCompany* Game::getIronWorks()
 {
-    return ironworks;
+    return &ironworks;
 }
-NotSeasonDependentCompany Game::getCoalStorageSite()
+NotSeasonDependentCompany* Game::getCoalStorageSite()
 {
-    return coalStorageSite;
-}
-
-SeasonDependent Game::getPowerStation()
-{
-    return powerStation;
+    return &coalStorageSite;
 }
 
-SeasonDependent Game::getHeatingPlant()
+SeasonDependent* Game::getPowerStation()
 {
-    return heatingPlant;
+    return &powerStation;
+}
+
+SeasonDependent* Game::getHeatingPlant()
+{
+    return &heatingPlant;
 }
 
 void Game::generateMinerList() {
@@ -91,12 +92,12 @@ void Game::generateMinerList() {
 
     for(int i = 0; i<iter; i++)
     {
-        Miner gornik;
+        Miner* gornik = new Miner;
         minerList.push_back(gornik);
     }
 }
 
-std::vector<Miner> Game::getMinersList(){
+std::vector<Miner*> Game::getMinersList(){
     return minerList;
 }
 
@@ -116,34 +117,34 @@ double Game::getMoney()
     return money;
 }
 
-MinerHat Game::getHat()
+MinerHat* Game::getHat()
 {
-    return hat;
+    return &hat;
 }
 
-MinerSuit Game::getSuit()
+MinerSuit* Game::getSuit()
 {
-    return suit;
+    return &suit;
 }
 
-MinerLamp Game::getLamp()
+MinerLamp* Game::getLamp()
 {
-    return lamp;
+    return &lamp;
 }
 
-void Game::setHat(MinerHat h)
+void Game::setHat(MinerHat *h)
 {
-    hat = h;
+    hat = *h;
 }
 
-void Game::setSuit(MinerSuit s)
+void Game::setSuit(MinerSuit *s)
 {
-    suit = s;
+    suit = *s;
 }
 
-void Game::setLamp(MinerLamp l)
+void Game::setLamp(MinerLamp *l)
 {
-    lamp = l;
+    lamp = *l;
 }
 
 void Game::subMoney(double m)
@@ -151,14 +152,14 @@ void Game::subMoney(double m)
     money = money - m;
 }
 
-Storage Game::getStorage()
+Storage* Game::getStorage()
 {
-    return storage;
+    return &storage;
 }
 
 void Game::refreshOfficeWorkersAmount()
 {
-    int minersSum = blackCoalMine.miners.size()+brownCoalMine.miners.size()+mixedCoalMine.miners.size();
+    int minersSum = blackCoalMine.getMiners()->size()+brownCoalMine.getMiners()->size()+mixedCoalMine.getMiners()->size();
     officeWorkersAmount = minersSum/5;
     if(officeWorkersAmount<(int)vectorOfficeWorkers.size())
     {
@@ -171,7 +172,7 @@ void Game::refreshOfficeWorkersAmount()
     {
         while(officeWorkersAmount>(int)vectorOfficeWorkers.size())
         {
-            OfficeWorker o;
+            OfficeWorker* o = new OfficeWorker;
             vectorOfficeWorkers.push_back(o);
         }
     }
@@ -187,7 +188,7 @@ void Game::refreshAccountantsAmount()
     }
     while(accountantsAmount>(int)vectorAccountants.size())
     {
-        Accountant a;
+        Accountant* a = new Accountant;
         vectorAccountants.push_back(a);
     }
 }
@@ -195,51 +196,51 @@ void Game::refreshAccountantsAmount()
 int Game::randomStrike()
 {
     int sum = 0;
-    for(int i = 0;i<(int)blackCoalMine.miners.size();i++)
+    for(int i = 0;i<(int)blackCoalMine.getMiners()->size();i++)
     {
         // strike probability
-        int sop = blackCoalMine.miners[i].getStrikeOpportunity();
+        int sop = blackCoalMine.getOneMiner(i)->getStrikeOpportunity();
         int r = rand()%100;
         switch(r/sop)
         {
         case 1:
-            blackCoalMine.miners[i].setStriking(true);
+            blackCoalMine.getOneMiner(i)->setStriking(true);
             sum++;
             break;
         default:
-            blackCoalMine.miners[i].setStriking(false);
+            blackCoalMine.getOneMiner(i)->setStriking(false);
             break;
         }
     }
-    for(int i = 0;i<(int)brownCoalMine.miners.size();i++)
+    for(int i = 0;i<(int)brownCoalMine.getMiners()->size();i++)
     {
         // strike probability
-        int sop = brownCoalMine.miners[i].getStrikeOpportunity();
+        int sop = brownCoalMine.getOneMiner(i)->getStrikeOpportunity();
         int r = rand()%100;
         switch(r/sop)
         {
         case 1:
-            brownCoalMine.miners[i].setStriking(true);
+            brownCoalMine.getOneMiner(i)->setStriking(true);
             sum++;
             break;
         default:
-            brownCoalMine.miners[i].setStriking(false);
+            brownCoalMine.getOneMiner(i)->setStriking(false);
             break;
         }
     }
-    for(int i = 0;i<(int)mixedCoalMine.miners.size();i++)
+    for(int i = 0;i<(int)mixedCoalMine.getMiners()->size();i++)
     {
         // strike probability
-        int sop = mixedCoalMine.miners[i].getStrikeOpportunity();
+        int sop = mixedCoalMine.getOneMiner(i)->getStrikeOpportunity();
         int r = rand()%100;
         switch(r/sop)
         {
         case 1:
-            mixedCoalMine.miners[i].setStriking(true);
+            mixedCoalMine.getOneMiner(i)->setStriking(true);
             sum++;
             break;
         default:
-            mixedCoalMine.miners[i].setStriking(false);
+            mixedCoalMine.getOneMiner(i)->setStriking(false);
             break;
         }
     }
@@ -251,20 +252,20 @@ double Game::moneyForChildren()
     double r = 0;
     if(season=="Autumn")
     {
-        for(int i = 0;i<(int)blackCoalMine.miners.size();i++)
+        for(int i = 0;i<(int)blackCoalMine.getMiners()->size();i++)
         {
             //$20 for every child every autumn month
-            r = r + 20*blackCoalMine.miners[i].getKids();
+            r = r + 20*blackCoalMine.getOneMiner(i)->getKids();
         }
-        for(int i = 0;i<(int)brownCoalMine.miners.size();i++)
+        for(int i = 0;i<(int)brownCoalMine.getMiners()->size();i++)
         {
             //$20 for every child every autumn month
-            r = r + 20*brownCoalMine.miners[i].getKids();
+            r = r + 20*brownCoalMine.getOneMiner(i)->getKids();
         }
-        for(int i = 0;i<(int)mixedCoalMine.miners.size();i++)
+        for(int i = 0;i<(int)mixedCoalMine.getMiners()->size();i++)
         {
             //$20 for every child every autumn month
-            r = r + 20*mixedCoalMine.miners[i].getKids();
+            r = r + 20*mixedCoalMine.getOneMiner(i)->getKids();
         }
     }
     return r;
@@ -291,17 +292,17 @@ double Game::itemsReduction()
     double r = 1;
     for(int i = 0;i<(int)vectorAccountants.size();i++)
     {
-        r = r * vectorAccountants[i].getDesk().getReduction() * vectorAccountants[i].getChair().getReduction() * vectorAccountants[i].getComputer().getReduction();
-        r = r * vectorAccountants[i].getChair().useItem();
-        r = r * vectorAccountants[i].getDesk().useItem();
-        r = r * vectorAccountants[i].getComputer().useItem();
+        r = r * vectorAccountants[i]->getDesk()->getReduction() * vectorAccountants[i]->getChair()->getReduction() * vectorAccountants[i]->getComputer()->getReduction();
+        r = r * vectorAccountants[i]->getChair()->useItem();
+        r = r * vectorAccountants[i]->getDesk()->useItem();
+        r = r * vectorAccountants[i]->getComputer()->useItem();
     }
     for(int i =0;i<(int)vectorOfficeWorkers.size();i++)
     {
-        r = r * vectorOfficeWorkers[i].getDesk().getReduction() * vectorOfficeWorkers[i].getChair().getReduction() * vectorOfficeWorkers[i].getComputer().getReduction();
-        r = r * vectorOfficeWorkers[i].getChair().useItem();
-        r = r * vectorOfficeWorkers[i].getDesk().useItem();
-        r = r * vectorOfficeWorkers[i].getComputer().useItem();
+        r = r * vectorOfficeWorkers[i]->getDesk()->getReduction() * vectorOfficeWorkers[i]->getChair()->getReduction() * vectorOfficeWorkers[i]->getComputer()->getReduction();
+        r = r * vectorOfficeWorkers[i]->getChair()->useItem();
+        r = r * vectorOfficeWorkers[i]->getDesk()->useItem();
+        r = r * vectorOfficeWorkers[i]->getComputer()->useItem();
     }
     return r;
 }
@@ -311,7 +312,7 @@ double Game::getAccStorageReduction()
     double reduction = 1;
     for(int i = 0 ;i<(int)vectorAccountants.size();i++)
     {
-        reduction = reduction * vectorAccountants[i].work();
+        reduction = reduction * vectorAccountants[i]->work();
     }
     return reduction;
 }
@@ -328,7 +329,7 @@ void Game::createAcc()
         }
         while(accSum>(int)vectorAccountants.size())
         {
-            Accountant a;
+            Accountant* a = new Accountant;
             vectorAccountants.push_back(a);
         }
     }else{
@@ -339,5 +340,66 @@ void Game::createAcc()
     }
 }
 
+std::vector <Accountant*> Game::getAccountantsVector()
+{
+    return vectorAccountants;
+}
+
+std::vector <OfficeWorker*> Game::getOfficeWorkersVector()
+{
+    return vectorOfficeWorkers;
+}
+
+OfficeWorker* Game::getOneOfficeWorker(int i)
+{
+    return vectorOfficeWorkers[i];
+}
+
+Accountant* Game::getOneAccountant(int i)
+{
+    return vectorAccountants[i];
+}
+
+BlackCoalMine* Game::getBlackCoalMine()
+{
+    return &blackCoalMine;
+}
+
+BrownCoalMine* Game::getBrownCoalMine()
+{
+    return &brownCoalMine;
+}
+
+MixedCoalMine* Game::getMixedCoalMine()
+{
+    return &mixedCoalMine;
+}
+
+void Game::deleteMinersList()
+{
+    for (int i = (int)minerList.size();i>0;i--)
+    {
+        delete minerList[i];
+    }
+}
+
+void Game::deleteMines()
+{
+    for (int i = (int)blackCoalMine.getMiners()->size();i>0;i--)
+    {
+        delete blackCoalMine.getOneMiner(i);
+    }
+
+    for (int i = (int)brownCoalMine.getMiners()->size();i>0;i--)
+    {
+        delete brownCoalMine.getOneMiner(i);
+    }
+
+    for (int i = (int)mixedCoalMine.getMiners()->size();i>0;i--)
+    {
+        delete blackCoalMine.getOneMiner(i);
+    }
+
+}
 
 

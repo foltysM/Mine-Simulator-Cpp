@@ -8,7 +8,7 @@
 
 class AboveGroundWorker
 {
-protected:
+private:
     std::string name;
     Chair chair;
     Computer computer;
@@ -16,12 +16,12 @@ protected:
     double salary;
 public:
     AboveGroundWorker();
-    void setDesk(Desk d);
-    void setComputer(Computer c);
-    void setChair(Chair c);
-    Chair getChair();
-    Computer getComputer();
-    Desk getDesk();
+    void setDesk(Desk *d);
+    void setComputer(Computer *c);
+    void setChair(Chair *c);
+    Chair* getChair();
+    Computer* getComputer();
+    Desk* getDesk();
 };
 
 #endif // ABOVEGROUNDWORKER_H

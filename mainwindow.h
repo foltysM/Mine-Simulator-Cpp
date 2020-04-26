@@ -18,28 +18,11 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 
-
 public:
-    //NewMinersList list;
-
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void nextMonth();
-    void showNewMinerList(std::vector <Miner> vectorMiners);
-    std::vector <Miner> initializeMiners();
-    Game game;
-
-    int months_overall = 40;
-    double x;
-    double w;
-    double z;
-    int which = 0;
-    int whichBlack = 0;
-    int whichBrown = 0;
-    int whichMixed = 0;
-    int which_acc = 0;
-    int which_off = 0;
-
+    void showNewMinerList(std::vector <Miner*> vectorMiners);
     void showNewMinerClothes();
 
 private slots:
@@ -135,5 +118,16 @@ private:
     GameDurationDialog *gameDurationDialog;
     void displayAccList();
     void displayOffList();
+    int which = 0;
+    int whichBlack = 0;
+    int whichBrown = 0;
+    int whichMixed = 0;
+    int which_acc = 0;
+    int which_off = 0;
+    int months_overall = 40;
+    double x;
+    double w;
+    double z;
+    Game game;
 };
 #endif // MAINWINDOW_H

@@ -6,8 +6,6 @@
 
 class Accountant:public AboveGroundWorker
 {
-private:
-    static int accountants;
 public:
     Accountant();
     ~Accountant();
