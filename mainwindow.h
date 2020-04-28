@@ -9,6 +9,8 @@
 #include "game.h"
 #include "newmonthdialog.h"
 #include "gamedurationdialog.h"
+#include "newminerui.h"
+#include "abovegroundui.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -22,22 +24,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void nextMonth();
-    void showNewMinerList(std::vector <Miner*> vectorMiners);
     void showNewMinerClothes();
 
 private slots:
 
     void on_nextMonthBtn_clicked();
-
-    void on_minerListLeftBtn_2_clicked();
-
-    void on_minerListRightBtn_2_clicked();
-
-    void on_newToBlackBtn_clicked();
-
-    void on_newToBrownBtn_clicked();
-
-    void on_newToUranBtn_clicked();
 
     void on_disFrBrBtn_clicked();
 
@@ -87,27 +78,11 @@ private slots:
 
     void on_buyLampMixedBtn_clicked();
 
-    void on_AccLeftBtn_clicked();
-
-    void on_AccRightBtn_clicked();
-
-    void on_OffLeftBtn_clicked();
-
-    void on_OffRightBtn_clicked();
-
-    void on_buyChairAccBtn_clicked();
-
-    void on_buyDeskAccBtn_clicked();
-
-    void on_BuyComputerAccBtn_clicked();
-
-    void on_buyChairOffBtn_clicked();
-
-    void on_buyDeskOffBtn_clicked();
-
-    void on_buyComputerOffBtn_clicked();
-
     void on_closeBtn_clicked();
+
+    void on_hireNewBtn_clicked();
+
+    void on_aboveUIBtn_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -116,18 +91,13 @@ private:
     void displayMixedMineMinersList();
     NewMonthDialog *newMonthDialog;
     GameDurationDialog *gameDurationDialog;
-    void displayAccList();
-    void displayOffList();
-    int which = 0;
     int whichBlack = 0;
     int whichBrown = 0;
     int whichMixed = 0;
-    int which_acc = 0;
-    int which_off = 0;
     int months_overall = 40;
     double x;
     double w;
     double z;
-    Game game;
+    Game *game;
 };
 #endif // MAINWINDOW_H

@@ -1,19 +1,19 @@
 #include "newmonthdialog.h"
 #include "ui_newmonthdialog.h"
 
-NewMonthDialog::NewMonthDialog(QWidget *parent, Game g) :
+NewMonthDialog::NewMonthDialog(QWidget *parent, Game *g) :
     QDialog(parent),
     ui(new Ui::NewMonthDialog)
 {
-    double bl = g.getBlackCoalMine()->coalMined();
-    double br = g.getBrownCoalMine()->coalMined();
-    double mx = g.getMixedCoalMine()->coalMined();
+    double bl = g->getBlackCoalMine()->coalMined();
+    double br = g->getBrownCoalMine()->coalMined();
+    double mx = g->getMixedCoalMine()->coalMined();
     ui->setupUi(this);
-    ui->labelSeason->setText(QString::fromStdString(g.getSeason()));
+    ui->labelSeason->setText(QString::fromStdString(g->getSeason()));
     sum_black = 0;
     sum_brown = 0;
     half_mixed = mx/2;
-    moneyBefore = g.getMoney();
+    moneyBefore = g->getMoney();
     ui->labelBlackCoalMined->setText(QString::number(bl));
     ui->labelBrownCoalMined->setText(QString::number(br));
     ui->labelBlackMinedMixed->setText(QString::number(half_mixed));
@@ -22,15 +22,15 @@ NewMonthDialog::NewMonthDialog(QWidget *parent, Game g) :
     sum_brown = br + half_mixed;
     ui->labelSumBlack->setText(QString::number(sum_black));
     ui->labelSumBrown->setText(QString::number(sum_brown));
-    getNeedsAndPrice(g);
-    getStorage(g);
+    getNeedsAndPrice(*g);
+    getStorage(*g);
     ui->labelNeedsBlackIronworks->setText(QString::number(needsBlackIronWorks));
     ui->labelNeedsBrownIronworks->setText(QString::number(needsBrownIronWorks));
     ui->labelNeedsBlackCoalStorage->setText(QString::number(needsBlackCoalStorageSite));
     ui->labelNeedsBrownCoalStorageSite->setText(QString::number(needsBrownCoalStorageSite));
     ui->labelCashIronWorks->setText(QString::number(priceIronWorks));
     ui->labelCashCoalStorage->setText(QString::number(priceCoalStorageSite));
-    g.setSeason();
+    g->setSeason();
     ui->labelCashHeatingPlant->setText(QString::number(priceHeatingPlant));
     ui->labelNeedsBrownHeatingPlant->setText(QString::number(needsBrownHeatingPlant));
     ui->labelNeedsBlackHeatingPlant->setText(QString::number(needsBlackHeatingPlant));
@@ -38,28 +38,28 @@ NewMonthDialog::NewMonthDialog(QWidget *parent, Game g) :
     ui->labelNeedsBlackPowerstation->setText(QString::number(needsBlackPowerStation));
     ui->labelNeedsBrownPowerstation->setText(QString::number(needsBrownPowerStation));
     //money
-    ui->labelMoneyDialog->setText(QString::fromStdString("$"+std::to_string(g.getMoney())));
+    ui->labelMoneyDialog->setText(QString::fromStdString("$"+std::to_string(g->getMoney())));
 
 
     // Storage init
-    storageInit(g);
+    storageInit(*g);
 
     // Miners' salary
-    ui->labelMinersStriking->setNum(g.randomStrike());
+    ui->labelMinersStriking->setNum(g->randomStrike());
     // Including money for children
-    minersSalary = (round(g.getBlackCoalMine()->getMinerCosts())+round(g.getBrownCoalMine()->getMinerCosts())+round(g.getMixedCoalMine()->getMinerCosts())+g.moneyForChildren())*g.itemsReduction();
+    minersSalary = (round(g->getBlackCoalMine()->getMinerCosts())+round(g->getBrownCoalMine()->getMinerCosts())+round(g->getMixedCoalMine()->getMinerCosts())+g->moneyForChildren())*g->itemsReduction();
     ui->labelCostsMiners->setNum(minersSalary);
 
     // Office Workers salary - $50 for every worker
-    officeWorkersSalary = (int)g.getOfficeWorkersVector().size()*50;
+    officeWorkersSalary = (int)g->getOfficeWorkersVector().size()*50;
     ui->labelCostsOfficeWorkers->setNum(officeWorkersSalary);
 
     // Accountants salary - $20 for every accountant
-    accountantsSalary = (int)g.getAccountantsVector().size()*20;
+    accountantsSalary = (int)g->getAccountantsVector().size()*20;
     ui->labelCostsAccountants->setNum(accountantsSalary);
 
     // Final money
-    finalMoney = g.getMoney() - accountantsSalary - minersSalary - officeWorkersSalary - storageSumPrice;
+    finalMoney = g->getMoney() - accountantsSalary - minersSalary - officeWorkersSalary - storageSumPrice;
     ui->labelFinalMoney->setText(QString::fromStdString("$"+std::to_string(finalMoney)));
 }
 

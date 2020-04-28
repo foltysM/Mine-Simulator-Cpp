@@ -15,7 +15,7 @@ class NewMonthDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit NewMonthDialog(QWidget *parent, Game g);
+    explicit NewMonthDialog(QWidget *parent = nullptr, Game *g = nullptr);
     ~NewMonthDialog();
     double getStorBlack();
     double getStorBrown();

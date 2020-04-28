@@ -16,6 +16,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    abovegroundui.cpp \
     abovegroundworker.cpp \
     abovegroundworkeritem.cpp \
     accountant.cpp \
@@ -35,6 +36,7 @@ SOURCES += \
     minerlamp.cpp \
     minersuit.cpp \
     mixedcoalmine.cpp \
+    newminerui.cpp \
     newmonthdialog.cpp \
     notseasondependentcompany.cpp \
     officeworker.cpp \
@@ -42,6 +44,7 @@ SOURCES += \
     seasondependent.cpp
 
 HEADERS += \
+    abovegroundui.h \
     abovegroundworker.h \
     abovegroundworkeritem.h \
     accountant.h \
@@ -60,6 +63,7 @@ HEADERS += \
     minerlamp.h \
     minersuit.h \
     mixedcoalmine.h \
+    newminerui.h \
     newmonthdialog.h \
     notseasondependentcompany.h \
     officeworker.h \
@@ -67,8 +71,10 @@ HEADERS += \
     seasondependent.h
 
 FORMS += \
+    abovegroundui.ui \
     gamedurationdialog.ui \
     mainwindow.ui \
+    newminerui.ui \
     newmonthdialog.ui
 
 # Default rules for deployment.
