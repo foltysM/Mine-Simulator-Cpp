@@ -6,7 +6,7 @@
 class Computer:public AboveGroundWorkerItem
 {
 private:
-    double reduction;
+    //double reduction;
 public:
     Computer();
     double useItem();

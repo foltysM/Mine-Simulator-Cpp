@@ -1,16 +1,16 @@
 #include "computer.h"
 
-Computer::Computer()
+Computer::Computer():AboveGroundWorkerItem()
 {
     int w = rand()%2;
     switch(w)
     {
     case 0:
-        reduction = 0.95;
+        AboveGroundWorkerItem::setReduction(0.95);
         break;
     case 1:
     default:
-        reduction = 0.96;
+        AboveGroundWorkerItem::setReduction(0.96);
         break;
     }
 }

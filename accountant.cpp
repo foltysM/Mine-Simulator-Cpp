@@ -1,6 +1,6 @@
 #include "accountant.h"
 
-Accountant::Accountant()
+Accountant::Accountant():AboveGroundWorker()
 {
 
 }

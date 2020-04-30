@@ -13,6 +13,7 @@ public:
     virtual double useItem() = 0;
     double getReduction();
     void setReductionOne();
+    void setReduction(double r);
 };
 
 #endif // ABOVEGROUNDWORKERITEM_H

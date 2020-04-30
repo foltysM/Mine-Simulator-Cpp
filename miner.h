@@ -10,9 +10,9 @@ class Miner
 {
 private:
     int kids;
-    MinerHat hat;
-    MinerLamp lamp;
-    MinerSuit suit;
+    MinerHat *hat;
+    MinerLamp *lamp;
+    MinerSuit *suit;
     double monthSalary;
     std::string name;
     double productivity;

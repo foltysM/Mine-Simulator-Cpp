@@ -47,7 +47,7 @@ void NewMinerUI::on_minerListRightBtn_2_clicked()
 
 void NewMinerUI::on_newToBlackBtn_clicked()
 {
-    game->getBlackCoalMine()->addMinerToList(game->getMinersList()[which]);
+    game->getBlackCoalMine()->addMinerToList(game->getOneMinerFromList(which));
     game->eraseMiner(which);
     //displayBlackMineMinersList();
     showNewMinerList(game->getMinersList());

@@ -2,37 +2,37 @@
 
 AboveGroundWorker::AboveGroundWorker()
 {
-    chair.setReductionOne();
-    desk.setReductionOne();
-    computer.setReductionOne();
+    chair->setReductionOne();
+    desk->setReductionOne();
+    computer->setReductionOne();
 }
 
 void AboveGroundWorker::setDesk(Desk *d)
 {
-    desk = *d;
+    desk = d;
 }
 
 void AboveGroundWorker::setComputer(Computer *c)
 {
-    computer = *c;
+    computer = c;
 }
 
 void AboveGroundWorker::setChair(Chair *c)
 {
-    chair = *c;
+    chair = c;
 }
 
 Chair* AboveGroundWorker::getChair()
 {
-    return &chair;
+    return chair;
 }
 
 Computer* AboveGroundWorker::getComputer()
 {
-    return &computer;
+    return computer;
 }
 
 Desk* AboveGroundWorker::getDesk()
 {
-    return &desk;
+    return desk;
 }

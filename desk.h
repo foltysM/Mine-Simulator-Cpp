@@ -6,7 +6,7 @@
 class Desk:public AboveGroundWorkerItem
 {
 private:
-    double reduction;
+    //double reduction;
 public:
     Desk();
     double useItem();

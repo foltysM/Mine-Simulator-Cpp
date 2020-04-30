@@ -44,49 +44,50 @@ void Game::setSeason()
     if(months==0||months==1||months==2||months==12||months==13||months==14||months==24||months==25||months==26||months==36||months==37||months==38||months==48||months==49||months==50||months==60||months==61||months==62||months==72||months==73||months==74||months==84||months==85||months==86||months==96||months==97||months==98)
     {
         season = "Spring";
-        powerStation.setSeason(season);
-        heatingPlant.setSeason(season);
+        powerStation->setSeason(season);
+        heatingPlant->setSeason(season);
     }
     if(months==3||months==4||months==5||months==15||months==16||months==17||months==27||months==28||months==29||months==39||months==40||months==41||months==51||months==52||months==53||months==63||months==64||months==65||months==75||months==76||months==77||months==87||months==88||months==89||months==99||months==100||months==101)
     {
         season = "Summer";
-        powerStation.setSeason(season);
-        heatingPlant.setSeason(season);
+        powerStation->setSeason(season);
+        heatingPlant->setSeason(season);
     }
     if(months==6||months==7||months==8||months==18||months==19||months==20||months==30||months==31||months==32||months==42||months==43||months==44||months==54||months==55||months==56||months==66||months==67||months==68||months==78||months==79||months==80||months==90||months==91||months==92||months==102||months==103||months==104)
     {
         season = "Autumn";
-        powerStation.setSeason(season);
-        heatingPlant.setSeason(season);
+        powerStation->setSeason(season);
+        heatingPlant->setSeason(season);
     }
     if(months==9||months==10||months==11||months==21||months==22||months==23||months==33||months==34||months==35||months==45||months==46||months==47||months==57||months==58||months==59||months==69||months==70||months==71||months==81||months==82||months==83||months==93||months==94||months==95||months==105||months==106||months==107)
     {
         season = "Winter";
-        powerStation.setSeason(season);
-        heatingPlant.setSeason(season);
+        powerStation->setSeason(season);
+        heatingPlant->setSeason(season);
     }
 }
 
 NotSeasonDependentCompany* Game::getIronWorks()
 {
-    return &ironworks;
+    return ironworks;
 }
 NotSeasonDependentCompany* Game::getCoalStorageSite()
 {
-    return &coalStorageSite;
+    return coalStorageSite;
 }
 
 SeasonDependent* Game::getPowerStation()
 {
-    return &powerStation;
+    return powerStation;
 }
 
 SeasonDependent* Game::getHeatingPlant()
 {
-    return &heatingPlant;
+    return heatingPlant;
 }
 
-void Game::generateMinerList() {
+void Game::generateMinerList()
+{
     int list_size = minerList.size();
     int iter = 10-list_size;
 
@@ -97,8 +98,14 @@ void Game::generateMinerList() {
     }
 }
 
-std::vector<Miner*> Game::getMinersList(){
+std::vector<Miner*> Game::getMinersList()
+{
     return minerList;
+}
+
+Miner* Game::getOneMinerFromList(int i)
+{
+    return minerList[i];
 }
 
 void Game::eraseMiner(int w)
@@ -119,32 +126,32 @@ double Game::getMoney()
 
 MinerHat* Game::getHat()
 {
-    return &hat;
+    return hat;
 }
 
 MinerSuit* Game::getSuit()
 {
-    return &suit;
+    return suit;
 }
 
 MinerLamp* Game::getLamp()
 {
-    return &lamp;
+    return lamp;
 }
 
 void Game::setHat(MinerHat *h)
 {
-    hat = *h;
+    hat = h;
 }
 
 void Game::setSuit(MinerSuit *s)
 {
-    suit = *s;
+    suit = s;
 }
 
 void Game::setLamp(MinerLamp *l)
 {
-    lamp = *l;
+    lamp = l;
 }
 
 void Game::subMoney(double m)
@@ -159,7 +166,7 @@ Storage* Game::getStorage()
 
 void Game::refreshOfficeWorkersAmount()
 {
-    int minersSum = blackCoalMine.getMiners()->size()+brownCoalMine.getMiners()->size()+mixedCoalMine.getMiners()->size();
+    int minersSum = blackCoalMine->getMiners()->size()+brownCoalMine->getMiners()->size()+mixedCoalMine->getMiners()->size();
     officeWorkersAmount = minersSum/5;
     if(officeWorkersAmount<(int)vectorOfficeWorkers.size())
     {
@@ -196,51 +203,51 @@ void Game::refreshAccountantsAmount()
 int Game::randomStrike()
 {
     int sum = 0;
-    for(int i = 0;i<(int)blackCoalMine.getMiners()->size();i++)
+    for(int i = 0;i<(int)blackCoalMine->getMiners()->size();i++)
     {
         // strike probability
-        int sop = blackCoalMine.getOneMiner(i)->getStrikeOpportunity();
+        int sop = blackCoalMine->getOneMiner(i)->getStrikeOpportunity();
         int r = rand()%100;
         switch(r/sop)
         {
         case 1:
-            blackCoalMine.getOneMiner(i)->setStriking(true);
+            blackCoalMine->getOneMiner(i)->setStriking(true);
             sum++;
             break;
         default:
-            blackCoalMine.getOneMiner(i)->setStriking(false);
+            blackCoalMine->getOneMiner(i)->setStriking(false);
             break;
         }
     }
-    for(int i = 0;i<(int)brownCoalMine.getMiners()->size();i++)
+    for(int i = 0;i<(int)brownCoalMine->getMiners()->size();i++)
     {
         // strike probability
-        int sop = brownCoalMine.getOneMiner(i)->getStrikeOpportunity();
+        int sop = brownCoalMine->getOneMiner(i)->getStrikeOpportunity();
         int r = rand()%100;
         switch(r/sop)
         {
         case 1:
-            brownCoalMine.getOneMiner(i)->setStriking(true);
+            brownCoalMine->getOneMiner(i)->setStriking(true);
             sum++;
             break;
         default:
-            brownCoalMine.getOneMiner(i)->setStriking(false);
+            brownCoalMine->getOneMiner(i)->setStriking(false);
             break;
         }
     }
-    for(int i = 0;i<(int)mixedCoalMine.getMiners()->size();i++)
+    for(int i = 0;i<(int)mixedCoalMine->getMiners()->size();i++)
     {
         // strike probability
-        int sop = mixedCoalMine.getOneMiner(i)->getStrikeOpportunity();
+        int sop = mixedCoalMine->getOneMiner(i)->getStrikeOpportunity();
         int r = rand()%100;
         switch(r/sop)
         {
         case 1:
-            mixedCoalMine.getOneMiner(i)->setStriking(true);
+            mixedCoalMine->getOneMiner(i)->setStriking(true);
             sum++;
             break;
         default:
-            mixedCoalMine.getOneMiner(i)->setStriking(false);
+            mixedCoalMine->getOneMiner(i)->setStriking(false);
             break;
         }
     }
@@ -252,20 +259,20 @@ double Game::moneyForChildren()
     double r = 0;
     if(season=="Autumn")
     {
-        for(int i = 0;i<(int)blackCoalMine.getMiners()->size();i++)
+        for(int i = 0;i<(int)blackCoalMine->getMiners()->size();i++)
         {
             //$20 for every child every autumn month
-            r = r + 20*blackCoalMine.getOneMiner(i)->getKids();
+            r = r + 20*blackCoalMine->getOneMiner(i)->getKids();
         }
-        for(int i = 0;i<(int)brownCoalMine.getMiners()->size();i++)
+        for(int i = 0;i<(int)brownCoalMine->getMiners()->size();i++)
         {
             //$20 for every child every autumn month
-            r = r + 20*brownCoalMine.getOneMiner(i)->getKids();
+            r = r + 20*brownCoalMine->getOneMiner(i)->getKids();
         }
-        for(int i = 0;i<(int)mixedCoalMine.getMiners()->size();i++)
+        for(int i = 0;i<(int)mixedCoalMine->getMiners()->size();i++)
         {
             //$20 for every child every autumn month
-            r = r + 20*mixedCoalMine.getOneMiner(i)->getKids();
+            r = r + 20*mixedCoalMine->getOneMiner(i)->getKids();
         }
     }
     return r;
@@ -362,17 +369,17 @@ Accountant* Game::getOneAccountant(int i)
 
 BlackCoalMine* Game::getBlackCoalMine()
 {
-    return &blackCoalMine;
+    return blackCoalMine;
 }
 
 BrownCoalMine* Game::getBrownCoalMine()
 {
-    return &brownCoalMine;
+    return brownCoalMine;
 }
 
 MixedCoalMine* Game::getMixedCoalMine()
 {
-    return &mixedCoalMine;
+    return mixedCoalMine;
 }
 
 void Game::deleteMinersList()
@@ -385,21 +392,35 @@ void Game::deleteMinersList()
 
 void Game::deleteMines()
 {
-    for (int i = (int)blackCoalMine.getMiners()->size();i>0;i--)
+    for (int i = (int)blackCoalMine->getMiners()->size();i>0;i--)
     {
-        delete blackCoalMine.getOneMiner(i);
+        delete blackCoalMine->getOneMiner(i);
     }
 
-    for (int i = (int)brownCoalMine.getMiners()->size();i>0;i--)
+    for (int i = (int)brownCoalMine->getMiners()->size();i>0;i--)
     {
-        delete brownCoalMine.getOneMiner(i);
+        delete brownCoalMine->getOneMiner(i);
     }
 
-    for (int i = (int)mixedCoalMine.getMiners()->size();i>0;i--)
+    for (int i = (int)mixedCoalMine->getMiners()->size();i>0;i--)
     {
-        delete blackCoalMine.getOneMiner(i);
+        delete blackCoalMine->getOneMiner(i);
     }
 
+}
+
+void Game::initMinerItems()
+{
+    hat = new MinerHat;
+    suit = new MinerSuit;
+    lamp = new MinerLamp;
+}
+
+void Game::initMines()
+{
+    blackCoalMine = new BlackCoalMine;
+    brownCoalMine = new BrownCoalMine;
+    mixedCoalMine = new MixedCoalMine;
 }
 
 

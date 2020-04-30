@@ -1,6 +1,6 @@
 #include "officeworker.h"
 
-OfficeWorker::OfficeWorker()
+OfficeWorker::OfficeWorker():AboveGroundWorker()
 {
 
 }

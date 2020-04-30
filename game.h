@@ -18,14 +18,14 @@ private:
     std::vector <Miner*> minerList;
     int months;
     std::string season;
-    MinerHat hat;
-    MinerSuit suit;
-    MinerLamp lamp;
+    MinerHat *hat;
+    MinerSuit *suit;
+    MinerLamp *lamp;
     double money;   
-    SeasonDependent heatingPlant;
-    SeasonDependent powerStation;
-    NotSeasonDependentCompany coalStorageSite;
-    NotSeasonDependentCompany ironworks;
+    SeasonDependent *heatingPlant;
+    SeasonDependent *powerStation;
+    NotSeasonDependentCompany *coalStorageSite;
+    NotSeasonDependentCompany *ironworks;
     int miners_overall;
     int officeWorkersAmount;
     double lastMonthRevenues;
@@ -33,11 +33,15 @@ private:
     std::vector <Accountant*> vectorAccountants;
     std::vector <OfficeWorker*> vectorOfficeWorkers;
     Storage storage;
-    BlackCoalMine blackCoalMine;
-    BrownCoalMine brownCoalMine;
-    MixedCoalMine mixedCoalMine;
+    BlackCoalMine *blackCoalMine;
+    BrownCoalMine *brownCoalMine;
+    MixedCoalMine *mixedCoalMine;
+
 public:   
     Game();
+    void initMinerItems();
+    Miner* getOneMinerFromList(int i);
+    void initMines();
     double getLastMonthRevenues();
     void setMonths(int m);
     int getMonths();

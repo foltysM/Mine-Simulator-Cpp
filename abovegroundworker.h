@@ -10,9 +10,9 @@ class AboveGroundWorker
 {
 private:
     std::string name;
-    Chair chair;
-    Computer computer;
-    Desk desk;
+    Chair *chair;
+    Computer *computer;
+    Desk *desk;
     double salary;
 public:
     AboveGroundWorker();

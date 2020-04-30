@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     game = new Game;
+    game->initMinerItems();
+    game->initMines();
     game->generateMinerList();
 
     // Settings dialog
@@ -24,7 +26,6 @@ MainWindow::MainWindow(QWidget *parent)
     showNewMinerClothes();
     ui->progressBar->setValue(0);
     ui->labelMoneyMain->setText(QString::fromStdString("0$"));
-
 
     game->setMoney(10000);
     ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game->getMoney())+"$"));

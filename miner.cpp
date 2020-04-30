@@ -1,18 +1,20 @@
 #include <iostream>
 #include "miner.h"
 
-//int Miner::miners = 0;
 
 Miner::Miner()
 {
     int val;
-    hat.setName("No hat");
-    hat.setSalaryReduction(1);
-    lamp.setName("No lamp");
-    lamp.setAdditionalProductivity(1);
-    suit.setName("No suit");
-    suit.setSalaryReduction(1);
-    suit.setAdditionalProductivity(1);
+    hat = new MinerHat;
+    hat->setName("No hat");
+    hat->setSalaryReduction(1);
+    lamp = new MinerLamp;
+    lamp->setName("No lamp");
+    lamp->setAdditionalProductivity(1);
+    suit = new MinerSuit;
+    suit->setName("No suit");
+    suit->setSalaryReduction(1);
+    suit->setAdditionalProductivity(1);
     kids = rand()%4+1;
     //salary
     monthSalary = rand()%300+250;
@@ -96,32 +98,32 @@ void Miner::setSeniority(int s)
 
 MinerHat* Miner::getHat()
 {
-    return &hat;
+    return hat;
 }
 
 MinerSuit* Miner::getSuit()
 {
-    return &suit;
+    return suit;
 }
 
 MinerLamp* Miner::getLamp()
 {
-    return &lamp;
+    return lamp;
 }
 
 void Miner::setHat(MinerHat *h)
 {
-    hat = *h;
+    hat = h;
 }
 
 void Miner::setSuit(MinerSuit *s)
 {
-    suit = *s;
+    suit = s;
 }
 
 void Miner::setLamp(MinerLamp *l)
 {
-    lamp = *l;
+    lamp = l;
 }
 
 bool Miner::getStriking()
