@@ -35,7 +35,13 @@ MinerLamp::MinerLamp()
 
 void MinerLamp::setAdditionalProductivity(double p)
 {
-    additionalProductivity = p;
+    if(p>=1)
+        additionalProductivity = p;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, productivity not set!");
+    }
 }
 
 double MinerLamp::getAdditionalProductivity()

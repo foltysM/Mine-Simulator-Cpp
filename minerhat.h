@@ -1,6 +1,7 @@
 #ifndef MINERHAT_H
 #define MINERHAT_H
 
+#include <QMessageBox>
 #include "mineritem.h"
 
 class MinerHat: public MinerItem

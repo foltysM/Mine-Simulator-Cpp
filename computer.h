@@ -2,6 +2,7 @@
 #define COMPUTER_H
 
 #include "abovegroundworkeritem.h"
+//#include "game.h"
 
 class Computer:public AboveGroundWorkerItem
 {
@@ -10,6 +11,7 @@ private:
 public:
     Computer();
     double useItem();
+    //bool special(Game *g);
 };
 
 #endif // COMPUTER_H

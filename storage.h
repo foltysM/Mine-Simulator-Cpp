@@ -2,6 +2,7 @@
 #define STORAGE_H
 
 #include <iostream>
+#include <QMessageBox>
 
 class Storage
 {

@@ -14,6 +14,7 @@ Chair::Chair():AboveGroundWorkerItem()
         break;
     }
 }
+
 double Chair::useItem() {
     int random = rand()%45;
     double r = 0;
@@ -28,3 +29,4 @@ double Chair::useItem() {
     }
     return r;
 }
+

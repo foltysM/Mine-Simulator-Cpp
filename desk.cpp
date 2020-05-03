@@ -30,3 +30,4 @@ double Desk::useItem()
     }
     return r;
 }
+

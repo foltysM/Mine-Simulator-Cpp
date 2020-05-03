@@ -13,10 +13,15 @@ double AboveGroundWorkerItem::getReduction()
 void AboveGroundWorkerItem::setReductionOne()
 {
     reduction = 1;
-    //TODO PROBLEM, NIESTWORZONY OBIEKT
 }
 
 void AboveGroundWorkerItem::setReduction(double r)
 {
-    reduction = r;
+    if(r<=1)
+        reduction = r;
+    else
+    {
+         QMessageBox msg;
+         msg.setText("Error encountered, reduction not set!");
+    }
 }

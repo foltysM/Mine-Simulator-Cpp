@@ -1,6 +1,7 @@
 #ifndef MINERLAMP_H
 #define MINERLAMP_H
 
+#include <QMessageBox>
 #include "mineritem.h"
 
 class MinerLamp: public MinerItem

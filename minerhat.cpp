@@ -35,7 +35,13 @@ MinerHat::MinerHat()
 
 void MinerHat::setSalaryReduction(double r)
 {
-    salaryReduction = r;
+    if(r<=1)
+        salaryReduction = r;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, reduction not set!");
+    }
 }
 
 double MinerHat::getSalaryReduction()

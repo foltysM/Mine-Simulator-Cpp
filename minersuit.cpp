@@ -41,12 +41,24 @@ MinerSuit::MinerSuit()
 
 void MinerSuit::setAdditionalProductivity(double p)
 {
-    additionalProductivity = p;
+    if(p>=1)
+        additionalProductivity = p;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, productivity not set!");
+    }
 }
 
 void MinerSuit::setSalaryReduction(double r)
 {
-    salaryReduction = r;
+    if(r<=1)
+        salaryReduction = r;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, reduction not set!");
+    }
 }
 
 double MinerSuit::getSalaryReduction()

@@ -24,10 +24,22 @@ double Storage::getPrice()
 
 void Storage::setBlackCoalAmount(double bla)
 {
-    blackCoalAmount = bla;
+    if(bla>=0)
+        blackCoalAmount = bla;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, amount not set!");
+    }
 }
 
 void Storage::setBrownCoalAmount(double bra)
 {
-    brownCoalAmount = bra;
+    if(bra>=0)
+        brownCoalAmount = bra;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, amount not set!");
+    }
 }

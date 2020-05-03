@@ -2,6 +2,7 @@
 #define SEASONDEPENDENT_H
 
 #include <iostream>
+#include <QMessageBox>
 #include "notseasondependentcompany.h"
 
 class SeasonDependent :public NotSeasonDependentCompany

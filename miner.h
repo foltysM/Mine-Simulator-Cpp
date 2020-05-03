@@ -1,6 +1,7 @@
 #ifndef MINER_H
 #define MINER_H
 
+#include <QMessageBox>
 #include <iostream>
 #include "minerlamp.h"
 #include "minerhat.h"

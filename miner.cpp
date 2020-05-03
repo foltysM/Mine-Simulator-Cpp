@@ -93,7 +93,13 @@ int Miner::getSeniority()
 
 void Miner::setSeniority(int s)
 {
-    seniority = s;
+    if(s>=0)
+        seniority = s;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, seniority not set!");
+    }
 }
 
 MinerHat* Miner::getHat()

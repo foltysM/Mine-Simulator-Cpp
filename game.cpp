@@ -13,7 +13,13 @@ Game::Game()
 
 void Game::setMonths(int m)
 {
-    months = m;
+    if(m >= 0)
+    {
+        months = m;
+    }else{
+        QMessageBox msg;
+        msg.setText("Error encountered, months not set!");
+    }
 }
 
 int Game::getMonths()
@@ -115,8 +121,14 @@ Miner* Game::getOneMinerFromList(int i)
 
 void Game::eraseMiner(int w)
 {
-    minerList.erase(minerList.begin()+w);
-    generateMinerList();
+    if(w>=0)
+    {
+        minerList.erase(minerList.begin()+w);
+        generateMinerList();
+    }else{
+        QMessageBox msg;
+        msg.setText("Error encountered, miner not erased!");
+    }
 }
 
 void Game::setMoney(double m)
@@ -161,7 +173,13 @@ void Game::setLamp(MinerLamp *l)
 
 void Game::subMoney(double m)
 {
-    money = money - m;
+    if(m>=0)
+        money = money - m;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, money not substracted!");
+    }
 }
 
 Storage* Game::getStorage()

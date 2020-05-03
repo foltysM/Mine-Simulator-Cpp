@@ -47,7 +47,14 @@ void Mine::setMiners(std::vector <Miner*>* m)
 
 Miner* Mine::getOneMiner(int i)
 {
-    return miners[i];
+    if(i>=0)
+        return miners[i];
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, miner cannot be get!");
+    }
+    return nullptr;
 }
 
 void Mine::addMinerToList(Miner* m)
@@ -57,6 +64,12 @@ void Mine::addMinerToList(Miner* m)
 
 void Mine::eraseMiner(int i)
 {
-    miners.erase(miners.begin()+i);
+    if(i>=0)
+        miners.erase(miners.begin()+i);
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, miner not erased!");
+    }
 }
 

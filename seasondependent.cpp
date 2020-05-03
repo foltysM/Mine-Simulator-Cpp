@@ -37,6 +37,12 @@ double SeasonDependent::getNeedsBrown()
 }
 void SeasonDependent::setNeedsBlack(double n)
 {
-    needs_black = n;
+    if(n>=0)
+        needs_black = n;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, needs not set!");
+    }
 }
 

@@ -1,8 +1,8 @@
 #ifndef CHAIR_H
 #define CHAIR_H
 
-
 #include "abovegroundworkeritem.h"
+//#include "game.h"
 
 class Chair: public AboveGroundWorkerItem
 {
@@ -11,6 +11,7 @@ private:
 public:
     Chair();
     double useItem();
+   // bool special(Game g);
 };
 
 #endif // CHAIR_H

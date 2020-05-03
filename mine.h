@@ -4,6 +4,7 @@
 #include <iostream>
 #include "miner.h"
 #include <vector>
+#include "QMessageBox"
 
 class Mine
 {
