@@ -2,6 +2,9 @@
 
 AboveGroundWorker::AboveGroundWorker()
 {
+    chair = new Chair;
+    computer = new Computer;
+    desk = new Desk;
     chair->setReductionOne();
     desk->setReductionOne();
     computer->setReductionOne();

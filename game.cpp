@@ -4,6 +4,11 @@
 Game::Game()
 {
     months = 0;
+    powerStation = new SeasonDependent;
+    heatingPlant = new SeasonDependent;
+    coalStorageSite = new NotSeasonDependentCompany;
+    ironworks = new NotSeasonDependentCompany;
+
 }
 
 void Game::setMonths(int m)

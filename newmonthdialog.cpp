@@ -22,8 +22,8 @@ NewMonthDialog::NewMonthDialog(QWidget *parent, Game *g) :
     sum_brown = br + half_mixed;
     ui->labelSumBlack->setText(QString::number(sum_black));
     ui->labelSumBrown->setText(QString::number(sum_brown));
-    getNeedsAndPrice(*g);
-    getStorage(*g);
+    getNeedsAndPrice(g);
+    getStorage(g);
     ui->labelNeedsBlackIronworks->setText(QString::number(needsBlackIronWorks));
     ui->labelNeedsBrownIronworks->setText(QString::number(needsBrownIronWorks));
     ui->labelNeedsBlackCoalStorage->setText(QString::number(needsBlackCoalStorageSite));
@@ -42,7 +42,7 @@ NewMonthDialog::NewMonthDialog(QWidget *parent, Game *g) :
 
 
     // Storage init
-    storageInit(*g);
+    storageInit(g);
 
     // Miners' salary
     ui->labelMinersStriking->setNum(g->randomStrike());
@@ -290,33 +290,33 @@ void NewMonthDialog::on_doubleSpinBrownPowerStation_valueChanged(double arg1)
     }
 }
 
-void NewMonthDialog::getNeedsAndPrice(Game g)
+void NewMonthDialog::getNeedsAndPrice(Game *g)
 {
     //needs
-    needsBrownCoalStorageSite = g.getCoalStorageSite()->getNeedsBrown();
-    needsBlackCoalStorageSite = g.getCoalStorageSite()->getNeedsBlack();
-    needsBlackIronWorks = g.getIronWorks()->getNeedsBlack();
-    needsBrownIronWorks = g.getIronWorks()->getNeedsBrown();
-    needsBlackHeatingPlant = g.getHeatingPlant()->getNeedsBlack();
-    needsBrownHeatingPlant = g.getHeatingPlant()->getNeedsBrown();
-    needsBlackPowerStation = g.getPowerStation()->getNeedsBlack();
-    needsBrownPowerStation = g.getPowerStation()->getNeedsBrown();
+    needsBrownCoalStorageSite = g->getCoalStorageSite()->getNeedsBrown();
+    needsBlackCoalStorageSite = g->getCoalStorageSite()->getNeedsBlack();
+    needsBlackIronWorks = g->getIronWorks()->getNeedsBlack();
+    needsBrownIronWorks = g->getIronWorks()->getNeedsBrown();
+    needsBlackHeatingPlant = g->getHeatingPlant()->getNeedsBlack();
+    needsBrownHeatingPlant = g->getHeatingPlant()->getNeedsBrown();
+    needsBlackPowerStation = g->getPowerStation()->getNeedsBlack();
+    needsBrownPowerStation = g->getPowerStation()->getNeedsBrown();
     //price
-    priceIronWorks = g.getIronWorks()->getMoneyPayingAmount();
-    priceHeatingPlant = g.getHeatingPlant()->getMoneyPayingAmount();
-    priceCoalStorageSite = g.getCoalStorageSite()->getMoneyPayingAmount();
-    pricePowerStation = g.getPowerStation()->getMoneyPayingAmount();
+    priceIronWorks = g->getIronWorks()->getMoneyPayingAmount();
+    priceHeatingPlant = g->getHeatingPlant()->getMoneyPayingAmount();
+    priceCoalStorageSite = g->getCoalStorageSite()->getMoneyPayingAmount();
+    pricePowerStation = g->getPowerStation()->getMoneyPayingAmount();
 }
 
-void NewMonthDialog::getStorage(Game g)
+void NewMonthDialog::getStorage(Game *g)
 {
-    inStorageBeforeBlack = g.getStorage()->getBlackCoalAmount();
-    inStorageBeforeBrown = g.getStorage()->getBrownCoalAmount();
+    inStorageBeforeBlack = g->getStorage()->getBlackCoalAmount();
+    inStorageBeforeBrown = g->getStorage()->getBrownCoalAmount();
     ui->labelInStorageBlack->setNum(inStorageBeforeBlack);
     ui->labelInStorageBrown->setNum(inStorageBeforeBrown);
 }
 
-void NewMonthDialog::storageInit(Game g)
+void NewMonthDialog::storageInit(Game *g)
 {
     toStorageBlack = sum_black+inStorageBeforeBlack;
     toStorageBrown = sum_brown+inStorageBeforeBrown;
@@ -324,9 +324,9 @@ void NewMonthDialog::storageInit(Game g)
     ui->labelToStorageBrown->setNum(toStorageBrown);
 
     //storage price
-    storagePrice = g.getStorage()->getPrice();
+    storagePrice = g->getStorage()->getPrice();
     ui->labelStoragePerUnitPrice->setNum(storagePrice);
-    storageSumPrice = ((toStorageBlack+toStorageBrown)*storagePrice)*g.getAccStorageReduction();
+    storageSumPrice = ((toStorageBlack+toStorageBrown)*storagePrice)*g->getAccStorageReduction();
     ui->labelCostsStorage->setNum(storageSumPrice);
 }
 

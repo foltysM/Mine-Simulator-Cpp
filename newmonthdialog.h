@@ -61,12 +61,12 @@ private:
     double needsBrownCoalStorageSite;
     double needsBlackHeatingPlant;
     double needsBrownHeatingPlant;
-    void getNeedsAndPrice(Game g);
+    void getNeedsAndPrice(Game *g);
     double priceHeatingPlant;
     double priceIronWorks;
     double priceCoalStorageSite;
     double pricePowerStation;
-    void getStorage(Game g);
+    void getStorage(Game *g);
     double sumProfitsBlackIronWorks = 0;
     double sumProfitsBrownIronWorks = 0;
     double sumProfitsBlackHeatingPlant = 0;
@@ -77,7 +77,7 @@ private:
     double sumProfitsBrownPowerStation = 0;
     double sumProfits = 0;
     double storagePrice;
-    void storageInit(Game g);
+    void storageInit(Game *g);
     double officeWorkersSalary;
     double accountantsSalary;
     double finalMoney;

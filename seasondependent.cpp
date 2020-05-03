@@ -1,6 +1,6 @@
 #include "seasondependent.h"
 
-SeasonDependent::SeasonDependent()
+SeasonDependent::SeasonDependent():NotSeasonDependentCompany()
 {
 
 }
