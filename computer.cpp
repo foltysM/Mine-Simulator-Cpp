@@ -1,4 +1,5 @@
 #include "computer.h"
+#include "game.h"
 
 Computer::Computer():AboveGroundWorkerItem()
 {
@@ -29,6 +30,21 @@ double Computer::useItem()
         break;
     }
     return r;
+}
+
+void Computer::special(Game *g)
+{
+    int s = rand()%100;
+    switch(s)
+    {
+    case 1:
+        if(getReduction()!=1)
+            g->setComputerSpecial(true);
+        break;
+    default:
+        g->setComputerSpecial(false);
+        break;
+    }
 }
 
 

@@ -1,4 +1,5 @@
 #include "chair.h"
+#include "game.h"
 
 Chair::Chair():AboveGroundWorkerItem()
 {
@@ -29,4 +30,20 @@ double Chair::useItem() {
     }
     return r;
 }
+
+void Chair::special(Game *g)
+{
+    int s = rand()%100;
+    switch(s)
+    {
+    case 1:
+        if(getReduction()!=1)
+            g->setChairSpecial(true);
+        break;
+    default:
+        g->setChairSpecial(false);
+        break;
+    }
+}
+
 

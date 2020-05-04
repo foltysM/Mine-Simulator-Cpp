@@ -40,7 +40,14 @@ private slots:
 
     void on_doubleSpinBrownPowerStation_valueChanged(double arg1);
 
+    void on_chairSpecialBtn_clicked();
+
+    void on_deskSpecialBtn_clicked();
+
+    void on_computerSpecialBtn_clicked();
+
 private:
+    Game *game;
     Ui::NewMonthDialog *ui;
     double blackIronWorks;
     double brownIronWorks;
@@ -89,6 +96,11 @@ private:
     double moneyBefore;
     double toStorageBlack = 0;
     double toStorageBrown = 0;
+    double chairSpec = 1;
+    double compSpec = 2;
+    bool specialChClicked;
+    bool specialCoClicked;
+    bool specialDeClicked;
 
 };
 

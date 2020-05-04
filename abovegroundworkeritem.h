@@ -3,8 +3,9 @@
 
 #include <stdlib.h>
 #include <QMessageBox>
-// TODO include game
 
+
+class Game;
 
 class AboveGroundWorkerItem
 {
@@ -14,7 +15,7 @@ public:
     AboveGroundWorkerItem();
     void listItems();
     virtual double useItem() = 0;
-    //virtual bool special(Game g) = 0;
+    virtual void special(Game *g) = 0;
     double getReduction();
     void setReductionOne();
     void setReduction(double r);

@@ -5,6 +5,14 @@ NewMonthDialog::NewMonthDialog(QWidget *parent, Game *g) :
     QDialog(parent),
     ui(new Ui::NewMonthDialog)
 {
+    game = g;
+    game->setChairSpecial(false);
+    game->setComputerSpecial(false);
+    chairSpec = 1;
+    compSpec = 1;
+    specialChClicked = false;
+    specialCoClicked = false;
+    specialDeClicked = false;
     double bl = g->getBlackCoalMine()->coalMined();
     double br = g->getBrownCoalMine()->coalMined();
     double mx = g->getMixedCoalMine()->coalMined();
@@ -38,7 +46,7 @@ NewMonthDialog::NewMonthDialog(QWidget *parent, Game *g) :
     ui->labelNeedsBlackPowerstation->setText(QString::number(needsBlackPowerStation));
     ui->labelNeedsBrownPowerstation->setText(QString::number(needsBrownPowerStation));
     //money
-    ui->labelMoneyDialog->setText(QString::fromStdString("$"+std::to_string(g->getMoney())));
+    ui->labelMoneyDialog->setText(QString::fromStdString("$"+std::to_string(game->getMoney())));
 
 
     // Storage init
@@ -99,7 +107,7 @@ void NewMonthDialog::on_doubleSpinBlackIronWorks_valueChanged(double arg1)
             toStorageBlack = toSet;
             ui->labelToStorageBlack->setNum(toStorageBlack);
             sumProfitsBlackIronWorks = priceIronWorks*arg1;
-            sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
+            sumProfits =  chairSpec*(sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation);
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackIronWorks->setNum(sumProfitsBlackIronWorks);
         }
@@ -125,7 +133,7 @@ void NewMonthDialog::on_doubleSpinBlackCoalStorageSite_valueChanged(double arg1)
             toStorageBlack = toSet;
             ui->labelToStorageBlack->setNum(toStorageBlack);
             sumProfitsBlackCoalStorageSite = priceCoalStorageSite*arg1;
-            sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
+            sumProfits = chairSpec*(sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation);
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackCoalStorageSite->setNum(sumProfitsBlackCoalStorageSite);
         }
@@ -151,7 +159,7 @@ void NewMonthDialog::on_doubleSpinBlackPowerStation_valueChanged(double arg1)
             toStorageBlack = toSet;
             ui->labelToStorageBlack->setNum(toStorageBlack);
             sumProfitsBlackPowerStation = pricePowerStation*arg1;
-            sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
+            sumProfits = chairSpec*(sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation);
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackPowerStation->setNum(sumProfitsBlackPowerStation);
         }
@@ -177,7 +185,7 @@ void NewMonthDialog::on_doubleSpinBlackHeatingPlant_valueChanged(double arg1)
             toStorageBlack = toSet;
             ui->labelToStorageBlack->setNum(toStorageBlack);
             sumProfitsBlackHeatingPlant = priceHeatingPlant*arg1;
-            sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
+            sumProfits = chairSpec*(sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation);
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBlackHeatingPlant->setNum(sumProfitsBlackHeatingPlant);
         }
@@ -203,7 +211,7 @@ void NewMonthDialog::on_doubleSpinBrownCoalStorageSite_valueChanged(double arg1)
             toStorageBrown = toSet;
             ui->labelToStorageBrown->setNum(toStorageBrown);
             sumProfitsBrownCoalStorageSite = priceCoalStorageSite*arg1;
-            sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
+            sumProfits = chairSpec*(sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation);
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownCoalStorageSite->setNum(sumProfitsBrownCoalStorageSite);
         }
@@ -229,7 +237,7 @@ void NewMonthDialog::on_doubleSpinBrownIronWorks_valueChanged(double arg1)
             toStorageBrown = toSet;
             ui->labelToStorageBrown->setNum(toStorageBrown);
             sumProfitsBrownIronWorks = priceIronWorks*arg1;
-            sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
+            sumProfits = chairSpec*(sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation);
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownIronWorks->setNum(sumProfitsBrownIronWorks);
         }
@@ -255,7 +263,7 @@ void NewMonthDialog::on_doubleSpinBrownHeatingPlant_valueChanged(double arg1)
             toStorageBrown = toSet;
             ui->labelToStorageBrown->setNum(toStorageBrown);
             sumProfitsBrownHeatingPlant = priceHeatingPlant*arg1;
-            sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
+            sumProfits = chairSpec*(sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation);
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownHeatingPlant->setNum(sumProfitsBrownHeatingPlant);
         }
@@ -281,7 +289,7 @@ void NewMonthDialog::on_doubleSpinBrownPowerStation_valueChanged(double arg1)
             toStorageBrown = toSet;
             ui->labelToStorageBrown->setNum(toStorageBrown);
             sumProfitsBrownPowerStation = pricePowerStation*arg1;
-            sumProfits = sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation;
+            sumProfits = chairSpec*(sumProfitsBlackIronWorks+sumProfitsBrownIronWorks+sumProfitsBlackHeatingPlant+sumProfitsBrownHeatingPlant+sumProfitsBlackCoalStorageSite+sumProfitsBrownCoalStorageSite+sumProfitsBlackPowerStation+sumProfitsBrownPowerStation);
             ui->labelMoneySum->setNum(sumProfits);
             ui->labelMoneyBrownPowerStation->setNum(sumProfitsBrownPowerStation);
         }
@@ -332,7 +340,7 @@ void NewMonthDialog::storageInit(Game *g)
 
 double NewMonthDialog::countFinal()
 {
-    return moneyBefore - minersSalary - accountantsSalary - officeWorkersSalary - storageSumPrice + sumProfits;
+    return moneyBefore - (minersSalary*compSpec) - accountantsSalary - officeWorkersSalary - storageSumPrice + sumProfits;
 }
 
 double NewMonthDialog::getMoneyBack()
@@ -350,3 +358,96 @@ double NewMonthDialog::getStorBrown()
     return toStorageBrown;
 }
 
+
+void NewMonthDialog::on_chairSpecialBtn_clicked()
+{
+
+    if(game->getAccountantsVector().size()==0&&game->getOfficeWorkersVector().size()==0)
+        QMessageBox::information(this, "Chair Special", "No office workers and no accountants ==> no chairs");
+    else
+    {
+        if(!specialChClicked)
+        {
+        for(int i = 0 ;i<(int)game->getAccountantsVector().size();i++)
+        {
+            game->getOneAccountant(i)->getChair()->special(game);
+        }
+        for(int i = 0;i<(int)game->getOfficeWorkersVector().size();i++)
+        {
+            game->getOneOfficeWorker(i)->getChair()->special(game);
+        }
+        if(game->getChairSpecial()==true)
+        {
+            chairSpec = 2;
+            QMessageBox::information(this, "Chair Special", "Double income!");
+            ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
+            ui->labelMoneySum->setNum(sumProfits);
+        }else
+        {
+            QMessageBox::information(this, "Chair Special", "Unlucky ;c");
+        }
+        }else{
+            QMessageBox::information(this, "Chair Special", "You can use special once in a month");
+        }
+    }
+    specialChClicked = true;
+}
+
+void NewMonthDialog::on_deskSpecialBtn_clicked()
+{
+    if(!specialDeClicked)
+    {
+        for(int i = 0 ;i<(int)game->getAccountantsVector().size();i++)
+        {
+            game->getOneAccountant(i)->getDesk()->special(game);
+        }
+        for(int i = 0;i<(int)game->getOfficeWorkersVector().size();i++)
+        {
+            game->getOneOfficeWorker(i)->getDesk()->special(game);
+        }
+        QMessageBox::information(this, "Desk Special", "Done! Check, if You are lucky!");
+        ui->labelMoneyDialog->setText(QString::fromStdString("$"+std::to_string(game->getMoney())));
+        ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
+    }else
+    {
+        QMessageBox::information(this, "Desk Special", "You can use special once in a month");
+
+    }
+    specialDeClicked = true;
+
+
+}
+
+void NewMonthDialog::on_computerSpecialBtn_clicked()
+{
+    if(game->getAccountantsVector().size()==0&&game->getOfficeWorkersVector().size()==0)
+        QMessageBox::information(this, "Computer Special", "No office workers and no accountants ==> no computers");
+    else
+    {
+        if(!specialCoClicked)
+        {
+            for(int i = 0 ;i<(int)game->getAccountantsVector().size();i++)
+            {
+                game->getOneAccountant(i)->getComputer()->special(game);
+            }
+            for(int i = 0;i<(int)game->getOfficeWorkersVector().size();i++)
+            {
+               game->getOneOfficeWorker(i)->getComputer()->special(game);
+            }
+            if(game->getComputerSpecial()==true)
+            {
+                compSpec = 0;
+                QMessageBox::information(this, "Computer Special", "No salary for miners!");
+                ui->labelFinalMoney->setText(QString::fromStdString(std::to_string(countFinal())+"$"));
+                ui->labelCostsMiners->setNum(0);
+            }else
+            {
+                QMessageBox::information(this, "Computer Special", "Unlucky ;c");
+            }
+        }else{
+            QMessageBox::information(this, "Computer Special", "You can use special once in a month");
+        }
+    }
+    specialCoClicked = true;
+
+}

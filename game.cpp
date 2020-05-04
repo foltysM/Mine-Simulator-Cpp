@@ -446,4 +446,36 @@ void Game::initMines()
     mixedCoalMine = new MixedCoalMine;
 }
 
+void Game::addMoney(double m)
+{
+    if(m>=0)
+        money = money + m;
+    else
+    {
+        QMessageBox msg;
+        msg.setText("Error encountered, money not added!");
+    }
+
+}
+
+void Game::setChairSpecial(bool s)
+{
+    chairSpecial = s;
+}
+
+void Game::setComputerSpecial(bool s)
+{
+    computerSpecial = s;
+}
+
+bool Game::getChairSpecial()
+{
+    return chairSpecial;
+}
+
+bool Game::getComputerSpecial()
+{
+    return computerSpecial;
+}
+
 

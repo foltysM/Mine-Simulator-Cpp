@@ -1,4 +1,5 @@
 #include "desk.h"
+#include "game.h"
 
 Desk::Desk():AboveGroundWorkerItem()
 {
@@ -29,5 +30,20 @@ double Desk::useItem()
         break;
     }
     return r;
+}
+
+void Desk::special(Game *g)
+{
+    int s = rand()%100;
+    switch(s)
+    {
+    case 1:
+        if(getReduction()!=1)
+            g->addMoney(10000);
+        break;
+    default:
+        break;
+    }
+
 }
 

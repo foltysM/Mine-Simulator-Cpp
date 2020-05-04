@@ -36,9 +36,15 @@ private:
     BlackCoalMine *blackCoalMine;
     BrownCoalMine *brownCoalMine;
     MixedCoalMine *mixedCoalMine;
+    bool computerSpecial = false;
+    bool chairSpecial = false;
 
 public:   
     Game();
+    void setComputerSpecial(bool s);
+    void setChairSpecial(bool s);
+    bool getComputerSpecial();
+    bool getChairSpecial();
     void initMinerItems();
     Miner* getOneMinerFromList(int i);
     void initMines();
@@ -85,6 +91,7 @@ public:
     MixedCoalMine* getMixedCoalMine();
     void deleteMinersList();
     void deleteMines();
+    void addMoney(double m);
 };
 
 #endif // GAME_H
