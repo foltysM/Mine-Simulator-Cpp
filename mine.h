@@ -1,10 +1,12 @@
 #ifndef MINE_H
 #define MINE_H
 
+#include <vector>
 #include <iostream>
 #include "miner.h"
-#include <vector>
 #include "QMessageBox"
+
+class Game;
 
 class Mine
 {
@@ -14,6 +16,8 @@ private:
     std::vector <Miner*> miners;
 public:    
     Mine();
+    ~Mine();
+    virtual void runSpecial(Game *g) = 0;
     bool Failure();
     void moveMiner(Miner m);
     void removeMiner(Miner m);

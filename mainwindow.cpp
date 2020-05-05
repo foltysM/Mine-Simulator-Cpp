@@ -654,3 +654,24 @@ void MainWindow::on_aboveUIBtn_clicked()
     }
 
 }
+
+void MainWindow::on_specialBrown_clicked()
+{
+    game->getBrownCoalMine()->runSpecial(game);
+    ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game->getMoney())+"$"));
+    showNewMinerClothes();
+}
+
+void MainWindow::on_specialMixed_clicked()
+{
+    game->getMixedCoalMine()->runSpecial(game);
+    ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game->getMoney())+"$"));
+    ui->labelInStorageBlackMain->setNum(game->getStorage()->getBlackCoalAmount());
+    ui->labelInStorageBrownMain->setNum(game->getStorage()->getBrownCoalAmount());
+}
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    game->getBlackCoalMine()->runSpecial(game);
+    ui->labelMoneyMain->setText(QString::fromStdString(std::to_string(game->getMoney())+"$"));
+}

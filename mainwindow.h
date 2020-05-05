@@ -84,6 +84,12 @@ private slots:
 
     void on_aboveUIBtn_clicked();
 
+    void on_specialBrown_clicked();
+
+    void on_specialMixed_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     void displayBlackMineMinersList();

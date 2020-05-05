@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>870</width>
-    <height>749</height>
+    <height>772</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -34,7 +34,7 @@
     <property name="geometry">
      <rect>
       <x>760</x>
-      <y>660</y>
+      <y>680</y>
       <width>81</width>
       <height>41</height>
      </rect>
@@ -47,9 +47,9 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>400</y>
+      <y>410</y>
       <width>411</width>
-      <height>311</height>
+      <height>331</height>
      </rect>
     </property>
     <property name="palette">
@@ -372,9 +372,9 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>220</y>
+       <y>240</y>
        <width>191</width>
-       <height>80</height>
+       <height>83</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
@@ -422,10 +422,10 @@
     <widget class="QWidget" name="verticalLayoutWidget_5">
      <property name="geometry">
       <rect>
-       <x>19</x>
-       <y>130</y>
+       <x>20</x>
+       <y>120</y>
        <width>171</width>
-       <height>83</height>
+       <height>112</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="buyBrownLayout">
@@ -465,6 +465,13 @@
         </property>
         <property name="text">
          <string>Buy Lamp</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="specialBrown">
+        <property name="text">
+         <string>Run special for this mine! ($500)</string>
         </property>
        </widget>
       </item>
@@ -516,7 +523,7 @@
       <x>20</x>
       <y>70</y>
       <width>411</width>
-      <height>311</height>
+      <height>331</height>
      </rect>
     </property>
     <property name="palette">
@@ -839,7 +846,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>220</y>
+       <y>240</y>
        <width>191</width>
        <height>80</height>
       </rect>
@@ -892,7 +899,7 @@
        <x>20</x>
        <y>120</y>
        <width>171</width>
-       <height>83</height>
+       <height>112</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -935,10 +942,18 @@
         </property>
        </widget>
       </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="text">
+         <string>Run special for this mine! ($500)</string>
+        </property>
+       </widget>
+      </item>
      </layout>
      <zorder>buyLampBlackBtn</zorder>
      <zorder>buyHatBlackBtn</zorder>
      <zorder>buySuitBlackBtn</zorder>
+     <zorder>pushButton_3</zorder>
     </widget>
     <widget class="QWidget" name="horizontalLayoutWidget_4">
      <property name="geometry">
@@ -986,7 +1001,7 @@
       <x>440</x>
       <y>340</y>
       <width>411</width>
-      <height>311</height>
+      <height>331</height>
      </rect>
     </property>
     <property name="palette">
@@ -1309,7 +1324,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>220</y>
+       <y>240</y>
        <width>191</width>
        <height>80</height>
       </rect>
@@ -1362,7 +1377,7 @@
        <x>19</x>
        <y>120</y>
        <width>171</width>
-       <height>83</height>
+       <height>112</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -1402,6 +1417,13 @@
         </property>
         <property name="text">
          <string>Buy Lamp</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="specialMixed">
+        <property name="text">
+         <string>Run special for this mine! ($500)</string>
         </property>
        </widget>
       </item>
@@ -1523,7 +1545,7 @@
     <property name="geometry">
      <rect>
       <x>580</x>
-      <y>660</y>
+      <y>680</y>
       <width>121</width>
       <height>41</height>
      </rect>
@@ -1536,7 +1558,7 @@
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>660</y>
+      <y>680</y>
       <width>121</width>
       <height>41</height>
      </rect>

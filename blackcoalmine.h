@@ -7,6 +7,7 @@ class BlackCoalMine: public Mine
 {
 public:
     BlackCoalMine();
+    void runSpecial(Game *g);
 };
 
 #endif // BLACKCOALMINE_H

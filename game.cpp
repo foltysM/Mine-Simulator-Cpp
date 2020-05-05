@@ -478,4 +478,19 @@ bool Game::getComputerSpecial()
     return computerSpecial;
 }
 
+void Game::deleteHat()
+{
+    delete hat;
+}
+
+void Game::deleteSuit()
+{
+    delete suit;
+}
+
+void Game::deleteLamp()
+{
+    delete hat;
+}
+
 

@@ -7,6 +7,7 @@ class BrownCoalMine: public Mine
 {
 public:
     BrownCoalMine();
+    void runSpecial(Game *g);
 };
 
 #endif // BROWNCOALMINE_H

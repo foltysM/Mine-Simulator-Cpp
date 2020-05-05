@@ -92,6 +92,9 @@ public:
     void deleteMinersList();
     void deleteMines();
     void addMoney(double m);
+    void deleteHat();
+    void deleteSuit();
+    void deleteLamp();
 };
 
 #endif // GAME_H
