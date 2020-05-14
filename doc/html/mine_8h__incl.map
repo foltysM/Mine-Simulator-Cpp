@@ -1,0 +1,11 @@
+<map id="mine.h" name="mine.h">
+<area shape="rect" id="node1" title=" " alt="" coords="331,5,392,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="181,80,237,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="139,304,211,331"/>
+<area shape="rect" id="node4" href="$miner_8h.html" title=" " alt="" coords="262,80,327,107"/>
+<area shape="rect" id="node5" title=" " alt="" coords="245,229,353,256"/>
+<area shape="rect" id="node6" href="$minerlamp_8h.html" title=" " alt="" coords="248,155,341,181"/>
+<area shape="rect" id="node8" href="$minerhat_8h.html" title=" " alt="" coords="29,155,112,181"/>
+<area shape="rect" id="node9" href="$minersuit_8h.html" title=" " alt="" coords="137,155,223,181"/>
+<area shape="rect" id="node7" href="$mineritem_8h.html" title=" " alt="" coords="129,229,220,256"/>
+</map>

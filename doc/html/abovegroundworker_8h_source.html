@@ -1,0 +1,119 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PJC_gierek: Plik źródłowy abovegroundworker.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="kam.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PJC_gierek
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">abovegroundworker.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="abovegroundworker_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ABOVEGROUNDWORKER_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ABOVEGROUNDWORKER_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="chair_8h.html">chair.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="computer_8h.html">computer.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="desk_8h.html">desk.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_above_ground_worker.html">    9</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_above_ground_worker.html">AboveGroundWorker</a></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::string name;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_chair.html">Chair</a> *chair;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_computer.html">Computer</a> *computer;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_desk.html">Desk</a> *desk;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">double</span> salary;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_above_ground_worker.html#a21d85916de711b8460274b07d389144a">AboveGroundWorker</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_above_ground_worker.html#ae41870a259f8dfb99f036689f9bae43c">setDesk</a>(<a class="code" href="class_desk.html">Desk</a> *d);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_above_ground_worker.html#a86703f4e759423994e5cc6081730733b">setComputer</a>(<a class="code" href="class_computer.html">Computer</a> *c);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_above_ground_worker.html#aa5f2a23d6be7e193610a743e44ed2788">setChair</a>(<a class="code" href="class_chair.html">Chair</a> *c);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_chair.html">Chair</a>* <a class="code" href="class_above_ground_worker.html#a09b4cb29f8ee4952083da43a779b53ec">getChair</a>();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_computer.html">Computer</a>* <a class="code" href="class_above_ground_worker.html#a7441d531f9b4c1d9fea851efcb7f2bb9">getComputer</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_desk.html">Desk</a>* <a class="code" href="class_above_ground_worker.html#a474290151853ba37c389027c8d60e9f6">getDesk</a>();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif // ABOVEGROUNDWORKER_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_above_ground_worker_html"><div class="ttname"><a href="class_above_ground_worker.html">AboveGroundWorker</a></div><div class="ttdef"><b>Definition:</b> abovegroundworker.h:10</div></div>
+<div class="ttc" id="aclass_above_ground_worker_html_a474290151853ba37c389027c8d60e9f6"><div class="ttname"><a href="class_above_ground_worker.html#a474290151853ba37c389027c8d60e9f6">AboveGroundWorker::getDesk</a></div><div class="ttdeci">Desk * getDesk()</div><div class="ttdef"><b>Definition:</b> abovegroundworker.cpp:38</div></div>
+<div class="ttc" id="aclass_above_ground_worker_html_a7441d531f9b4c1d9fea851efcb7f2bb9"><div class="ttname"><a href="class_above_ground_worker.html#a7441d531f9b4c1d9fea851efcb7f2bb9">AboveGroundWorker::getComputer</a></div><div class="ttdeci">Computer * getComputer()</div><div class="ttdef"><b>Definition:</b> abovegroundworker.cpp:33</div></div>
+<div class="ttc" id="aclass_above_ground_worker_html_a21d85916de711b8460274b07d389144a"><div class="ttname"><a href="class_above_ground_worker.html#a21d85916de711b8460274b07d389144a">AboveGroundWorker::AboveGroundWorker</a></div><div class="ttdeci">AboveGroundWorker()</div><div class="ttdef"><b>Definition:</b> abovegroundworker.cpp:3</div></div>
+<div class="ttc" id="aclass_above_ground_worker_html_a86703f4e759423994e5cc6081730733b"><div class="ttname"><a href="class_above_ground_worker.html#a86703f4e759423994e5cc6081730733b">AboveGroundWorker::setComputer</a></div><div class="ttdeci">void setComputer(Computer *c)</div><div class="ttdef"><b>Definition:</b> abovegroundworker.cpp:18</div></div>
+<div class="ttc" id="aclass_above_ground_worker_html_ae41870a259f8dfb99f036689f9bae43c"><div class="ttname"><a href="class_above_ground_worker.html#ae41870a259f8dfb99f036689f9bae43c">AboveGroundWorker::setDesk</a></div><div class="ttdeci">void setDesk(Desk *d)</div><div class="ttdef"><b>Definition:</b> abovegroundworker.cpp:13</div></div>
+<div class="ttc" id="achair_8h_html"><div class="ttname"><a href="chair_8h.html">chair.h</a></div></div>
+<div class="ttc" id="aclass_above_ground_worker_html_aa5f2a23d6be7e193610a743e44ed2788"><div class="ttname"><a href="class_above_ground_worker.html#aa5f2a23d6be7e193610a743e44ed2788">AboveGroundWorker::setChair</a></div><div class="ttdeci">void setChair(Chair *c)</div><div class="ttdef"><b>Definition:</b> abovegroundworker.cpp:23</div></div>
+<div class="ttc" id="aclass_chair_html"><div class="ttname"><a href="class_chair.html">Chair</a></div><div class="ttdef"><b>Definition:</b> chair.h:8</div></div>
+<div class="ttc" id="adesk_8h_html"><div class="ttname"><a href="desk_8h.html">desk.h</a></div></div>
+<div class="ttc" id="acomputer_8h_html"><div class="ttname"><a href="computer_8h.html">computer.h</a></div></div>
+<div class="ttc" id="aclass_above_ground_worker_html_a09b4cb29f8ee4952083da43a779b53ec"><div class="ttname"><a href="class_above_ground_worker.html#a09b4cb29f8ee4952083da43a779b53ec">AboveGroundWorker::getChair</a></div><div class="ttdeci">Chair * getChair()</div><div class="ttdef"><b>Definition:</b> abovegroundworker.cpp:28</div></div>
+<div class="ttc" id="aclass_desk_html"><div class="ttname"><a href="class_desk.html">Desk</a></div><div class="ttdef"><b>Definition:</b> desk.h:8</div></div>
+<div class="ttc" id="aclass_computer_html"><div class="ttname"><a href="class_computer.html">Computer</a></div><div class="ttdef"><b>Definition:</b> computer.h:8</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

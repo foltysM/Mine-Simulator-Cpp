@@ -1,0 +1,12 @@
+<map id="blackcoalmine.h" name="blackcoalmine.h">
+<area shape="rect" id="node1" title=" " alt="" coords="303,5,419,32"/>
+<area shape="rect" id="node2" href="$mine_8h.html" title=" " alt="" coords="331,80,392,107"/>
+<area shape="rect" id="node3" title=" " alt="" coords="181,155,237,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="139,379,211,405"/>
+<area shape="rect" id="node5" href="$miner_8h.html" title=" " alt="" coords="262,155,327,181"/>
+<area shape="rect" id="node6" title=" " alt="" coords="245,304,353,331"/>
+<area shape="rect" id="node7" href="$minerlamp_8h.html" title=" " alt="" coords="248,229,341,256"/>
+<area shape="rect" id="node9" href="$minerhat_8h.html" title=" " alt="" coords="29,229,112,256"/>
+<area shape="rect" id="node10" href="$minersuit_8h.html" title=" " alt="" coords="137,229,223,256"/>
+<area shape="rect" id="node8" href="$mineritem_8h.html" title=" " alt="" coords="129,304,220,331"/>
+</map>

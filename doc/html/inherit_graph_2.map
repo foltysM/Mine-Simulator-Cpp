@@ -1,0 +1,6 @@
+<map id="Graficzna hierarchia klas" name="Graficzna hierarchia klas">
+<area shape="rect" id="node1" href="$class_above_ground_worker_item.html" title=" " alt="" coords="5,56,172,83"/>
+<area shape="rect" id="node2" href="$class_chair.html" title=" " alt="" coords="233,5,285,32"/>
+<area shape="rect" id="node3" href="$class_computer.html" title=" " alt="" coords="220,56,299,83"/>
+<area shape="rect" id="node4" href="$class_desk.html" title=" " alt="" coords="233,107,285,133"/>
+</map>

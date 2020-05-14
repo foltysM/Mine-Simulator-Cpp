@@ -1,0 +1,26 @@
+<map id="game.h" name="game.h">
+<area shape="rect" id="node1" title=" " alt="" coords="482,5,547,32"/>
+<area shape="rect" id="node2" title=" " alt="" coords="36,229,92,256"/>
+<area shape="rect" id="node3" href="$miner_8h.html" title=" " alt="" coords="148,229,214,256"/>
+<area shape="rect" id="node10" href="$storage_8h.html" title=" " alt="" coords="492,155,568,181"/>
+<area shape="rect" id="node11" href="$seasondependent_8h.html" title=" " alt="" coords="562,304,696,331"/>
+<area shape="rect" id="node12" href="$notseasondependentcompany_8h.html" title=" " alt="" coords="943,379,1150,405"/>
+<area shape="rect" id="node13" href="$blackcoalmine_8h.html" title=" " alt="" coords="408,80,524,107"/>
+<area shape="rect" id="node15" href="$browncoalmine_8h.html" title=" " alt="" coords="120,80,239,107"/>
+<area shape="rect" id="node16" href="$mixedcoalmine_8h.html" title=" " alt="" coords="264,80,384,107"/>
+<area shape="rect" id="node17" href="$officeworker_8h.html" title=" " alt="" coords="773,80,874,107"/>
+<area shape="rect" id="node24" href="$accountant_8h.html" title=" " alt="" coords="651,80,748,107"/>
+<area shape="rect" id="node4" title=" " alt="" coords="323,379,431,405"/>
+<area shape="rect" id="node5" title=" " alt="" coords="489,453,561,480"/>
+<area shape="rect" id="node6" href="$minerlamp_8h.html" title=" " alt="" coords="134,304,228,331"/>
+<area shape="rect" id="node8" href="$minerhat_8h.html" title=" " alt="" coords="252,304,334,331"/>
+<area shape="rect" id="node9" href="$minersuit_8h.html" title=" " alt="" coords="23,304,110,331"/>
+<area shape="rect" id="node7" href="$mineritem_8h.html" title=" " alt="" coords="172,379,262,405"/>
+<area shape="rect" id="node14" href="$mine_8h.html" title=" " alt="" coords="293,155,354,181"/>
+<area shape="rect" id="node18" href="$abovegroundworker_8h.html" title=" " alt="" coords="736,155,879,181"/>
+<area shape="rect" id="node19" href="$chair_8h.html" title=" " alt="" coords="848,229,909,256"/>
+<area shape="rect" id="node22" href="$computer_8h.html" title=" " alt="" coords="651,229,738,256"/>
+<area shape="rect" id="node23" href="$desk_8h.html" title=" " alt="" coords="762,229,824,256"/>
+<area shape="rect" id="node20" href="$abovegroundworkeritem_8h.html" title=" " alt="" coords="721,304,889,331"/>
+<area shape="rect" id="node21" title=" " alt="" coords="773,379,837,405"/>
+</map>

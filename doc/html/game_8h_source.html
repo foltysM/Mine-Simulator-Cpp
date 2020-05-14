@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PJC_gierek: Plik źródłowy game.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="kam.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PJC_gierek
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">game.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="game_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef GAME_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define GAME_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="miner_8h.html">miner.h</a>&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="storage_8h.html">storage.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="seasondependent_8h.html">seasondependent.h</a>&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="notseasondependentcompany_8h.html">notseasondependentcompany.h</a>&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="blackcoalmine_8h.html">blackcoalmine.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="browncoalmine_8h.html">browncoalmine.h</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mixedcoalmine_8h.html">mixedcoalmine.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="officeworker_8h.html">officeworker.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="accountant_8h.html">accountant.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_game.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_game.html">Game</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector &lt;Miner*&gt; minerList;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">int</span> months;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string season;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_miner_hat.html">MinerHat</a> *hat;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_miner_suit.html">MinerSuit</a> *suit;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_miner_lamp.html">MinerLamp</a> *lamp;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">double</span> money;   </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_season_dependent.html">SeasonDependent</a> *heatingPlant;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_season_dependent.html">SeasonDependent</a> *powerStation;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_not_season_dependent_company.html">NotSeasonDependentCompany</a> *coalStorageSite;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_not_season_dependent_company.html">NotSeasonDependentCompany</a> *ironworks;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">int</span> miners_overall;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> officeWorkersAmount;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">double</span> lastMonthRevenues;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> accountantsAmount;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::vector &lt;Accountant*&gt; vectorAccountants;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::vector &lt;OfficeWorker*&gt; vectorOfficeWorkers;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_storage.html">Storage</a> storage;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_black_coal_mine.html">BlackCoalMine</a> *blackCoalMine;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_brown_coal_mine.html">BrownCoalMine</a> *brownCoalMine;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_mixed_coal_mine.html">MixedCoalMine</a> *mixedCoalMine;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> computerSpecial = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">bool</span> chairSpecial = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">public</span>:   </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a74854684657308d03d0dd95f46eb7965">setComputerSpecial</a>(<span class="keywordtype">bool</span> s);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#aaa6369e05ba8fb803f1751e5906603f3">setChairSpecial</a>(<span class="keywordtype">bool</span> s);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_game.html#a69c736fdba12ef328032ed0994a28dda">getComputerSpecial</a>();</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_game.html#a6b2054b587a672a944d204840939d4e7">getChairSpecial</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a668fa2723f7e99ac87b6c784a53d32ea">initMinerItems</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <a class="code" href="class_miner.html">Miner</a>* <a class="code" href="class_game.html#a40af94458c89b8a92d269695d92db06a">getOneMinerFromList</a>(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#ab40bd638d1acac81abcb5d8e278a4337">initMines</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_game.html#a7d541c2b7cfefd21bdc1fd0b052e1206">getLastMonthRevenues</a>();</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a230fcaafe72077e85b1ea025aba16528">setMonths</a>(<span class="keywordtype">int</span> m);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_game.html#abbba9618f614e7b3d2b3137669f1bb63">getMonths</a>();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_miner_hat.html">MinerHat</a>* <a class="code" href="class_game.html#af51be821e9c203b05772b5b0d31e7622">generateHat</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_miner_suit.html">MinerSuit</a>* <a class="code" href="class_game.html#aeab2528b98cb0f883d315cbb936eb24b">generateSuit</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="class_miner_lamp.html">MinerLamp</a>* <a class="code" href="class_game.html#a682f6a5cbddbe1fe6fd5367f5bbb71b1">generateLamp</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    std::string <a class="code" href="class_game.html#a7565e9591edac1bf1cb2b7d565849287">getSeason</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a567ff7db018d7766ecdf6ea0fd07d6df">setSeason</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <a class="code" href="class_not_season_dependent_company.html">NotSeasonDependentCompany</a>* <a class="code" href="class_game.html#abf1f3272520399afd57d524ce78a030b">getIronWorks</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_not_season_dependent_company.html">NotSeasonDependentCompany</a>* <a class="code" href="class_game.html#a6d516a122edfbb38027087b2079465a2">getCoalStorageSite</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_season_dependent.html">SeasonDependent</a>* <a class="code" href="class_game.html#a6277a3176c184ec03e2fc3effa16211e">getPowerStation</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_season_dependent.html">SeasonDependent</a>* <a class="code" href="class_game.html#a8798b565a58edf15fab3e0b189069d00">getHeatingPlant</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#afdc5c8341f576a26b2207635e933cca5">eraseMiner</a>(<span class="keywordtype">int</span> w);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#af37b1fe83ce22d8a5cc812cfd2eb031c">generateMinerList</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::vector&lt;Miner*&gt; <a class="code" href="class_game.html#a712b9894d63c105bd631acd1e57d49b9">getMinersList</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a6c7c024c85b24dda8ca5d3effcd741e9">setMoney</a>(<span class="keywordtype">double</span> m);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_game.html#a508fbc9eed6aa06c4b1b06c14864f715">getMoney</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="class_miner_hat.html">MinerHat</a>* <a class="code" href="class_game.html#a80ad699c198323b729749971e642410f">getHat</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="class_miner_suit.html">MinerSuit</a>* <a class="code" href="class_game.html#abba9e1b1bd90f862653c4449f7f341b2">getSuit</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="class_miner_lamp.html">MinerLamp</a>* <a class="code" href="class_game.html#a62255ebe1282e64127093fea6ff2dafa">getLamp</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#aba46854d9ea4c7d9301af07f311b3b6b">setHat</a>(<a class="code" href="class_miner_hat.html">MinerHat</a> *h);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a972c5c04dd6a7069968ed7b59548614d">setSuit</a>(<a class="code" href="class_miner_suit.html">MinerSuit</a> *s);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#ac38f9979f2fc9afe0c9eefce0af60dba">setLamp</a>(<a class="code" href="class_miner_lamp.html">MinerLamp</a> *l);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a560ec71a0968a0cbec776312573e700a">subMoney</a>(<span class="keywordtype">double</span> m);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="class_storage.html">Storage</a>* <a class="code" href="class_game.html#a9e2ab914b207ec6e890808f738d73a66">getStorage</a>();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a5fddaa9537542458200a86f01e7cfb6b">refreshOfficeWorkersAmount</a>();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#ae08f6d63d0712d638572cd1fd810dfe7">refreshAccountantsAmount</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_game.html#ace3f9d244375e34ab05eeba0798fa70d">randomStrike</a>();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_game.html#a2c4cde598598f1967caa63537c17a307">moneyForChildren</a>();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_game.html#afe723777279c97cac42a2e26ea6c8232">getOfficeWorkersAmount</a>();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#ade3c47f09606d93147cbb670fd646b37">setLastMonthRevenues</a>(<span class="keywordtype">double</span> r);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_game.html#a06a043eee8b29bde1941b2b84785c40b">itemsReduction</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="class_game.html#a400455c29aab8437575433f9bf2eb4fc">getAccStorageReduction</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a220e8eda5974edefef81b883bbcdf720">createAcc</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    std::vector &lt;Accountant*&gt; <a class="code" href="class_game.html#afd6d1a6ddae712d1fcbad24e47a20409">getAccountantsVector</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    std::vector &lt;OfficeWorker*&gt; <a class="code" href="class_game.html#a6f089967b26cbb5787accc1c6a56ac08">getOfficeWorkersVector</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="class_office_worker.html">OfficeWorker</a>* <a class="code" href="class_game.html#adfe04d149c8249c05f525a086a318021">getOneOfficeWorker</a>(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <a class="code" href="class_accountant.html">Accountant</a>* <a class="code" href="class_game.html#a360a02b58e57d8edc31a6f530232ed29">getOneAccountant</a>(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <a class="code" href="class_black_coal_mine.html">BlackCoalMine</a>* <a class="code" href="class_game.html#ae846c1495dfceb7371345d98b8db569d">getBlackCoalMine</a>();</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <a class="code" href="class_brown_coal_mine.html">BrownCoalMine</a>* <a class="code" href="class_game.html#a1d0c1b3fc82c8c0766a6b8f82f942f9a">getBrownCoalMine</a>();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <a class="code" href="class_mixed_coal_mine.html">MixedCoalMine</a>* <a class="code" href="class_game.html#af9c0e93bca9f5d58bd38f9e2eafc463d">getMixedCoalMine</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a510f02c1c9facdd181334b611f0bbb79">deleteMinersList</a>();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a6ddf6b00c46266d4e68899f246b05615">deleteMines</a>();</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#ac2c259dab8899b9f9e33d47dc3979ee2">addMoney</a>(<span class="keywordtype">double</span> m);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a3e656de3b2a9fcdd55f75819a05529ae">deleteHat</a>();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#aeff6c548c26f5d03b0cb57501afa5042">deleteSuit</a>();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_game.html#a157676d86085d1e6b5fb458cfd22ad85">deleteLamp</a>();</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor">#endif // GAME_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_season_dependent_html"><div class="ttname"><a href="class_season_dependent.html">SeasonDependent</a></div><div class="ttdef"><b>Definition:</b> seasondependent.h:9</div></div>
+<div class="ttc" id="aclass_office_worker_html"><div class="ttname"><a href="class_office_worker.html">OfficeWorker</a></div><div class="ttdef"><b>Definition:</b> officeworker.h:7</div></div>
+<div class="ttc" id="aclass_game_html_a560ec71a0968a0cbec776312573e700a"><div class="ttname"><a href="class_game.html#a560ec71a0968a0cbec776312573e700a">Game::subMoney</a></div><div class="ttdeci">void subMoney(double m)</div><div class="ttdef"><b>Definition:</b> game.cpp:174</div></div>
+<div class="ttc" id="aclass_miner_suit_html"><div class="ttname"><a href="class_miner_suit.html">MinerSuit</a></div><div class="ttdef"><b>Definition:</b> minersuit.h:8</div></div>
+<div class="ttc" id="aseasondependent_8h_html"><div class="ttname"><a href="seasondependent_8h.html">seasondependent.h</a></div></div>
+<div class="ttc" id="aclass_game_html_a74854684657308d03d0dd95f46eb7965"><div class="ttname"><a href="class_game.html#a74854684657308d03d0dd95f46eb7965">Game::setComputerSpecial</a></div><div class="ttdeci">void setComputerSpecial(bool s)</div><div class="ttdoc">Metoda ustawiająca wartość computerSpecial, która określa czy special powinien się wykonać czy nie.</div><div class="ttdef"><b>Definition:</b> game.cpp:466</div></div>
+<div class="ttc" id="aclass_game_html_ab40bd638d1acac81abcb5d8e278a4337"><div class="ttname"><a href="class_game.html#ab40bd638d1acac81abcb5d8e278a4337">Game::initMines</a></div><div class="ttdeci">void initMines()</div><div class="ttdef"><b>Definition:</b> game.cpp:442</div></div>
+<div class="ttc" id="aclass_game_html_a508fbc9eed6aa06c4b1b06c14864f715"><div class="ttname"><a href="class_game.html#a508fbc9eed6aa06c4b1b06c14864f715">Game::getMoney</a></div><div class="ttdeci">double getMoney()</div><div class="ttdef"><b>Definition:</b> game.cpp:139</div></div>
+<div class="ttc" id="aclass_game_html_abf1f3272520399afd57d524ce78a030b"><div class="ttname"><a href="class_game.html#abf1f3272520399afd57d524ce78a030b">Game::getIronWorks</a></div><div class="ttdeci">NotSeasonDependentCompany * getIronWorks()</div><div class="ttdef"><b>Definition:</b> game.cpp:81</div></div>
+<div class="ttc" id="aclass_game_html_afd6d1a6ddae712d1fcbad24e47a20409"><div class="ttname"><a href="class_game.html#afd6d1a6ddae712d1fcbad24e47a20409">Game::getAccountantsVector</a></div><div class="ttdeci">std::vector&lt; Accountant * &gt; getAccountantsVector()</div><div class="ttdef"><b>Definition:</b> game.cpp:373</div></div>
+<div class="ttc" id="aclass_game_html_a5fddaa9537542458200a86f01e7cfb6b"><div class="ttname"><a href="class_game.html#a5fddaa9537542458200a86f01e7cfb6b">Game::refreshOfficeWorkersAmount</a></div><div class="ttdeci">void refreshOfficeWorkersAmount()</div><div class="ttdef"><b>Definition:</b> game.cpp:190</div></div>
+<div class="ttc" id="aclass_game_html_af37b1fe83ce22d8a5cc812cfd2eb031c"><div class="ttname"><a href="class_game.html#af37b1fe83ce22d8a5cc812cfd2eb031c">Game::generateMinerList</a></div><div class="ttdeci">void generateMinerList()</div><div class="ttdef"><b>Definition:</b> game.cpp:100</div></div>
+<div class="ttc" id="aclass_game_html_a06a043eee8b29bde1941b2b84785c40b"><div class="ttname"><a href="class_game.html#a06a043eee8b29bde1941b2b84785c40b">Game::itemsReduction</a></div><div class="ttdeci">double itemsReduction()</div><div class="ttdef"><b>Definition:</b> game.cpp:320</div></div>
+<div class="ttc" id="aclass_game_html_a220e8eda5974edefef81b883bbcdf720"><div class="ttname"><a href="class_game.html#a220e8eda5974edefef81b883bbcdf720">Game::createAcc</a></div><div class="ttdeci">void createAcc()</div><div class="ttdef"><b>Definition:</b> game.cpp:350</div></div>
+<div class="ttc" id="aclass_game_html_a7d541c2b7cfefd21bdc1fd0b052e1206"><div class="ttname"><a href="class_game.html#a7d541c2b7cfefd21bdc1fd0b052e1206">Game::getLastMonthRevenues</a></div><div class="ttdeci">double getLastMonthRevenues()</div><div class="ttdef"><b>Definition:</b> game.cpp:314</div></div>
+<div class="ttc" id="aclass_game_html_a6b2054b587a672a944d204840939d4e7"><div class="ttname"><a href="class_game.html#a6b2054b587a672a944d204840939d4e7">Game::getChairSpecial</a></div><div class="ttdeci">bool getChairSpecial()</div><div class="ttdef"><b>Definition:</b> game.cpp:471</div></div>
+<div class="ttc" id="aclass_accountant_html"><div class="ttname"><a href="class_accountant.html">Accountant</a></div><div class="ttdef"><b>Definition:</b> accountant.h:8</div></div>
+<div class="ttc" id="aclass_game_html_a6277a3176c184ec03e2fc3effa16211e"><div class="ttname"><a href="class_game.html#a6277a3176c184ec03e2fc3effa16211e">Game::getPowerStation</a></div><div class="ttdeci">SeasonDependent * getPowerStation()</div><div class="ttdef"><b>Definition:</b> game.cpp:90</div></div>
+<div class="ttc" id="aclass_game_html_a6f089967b26cbb5787accc1c6a56ac08"><div class="ttname"><a href="class_game.html#a6f089967b26cbb5787accc1c6a56ac08">Game::getOfficeWorkersVector</a></div><div class="ttdeci">std::vector&lt; OfficeWorker * &gt; getOfficeWorkersVector()</div><div class="ttdef"><b>Definition:</b> game.cpp:378</div></div>
+<div class="ttc" id="aclass_game_html_a80ad699c198323b729749971e642410f"><div class="ttname"><a href="class_game.html#a80ad699c198323b729749971e642410f">Game::getHat</a></div><div class="ttdeci">MinerHat * getHat()</div><div class="ttdef"><b>Definition:</b> game.cpp:144</div></div>
+<div class="ttc" id="aclass_mixed_coal_mine_html"><div class="ttname"><a href="class_mixed_coal_mine.html">MixedCoalMine</a></div><div class="ttdef"><b>Definition:</b> mixedcoalmine.h:7</div></div>
+<div class="ttc" id="aclass_miner_html"><div class="ttname"><a href="class_miner.html">Miner</a></div><div class="ttdef"><b>Definition:</b> miner.h:11</div></div>
+<div class="ttc" id="aclass_game_html_afe723777279c97cac42a2e26ea6c8232"><div class="ttname"><a href="class_game.html#afe723777279c97cac42a2e26ea6c8232">Game::getOfficeWorkersAmount</a></div><div class="ttdeci">int getOfficeWorkersAmount()</div><div class="ttdef"><b>Definition:</b> game.cpp:304</div></div>
+<div class="ttc" id="aclass_game_html_a69c736fdba12ef328032ed0994a28dda"><div class="ttname"><a href="class_game.html#a69c736fdba12ef328032ed0994a28dda">Game::getComputerSpecial</a></div><div class="ttdeci">bool getComputerSpecial()</div><div class="ttdoc">Metoda pobierająca wartość computerSpecial.</div><div class="ttdef"><b>Definition:</b> game.cpp:476</div></div>
+<div class="ttc" id="aclass_game_html_ace3f9d244375e34ab05eeba0798fa70d"><div class="ttname"><a href="class_game.html#ace3f9d244375e34ab05eeba0798fa70d">Game::randomStrike</a></div><div class="ttdeci">int randomStrike()</div><div class="ttdef"><b>Definition:</b> game.cpp:226</div></div>
+<div class="ttc" id="aclass_game_html_a6ddf6b00c46266d4e68899f246b05615"><div class="ttname"><a href="class_game.html#a6ddf6b00c46266d4e68899f246b05615">Game::deleteMines</a></div><div class="ttdeci">void deleteMines()</div><div class="ttdef"><b>Definition:</b> game.cpp:416</div></div>
+<div class="ttc" id="aclass_game_html_a157676d86085d1e6b5fb458cfd22ad85"><div class="ttname"><a href="class_game.html#a157676d86085d1e6b5fb458cfd22ad85">Game::deleteLamp</a></div><div class="ttdeci">void deleteLamp()</div><div class="ttdef"><b>Definition:</b> game.cpp:491</div></div>
+<div class="ttc" id="aclass_game_html_a510f02c1c9facdd181334b611f0bbb79"><div class="ttname"><a href="class_game.html#a510f02c1c9facdd181334b611f0bbb79">Game::deleteMinersList</a></div><div class="ttdeci">void deleteMinersList()</div><div class="ttdef"><b>Definition:</b> game.cpp:408</div></div>
+<div class="ttc" id="aclass_game_html_a8798b565a58edf15fab3e0b189069d00"><div class="ttname"><a href="class_game.html#a8798b565a58edf15fab3e0b189069d00">Game::getHeatingPlant</a></div><div class="ttdeci">SeasonDependent * getHeatingPlant()</div><div class="ttdef"><b>Definition:</b> game.cpp:95</div></div>
+<div class="ttc" id="aclass_game_html_a400455c29aab8437575433f9bf2eb4fc"><div class="ttname"><a href="class_game.html#a400455c29aab8437575433f9bf2eb4fc">Game::getAccStorageReduction</a></div><div class="ttdeci">double getAccStorageReduction()</div><div class="ttdef"><b>Definition:</b> game.cpp:340</div></div>
+<div class="ttc" id="aclass_not_season_dependent_company_html"><div class="ttname"><a href="class_not_season_dependent_company.html">NotSeasonDependentCompany</a></div><div class="ttdef"><b>Definition:</b> notseasondependentcompany.h:7</div></div>
+<div class="ttc" id="aclass_game_html_a972c5c04dd6a7069968ed7b59548614d"><div class="ttname"><a href="class_game.html#a972c5c04dd6a7069968ed7b59548614d">Game::setSuit</a></div><div class="ttdeci">void setSuit(MinerSuit *s)</div><div class="ttdef"><b>Definition:</b> game.cpp:164</div></div>
+<div class="ttc" id="aclass_game_html_ad59df6562a58a614fda24622d3715b65"><div class="ttname"><a href="class_game.html#ad59df6562a58a614fda24622d3715b65">Game::Game</a></div><div class="ttdeci">Game()</div><div class="ttdef"><b>Definition:</b> game.cpp:4</div></div>
+<div class="ttc" id="aclass_game_html_a9e2ab914b207ec6e890808f738d73a66"><div class="ttname"><a href="class_game.html#a9e2ab914b207ec6e890808f738d73a66">Game::getStorage</a></div><div class="ttdeci">Storage * getStorage()</div><div class="ttdef"><b>Definition:</b> game.cpp:185</div></div>
+<div class="ttc" id="aclass_game_html_af51be821e9c203b05772b5b0d31e7622"><div class="ttname"><a href="class_game.html#af51be821e9c203b05772b5b0d31e7622">Game::generateHat</a></div><div class="ttdeci">MinerHat * generateHat()</div><div class="ttdef"><b>Definition:</b> game.cpp:30</div></div>
+<div class="ttc" id="aclass_brown_coal_mine_html"><div class="ttname"><a href="class_brown_coal_mine.html">BrownCoalMine</a></div><div class="ttdef"><b>Definition:</b> browncoalmine.h:7</div></div>
+<div class="ttc" id="aclass_game_html_afdc5c8341f576a26b2207635e933cca5"><div class="ttname"><a href="class_game.html#afdc5c8341f576a26b2207635e933cca5">Game::eraseMiner</a></div><div class="ttdeci">void eraseMiner(int w)</div><div class="ttdef"><b>Definition:</b> game.cpp:122</div></div>
+<div class="ttc" id="aclass_game_html_aeff6c548c26f5d03b0cb57501afa5042"><div class="ttname"><a href="class_game.html#aeff6c548c26f5d03b0cb57501afa5042">Game::deleteSuit</a></div><div class="ttdeci">void deleteSuit()</div><div class="ttdef"><b>Definition:</b> game.cpp:486</div></div>
+<div class="ttc" id="aclass_miner_hat_html"><div class="ttname"><a href="class_miner_hat.html">MinerHat</a></div><div class="ttdef"><b>Definition:</b> minerhat.h:8</div></div>
+<div class="ttc" id="aclass_storage_html"><div class="ttname"><a href="class_storage.html">Storage</a></div><div class="ttdef"><b>Definition:</b> storage.h:8</div></div>
+<div class="ttc" id="aclass_miner_lamp_html"><div class="ttname"><a href="class_miner_lamp.html">MinerLamp</a></div><div class="ttdef"><b>Definition:</b> minerlamp.h:8</div></div>
+<div class="ttc" id="aclass_game_html_a682f6a5cbddbe1fe6fd5367f5bbb71b1"><div class="ttname"><a href="class_game.html#a682f6a5cbddbe1fe6fd5367f5bbb71b1">Game::generateLamp</a></div><div class="ttdeci">MinerLamp * generateLamp()</div><div class="ttdef"><b>Definition:</b> game.cpp:42</div></div>
+<div class="ttc" id="aclass_game_html_a2c4cde598598f1967caa63537c17a307"><div class="ttname"><a href="class_game.html#a2c4cde598598f1967caa63537c17a307">Game::moneyForChildren</a></div><div class="ttdeci">double moneyForChildren()</div><div class="ttdef"><b>Definition:</b> game.cpp:280</div></div>
+<div class="ttc" id="aclass_game_html_aba46854d9ea4c7d9301af07f311b3b6b"><div class="ttname"><a href="class_game.html#aba46854d9ea4c7d9301af07f311b3b6b">Game::setHat</a></div><div class="ttdeci">void setHat(MinerHat *h)</div><div class="ttdef"><b>Definition:</b> game.cpp:159</div></div>
+<div class="ttc" id="aclass_game_html_a230fcaafe72077e85b1ea025aba16528"><div class="ttname"><a href="class_game.html#a230fcaafe72077e85b1ea025aba16528">Game::setMonths</a></div><div class="ttdeci">void setMonths(int m)</div><div class="ttdef"><b>Definition:</b> game.cpp:14</div></div>
+<div class="ttc" id="aminer_8h_html"><div class="ttname"><a href="miner_8h.html">miner.h</a></div></div>
+<div class="ttc" id="aclass_game_html_ade3c47f09606d93147cbb670fd646b37"><div class="ttname"><a href="class_game.html#ade3c47f09606d93147cbb670fd646b37">Game::setLastMonthRevenues</a></div><div class="ttdeci">void setLastMonthRevenues(double r)</div><div class="ttdef"><b>Definition:</b> game.cpp:309</div></div>
+<div class="ttc" id="aclass_game_html_a3e656de3b2a9fcdd55f75819a05529ae"><div class="ttname"><a href="class_game.html#a3e656de3b2a9fcdd55f75819a05529ae">Game::deleteHat</a></div><div class="ttdeci">void deleteHat()</div><div class="ttdef"><b>Definition:</b> game.cpp:481</div></div>
+<div class="ttc" id="aclass_game_html_ae846c1495dfceb7371345d98b8db569d"><div class="ttname"><a href="class_game.html#ae846c1495dfceb7371345d98b8db569d">Game::getBlackCoalMine</a></div><div class="ttdeci">BlackCoalMine * getBlackCoalMine()</div><div class="ttdef"><b>Definition:</b> game.cpp:393</div></div>
+<div class="ttc" id="aclass_game_html_a668fa2723f7e99ac87b6c784a53d32ea"><div class="ttname"><a href="class_game.html#a668fa2723f7e99ac87b6c784a53d32ea">Game::initMinerItems</a></div><div class="ttdeci">void initMinerItems()</div><div class="ttdef"><b>Definition:</b> game.cpp:435</div></div>
+<div class="ttc" id="aclass_game_html_abba9e1b1bd90f862653c4449f7f341b2"><div class="ttname"><a href="class_game.html#abba9e1b1bd90f862653c4449f7f341b2">Game::getSuit</a></div><div class="ttdeci">MinerSuit * getSuit()</div><div class="ttdef"><b>Definition:</b> game.cpp:149</div></div>
+<div class="ttc" id="aofficeworker_8h_html"><div class="ttname"><a href="officeworker_8h.html">officeworker.h</a></div></div>
+<div class="ttc" id="aclass_game_html_ac38f9979f2fc9afe0c9eefce0af60dba"><div class="ttname"><a href="class_game.html#ac38f9979f2fc9afe0c9eefce0af60dba">Game::setLamp</a></div><div class="ttdeci">void setLamp(MinerLamp *l)</div><div class="ttdef"><b>Definition:</b> game.cpp:169</div></div>
+<div class="ttc" id="aclass_game_html_a7565e9591edac1bf1cb2b7d565849287"><div class="ttname"><a href="class_game.html#a7565e9591edac1bf1cb2b7d565849287">Game::getSeason</a></div><div class="ttdeci">std::string getSeason()</div><div class="ttdef"><b>Definition:</b> game.cpp:48</div></div>
+<div class="ttc" id="aclass_game_html_ac2c259dab8899b9f9e33d47dc3979ee2"><div class="ttname"><a href="class_game.html#ac2c259dab8899b9f9e33d47dc3979ee2">Game::addMoney</a></div><div class="ttdeci">void addMoney(double m)</div><div class="ttdef"><b>Definition:</b> game.cpp:449</div></div>
+<div class="ttc" id="aclass_game_html_af9c0e93bca9f5d58bd38f9e2eafc463d"><div class="ttname"><a href="class_game.html#af9c0e93bca9f5d58bd38f9e2eafc463d">Game::getMixedCoalMine</a></div><div class="ttdeci">MixedCoalMine * getMixedCoalMine()</div><div class="ttdef"><b>Definition:</b> game.cpp:403</div></div>
+<div class="ttc" id="astorage_8h_html"><div class="ttname"><a href="storage_8h.html">storage.h</a></div></div>
+<div class="ttc" id="aclass_game_html_ae08f6d63d0712d638572cd1fd810dfe7"><div class="ttname"><a href="class_game.html#ae08f6d63d0712d638572cd1fd810dfe7">Game::refreshAccountantsAmount</a></div><div class="ttdeci">void refreshAccountantsAmount()</div><div class="ttdef"><b>Definition:</b> game.cpp:211</div></div>
+<div class="ttc" id="aclass_game_html_aaa6369e05ba8fb803f1751e5906603f3"><div class="ttname"><a href="class_game.html#aaa6369e05ba8fb803f1751e5906603f3">Game::setChairSpecial</a></div><div class="ttdeci">void setChairSpecial(bool s)</div><div class="ttdoc">Metoda ustawiająca wartość chairSpecial, która określa czy special powinien się wykonać czy nie.</div><div class="ttdef"><b>Definition:</b> game.cpp:461</div></div>
+<div class="ttc" id="aclass_black_coal_mine_html"><div class="ttname"><a href="class_black_coal_mine.html">BlackCoalMine</a></div><div class="ttdef"><b>Definition:</b> blackcoalmine.h:7</div></div>
+<div class="ttc" id="aclass_game_html_a360a02b58e57d8edc31a6f530232ed29"><div class="ttname"><a href="class_game.html#a360a02b58e57d8edc31a6f530232ed29">Game::getOneAccountant</a></div><div class="ttdeci">Accountant * getOneAccountant(int i)</div><div class="ttdef"><b>Definition:</b> game.cpp:388</div></div>
+<div class="ttc" id="aclass_game_html_a1d0c1b3fc82c8c0766a6b8f82f942f9a"><div class="ttname"><a href="class_game.html#a1d0c1b3fc82c8c0766a6b8f82f942f9a">Game::getBrownCoalMine</a></div><div class="ttdeci">BrownCoalMine * getBrownCoalMine()</div><div class="ttdef"><b>Definition:</b> game.cpp:398</div></div>
+<div class="ttc" id="amixedcoalmine_8h_html"><div class="ttname"><a href="mixedcoalmine_8h.html">mixedcoalmine.h</a></div></div>
+<div class="ttc" id="aclass_game_html_aeab2528b98cb0f883d315cbb936eb24b"><div class="ttname"><a href="class_game.html#aeab2528b98cb0f883d315cbb936eb24b">Game::generateSuit</a></div><div class="ttdeci">MinerSuit * generateSuit()</div><div class="ttdef"><b>Definition:</b> game.cpp:36</div></div>
+<div class="ttc" id="anotseasondependentcompany_8h_html"><div class="ttname"><a href="notseasondependentcompany_8h.html">notseasondependentcompany.h</a></div></div>
+<div class="ttc" id="aclass_game_html_adfe04d149c8249c05f525a086a318021"><div class="ttname"><a href="class_game.html#adfe04d149c8249c05f525a086a318021">Game::getOneOfficeWorker</a></div><div class="ttdeci">OfficeWorker * getOneOfficeWorker(int i)</div><div class="ttdef"><b>Definition:</b> game.cpp:383</div></div>
+<div class="ttc" id="abrowncoalmine_8h_html"><div class="ttname"><a href="browncoalmine_8h.html">browncoalmine.h</a></div></div>
+<div class="ttc" id="aclass_game_html_a62255ebe1282e64127093fea6ff2dafa"><div class="ttname"><a href="class_game.html#a62255ebe1282e64127093fea6ff2dafa">Game::getLamp</a></div><div class="ttdeci">MinerLamp * getLamp()</div><div class="ttdef"><b>Definition:</b> game.cpp:154</div></div>
+<div class="ttc" id="aclass_game_html_a6d516a122edfbb38027087b2079465a2"><div class="ttname"><a href="class_game.html#a6d516a122edfbb38027087b2079465a2">Game::getCoalStorageSite</a></div><div class="ttdeci">NotSeasonDependentCompany * getCoalStorageSite()</div><div class="ttdef"><b>Definition:</b> game.cpp:85</div></div>
+<div class="ttc" id="aclass_game_html_a40af94458c89b8a92d269695d92db06a"><div class="ttname"><a href="class_game.html#a40af94458c89b8a92d269695d92db06a">Game::getOneMinerFromList</a></div><div class="ttdeci">Miner * getOneMinerFromList(int i)</div><div class="ttdef"><b>Definition:</b> game.cpp:117</div></div>
+<div class="ttc" id="ablackcoalmine_8h_html"><div class="ttname"><a href="blackcoalmine_8h.html">blackcoalmine.h</a></div></div>
+<div class="ttc" id="aaccountant_8h_html"><div class="ttname"><a href="accountant_8h.html">accountant.h</a></div></div>
+<div class="ttc" id="aclass_game_html_a567ff7db018d7766ecdf6ea0fd07d6df"><div class="ttname"><a href="class_game.html#a567ff7db018d7766ecdf6ea0fd07d6df">Game::setSeason</a></div><div class="ttdeci">void setSeason()</div><div class="ttdef"><b>Definition:</b> game.cpp:53</div></div>
+<div class="ttc" id="aclass_game_html_a712b9894d63c105bd631acd1e57d49b9"><div class="ttname"><a href="class_game.html#a712b9894d63c105bd631acd1e57d49b9">Game::getMinersList</a></div><div class="ttdeci">std::vector&lt; Miner * &gt; getMinersList()</div><div class="ttdef"><b>Definition:</b> game.cpp:112</div></div>
+<div class="ttc" id="aclass_game_html_abbba9618f614e7b3d2b3137669f1bb63"><div class="ttname"><a href="class_game.html#abbba9618f614e7b3d2b3137669f1bb63">Game::getMonths</a></div><div class="ttdeci">int getMonths()</div><div class="ttdef"><b>Definition:</b> game.cpp:25</div></div>
+<div class="ttc" id="aclass_game_html_a6c7c024c85b24dda8ca5d3effcd741e9"><div class="ttname"><a href="class_game.html#a6c7c024c85b24dda8ca5d3effcd741e9">Game::setMoney</a></div><div class="ttdeci">void setMoney(double m)</div><div class="ttdef"><b>Definition:</b> game.cpp:134</div></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdef"><b>Definition:</b> game.h:16</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>

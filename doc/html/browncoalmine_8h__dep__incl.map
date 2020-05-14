@@ -1,0 +1,20 @@
+<map id="browncoalmine.h" name="browncoalmine.h">
+<area shape="rect" id="node1" title=" " alt="" coords="818,5,937,32"/>
+<area shape="rect" id="node2" href="$game_8h.html" title=" " alt="" coords="670,80,735,107"/>
+<area shape="rect" id="node9" href="$browncoalmine_8cpp.html" title=" " alt="" coords="1267,155,1400,181"/>
+<area shape="rect" id="node3" href="$abovegroundui_8h.html" title=" " alt="" coords="925,155,1040,181"/>
+<area shape="rect" id="node5" href="$mainwindow_8h.html" title=" " alt="" coords="771,229,874,256"/>
+<area shape="rect" id="node6" href="$main_8cpp.html" title=" " alt="" coords="1048,304,1123,331"/>
+<area shape="rect" id="node8" href="$blackcoalmine_8cpp.html" title=" " alt="" coords="185,155,316,181"/>
+<area shape="rect" id="node10" href="$chair_8cpp.html" title=" " alt="" coords="340,155,415,181"/>
+<area shape="rect" id="node11" href="$computer_8cpp.html" title=" " alt="" coords="439,155,540,181"/>
+<area shape="rect" id="node12" href="$desk_8cpp.html" title=" " alt="" coords="564,155,639,181"/>
+<area shape="rect" id="node13" href="$game_8cpp.html" title=" " alt="" coords="663,155,742,181"/>
+<area shape="rect" id="node14" href="$newmonthdialog_8h.html" title=" " alt="" coords="1065,155,1191,181"/>
+<area shape="rect" id="node16" href="$newminerui_8h.html" title=" " alt="" coords="12,155,111,181"/>
+<area shape="rect" id="node18" href="$mixedcoalmine_8cpp.html" title=" " alt="" coords="766,155,901,181"/>
+<area shape="rect" id="node4" href="$abovegroundui_8cpp.html" title=" " alt="" coords="898,229,1027,256"/>
+<area shape="rect" id="node7" href="$mainwindow_8cpp.html" title=" " alt="" coords="764,304,881,331"/>
+<area shape="rect" id="node15" href="$newmonthdialog_8cpp.html" title=" " alt="" coords="1051,229,1191,256"/>
+<area shape="rect" id="node17" href="$newminerui_8cpp.html" title=" " alt="" coords="5,229,117,256"/>
+</map>

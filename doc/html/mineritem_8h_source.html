@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.18"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>PJC_gierek: Plik źródłowy mineritem.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="kam.jpg"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">PJC_gierek
+   &#160;<span id="projectnumber">1.0.0</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.18 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">mineritem.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="mineritem_8h.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MINERITEM_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MINERITEM_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="class_miner_item.html">    6</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_miner_item.html">MinerItem</a></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_miner_item.html#ac70b86fce93ac98a931202846b9033aa">    9</a></span>&#160;    std::string <a class="code" href="class_miner_item.html#ac70b86fce93ac98a931202846b9033aa">name</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_miner_item.html#afaec9cc0375e0c04c824e510a85f2f8a">   10</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_miner_item.html#afaec9cc0375e0c04c824e510a85f2f8a">price</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_miner_item.html#a9040785bf6829aad00101b37bf6a385a">MinerItem</a>();</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_miner_item.html#aa3e3b66b67c116f6f0f4d00591d858c5">   13</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_miner_item.html#aa3e3b66b67c116f6f0f4d00591d858c5">listItems</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    std::string <a class="code" href="class_miner_item.html#a3b8d277d20e608980b88fb74d6badcc6">getName</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_miner_item.html#ace26912cc8eca40fd6275dbf74096418">getPrice</a>();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_miner_item.html#af143264fb508b00b866ddb48410e7ae0">setName</a>(std::string n);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#endif // MINERITEM_H</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_miner_item_html_afaec9cc0375e0c04c824e510a85f2f8a"><div class="ttname"><a href="class_miner_item.html#afaec9cc0375e0c04c824e510a85f2f8a">MinerItem::price</a></div><div class="ttdeci">int price</div><div class="ttdef"><b>Definition:</b> mineritem.h:10</div></div>
+<div class="ttc" id="aclass_miner_item_html_a9040785bf6829aad00101b37bf6a385a"><div class="ttname"><a href="class_miner_item.html#a9040785bf6829aad00101b37bf6a385a">MinerItem::MinerItem</a></div><div class="ttdeci">MinerItem()</div><div class="ttdef"><b>Definition:</b> mineritem.cpp:3</div></div>
+<div class="ttc" id="aclass_miner_item_html_af143264fb508b00b866ddb48410e7ae0"><div class="ttname"><a href="class_miner_item.html#af143264fb508b00b866ddb48410e7ae0">MinerItem::setName</a></div><div class="ttdeci">void setName(std::string n)</div><div class="ttdef"><b>Definition:</b> mineritem.cpp:18</div></div>
+<div class="ttc" id="aclass_miner_item_html"><div class="ttname"><a href="class_miner_item.html">MinerItem</a></div><div class="ttdef"><b>Definition:</b> mineritem.h:7</div></div>
+<div class="ttc" id="aclass_miner_item_html_ace26912cc8eca40fd6275dbf74096418"><div class="ttname"><a href="class_miner_item.html#ace26912cc8eca40fd6275dbf74096418">MinerItem::getPrice</a></div><div class="ttdeci">int getPrice()</div><div class="ttdef"><b>Definition:</b> mineritem.cpp:13</div></div>
+<div class="ttc" id="aclass_miner_item_html_ac70b86fce93ac98a931202846b9033aa"><div class="ttname"><a href="class_miner_item.html#ac70b86fce93ac98a931202846b9033aa">MinerItem::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> mineritem.h:9</div></div>
+<div class="ttc" id="aclass_miner_item_html_a3b8d277d20e608980b88fb74d6badcc6"><div class="ttname"><a href="class_miner_item.html#a3b8d277d20e608980b88fb74d6badcc6">MinerItem::getName</a></div><div class="ttdeci">std::string getName()</div><div class="ttdef"><b>Definition:</b> mineritem.cpp:8</div></div>
+<div class="ttc" id="aclass_miner_item_html_aa3e3b66b67c116f6f0f4d00591d858c5"><div class="ttname"><a href="class_miner_item.html#aa3e3b66b67c116f6f0f4d00591d858c5">MinerItem::listItems</a></div><div class="ttdeci">void listItems()</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano przez &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.18
+</small></address>
+</body>
+</html>
