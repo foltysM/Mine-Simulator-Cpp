@@ -57,178 +57,250 @@ public:
      */
     bool getComputerSpecial();
     /**
-     * @brief getChairSpecial
-     * @return
+     * @brief Metoda pobierająca wartość chairSpecial
+     * @return Wartość chairSpecial
      */
     bool getChairSpecial();
     /**
-     * @brief initMinerItems
+     * @brief Metoda tworząca nowe obiekty podklas MinerItem, które będą potem możliwe do kupienia
      */
     void initMinerItems();
     /**
-     * @brief getOneMinerFromList
-     * @param i
-     * @return
+     * @brief Metoda zwracająca jednego górnika z listy górników
+     * @param i Numer górnika na liście górników
+     * @return Obiekt górnika o wybranym numerze
      */
     Miner* getOneMinerFromList(int i);
     /**
-     * @brief initMines
+     * @brief Metoda inicjująca obiekty trzech kopalń wykorzystywanych w grze
      */
     void initMines();
     /**
-     * @brief getLastMonthRevenues
-     * @return
+     * @brief Metoda zwracająca przychody z zeszłego miesiąca
+     * @return Wartość przychodów w zeszłym miesiącu
      */
     double getLastMonthRevenues();
     /**
-     * @brief setMonths
-     * @param m
+     * @brief Metoda ustawiająca wartość miesiąca
+     * @param m Numer miesiąca gry
      */
     void setMonths(int m);
     /**
-     * @brief getMonths
-     * @return
+     * @brief Metoda zwracająca numer miesiąca gry
+     * @return Numer miesiąca gry
      */
     int getMonths();
     /**
-     * @brief generateHat
-     * @return
+     * @brief Metoda tworząca nowy obiekt klasy MinerHat
+     * @return Wskaźnik na stworzony obiekt
      */
     MinerHat* generateHat();
     /**
-     * @brief generateSuit
-     * @return
+     * @brief Metoda tworząca nowy obiekt klasy MinerSuit
+     * @return Wskaźnik na stworzony obiekt
      */
     MinerSuit* generateSuit();
     /**
-     * @brief generateLamp
-     * @return
+     * @brief Metoda tworząca nowy obiekt klasy MinerLamp
+     * @return Wskaźnik na stworzony obiekt
      */
     MinerLamp* generateLamp();
     /**
-     * @brief getSeason
-     * @return
+     * @brief Metoda zwracająca porę roku
+     * @return Nazwę pory roku
      */
     std::string getSeason();
     /**
-     * @brief setSeason
+     * @brief Metoda ustawiająca nazwę pory roku na podstawie miesiąca gry
      */
     void setSeason();
     /**
-     * @brief getIronWorks
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt huty
+     * @return Wskaźnik na obiekt huty
      */
     NotSeasonDependentCompany* getIronWorks();
     /**
-     * @brief getCoalStorageSite
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt składowiska węgla
+     * @return Wskaźnik na obiekt składowiska
      */
     NotSeasonDependentCompany* getCoalStorageSite();
     /**
-     * @brief getPowerStation
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt elektrowni
+     * @return Wskaźnik na obiekt elektrowni
      */
     SeasonDependent* getPowerStation();
     /**
-     * @brief getHeatingPlant
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt ciepłowni
+     * @return Wskaźnik na obiekt ciepłowni
      */
     SeasonDependent* getHeatingPlant();
     /**
-     * @brief eraseMiner
-     * @param w
+     * @brief Metoda usuwająca obiekt górnika z listy górników
+     * @param w Numer górnika na liście
      */
     void eraseMiner(int w);
     /**
-     * @brief generateMinerList
+     * @brief Metoda generująca listę górników
      */
     void generateMinerList();
     /**
-     * @brief getMinersList
-     * @return
+     * @brief Metoda zwracająca listę górników
+     * @return Wskaźnik na listę górników
      */
     std::vector<Miner*> getMinersList();
     /**
-     * @brief setMoney
-     * @param m
+     * @brief Metoda ustawiająca ilość pieniędzy gracza
+     * @param m Ilość pieniędzy
      */
     void setMoney(double m);
     /**
-     * @brief getMoney
-     * @return
+     * @brief Metoda zwracająca ilość pieniędzy gracza
+     * @return Ilość pieniędzy
      */
     double getMoney();
     /**
-     * @brief getHat
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt klasy MinerHat możliwy do kupienia
+     * @return Wskaźnik na obiekt klasy MinerHat
      */
     MinerHat* getHat();
     /**
-     * @brief getSuit
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt klasy MinerSuit możliwy do kupienia
+     * @return Wskaźnik na obiekt klasy MinerSuit
      */
     MinerSuit* getSuit();
     /**
-     * @brief getLamp
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt klasy MinerLamp możliwy do kupienia
+     * @return Wskaźnik na obiekt klasy MinerLamp
      */
     MinerLamp* getLamp();
     /**
-     * @brief setHat
-     * @param h
+     * @brief Metoda ustawiająca wskaźnik na obiekt klasy MinerHat mozliwy do kupienia
+     * @param h Wskaźnik na obiekt klasy MinerHat
      */
     void setHat(MinerHat *h);
     /**
-     * @brief setSuit
-     * @param s
+     * @brief Metoda ustawiająca wskaźnik na obiekt klasy MinerSuit możliwy do kupienia
+     * @param s Wskaźnik na obiekt klasy MinerSuit
      */
     void setSuit(MinerSuit *s);
     /**
-     * @brief setLamp
-     * @param l
+     * @brief Metoda ustawiająca wskaźnik na obiekt klasy MinerLamp możliwy do kupienia
+     * @param l Wskaźnik na obiekt klasy MinerLamp
      */
     void setLamp(MinerLamp *l);
     /**
-     * @brief subMoney
-     * @param m
+     * @brief Metoda odejmująca od pieniędzy gracza zadaną liczbę
+     * @param m Liczba pieniędzy do odjęcia
      */
     void subMoney(double m);
     /**
-     * @brief getStorage
-     * @return
+     * @brief Metoda zwracająca wskaźnik na magazyn węgla
+     * @return Wskaźnik na magazyn węgla
      */
     Storage* getStorage();
     /**
-     * @brief refreshOfficeWorkersAmount
+     * @brief Metoda odświeżająca ilość pracowników biurowych
      */
     void refreshOfficeWorkersAmount();
     /**
-     * @brief refreshAccountantsAmount
+     * @brief Metoda odświeżająca ilość księgowych
      */
     void refreshAccountantsAmount();
     /**
-     * @brief randomStrike
-     * @return
+     * @brief Metoda zwracająca liczbę strajkujących w danym miesiącu górników
+     * @return Liczbę strajkujących w danym miesiącu górników
      */
     int randomStrike();
+    /**
+     * @brief Metoda obliczająca ile pieniędzy "szkolnych" musi zapłacić gracz na dzieci górników (Działa gdy pora roku to jesień)
+     * @return Ilość pieniędzy do zapłacenia
+     */
     double moneyForChildren();
+    /**
+     * @brief Metoda zwracająca ilość pracowników biurowych
+     * @return Ilość pracowników biurowych
+     */
     int getOfficeWorkersAmount();
+    /**
+     * @brief Metoda ustawiająca wielkość przychodów w miesiącu
+     * @param r Ilość zarobionych pieniędzy
+     */
     void setLastMonthRevenues(double r);
+    /**
+     * @brief Metoda obliczająca finalną redukcję wszystkich przedmiotów pracowników górnych
+     * @return Finalną redukcję
+     */
     double itemsReduction();
+    /**
+     * @brief Metoda obliczająca finalną redukcję opłat za magazyn obliczaną na podstawie redukcji księgowych
+     * @return Finalną redukcję
+     */
     double getAccStorageReduction();
+    /**
+     * @brief Metoda dodająca lub usuwająca księgowych z listy na podstawie przychodów z poprzedniego miesiąca
+     */
     void createAcc();
+    /**
+     * @brief Metoda zwracająca listę księgowych
+     * @return Listę księgowych
+     */
     std::vector <Accountant*> getAccountantsVector();
+    /**
+     * @brief Metoda zwracająca listę pracowników biurowych
+     * @return Listę pracowników biurowych
+     */
     std::vector <OfficeWorker*> getOfficeWorkersVector();
+    /**
+     * @brief Metoda zwracająca pracownika biurowego z listy
+     * @param i Numer pracownika na liście
+     * @return Wskaźnik na określonego pracownika
+     */
     OfficeWorker* getOneOfficeWorker(int i);
+    /**
+     * @brief Metoda zwracająca księgowego z listy
+     * @param i Numer księgowego na liście
+     * @return Wskaźnik na określonego księgowego
+     */
     Accountant* getOneAccountant(int i);
+    /**
+     * @brief Metoda zwracająca wskaźnik na kopalnię węgla kamiennego
+     * @return Wskaźnik na kopalnię węgla kamiennego
+     */
     BlackCoalMine* getBlackCoalMine();
+    /**
+     * @brief Metoda zwracająca wskaźnik na kopalnię węgla brunatnego
+     * @return Wskaźnik na kopalnię węgla brunatnego
+     */
     BrownCoalMine* getBrownCoalMine();
+    /**
+     * @brief Metoda zwracająca wskaźnik na kopalnię węgla mieszanego
+     * @return Wskaźnik na kopalnię węgla mieszanego
+     */
     MixedCoalMine* getMixedCoalMine();
+    /**
+     * @brief Metoda zwalniająca miejsce wcześniej wykorzystywane na listę górników
+     */
     void deleteMinersList();
+    /**
+     * @brief Metoda zwalniająca miejsce wcześniej wykorzystywane na kopalnie
+     */
     void deleteMines();
+    /**
+     * @brief Metoda dodająca określoną liczbę pieniędzy do pieniędzy gracza
+     * @param m Liczba pieniędzy
+     */
     void addMoney(double m);
+    /**
+     * @brief Metoda zwalniająca miejsce wcześniej wykorzystywane na obiekt klasy MinerHat
+     */
     void deleteHat();
+    /**
+     * @brief Metoda zwalniająca miejsce wcześniej wykorzystywane na obiekt klasy MinerSuit
+     */
     void deleteSuit();
+    /**
+     * @brief Metoda zwalniająca miejsce wcześniej wykorzystywane na obiekt klasy MinerLamp
+     */
     void deleteLamp();
 };
 

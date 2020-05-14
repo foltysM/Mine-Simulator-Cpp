@@ -8,7 +8,10 @@ class Accountant:public AboveGroundWorker
 {
 public:
     Accountant();
-    ~Accountant();
+    /**
+     * @brief Metoda powodująca "pracę" księgowego czyli redukcję opłat
+     * @return Wartość redukcji
+     */
     double work();
 };
 

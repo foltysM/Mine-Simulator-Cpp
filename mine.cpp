@@ -5,11 +5,6 @@ Mine::Mine()
 
 }
 
-Mine::~Mine()
-{
-
-}
-
 void Mine::upSeniority()
 {
     for(int i = 0;i<(int)miners.size();i++)
