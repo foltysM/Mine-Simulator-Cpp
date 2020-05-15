@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['ui_187',['Ui',['../namespace_ui.html',1,'']]],
-  ['updateproductivity_188',['updateProductivity',['../class_mine.html#a2906dc64ff7a1f1949d425d4d7477d25',1,'Mine']]],
-  ['upseniority_189',['upSeniority',['../class_mine.html#a7d431c3bbe67b8bcac3efd39c3f404dc',1,'Mine']]],
-  ['useitem_190',['useItem',['../class_above_ground_worker_item.html#a03c14fbeca79a4dbad597eb7ceff0499',1,'AboveGroundWorkerItem::useItem()'],['../class_chair.html#a9331f0f4b948d8126ace7088c05fb0cf',1,'Chair::useItem()'],['../class_computer.html#a69131505c5ca0964db66d79629d370e9',1,'Computer::useItem()'],['../class_desk.html#a1c4be26ef93c4d4ed4d2ee3db485c7ec',1,'Desk::useItem()']]]
+  ['_7eabovegroundui_186',['~AboveGroundUI',['../class_above_ground_u_i.html#a8f32378e90f49d7b12bce00f2681062c',1,'AboveGroundUI']]],
+  ['_7egamedurationdialog_187',['~GameDurationDialog',['../class_game_duration_dialog.html#a9d702a26146cb29ef17f550ddc2a9762',1,'GameDurationDialog']]],
+  ['_7emainwindow_188',['~MainWindow',['../class_main_window.html#ae98d00a93bc118200eeef9f9bba1dba7',1,'MainWindow']]],
+  ['_7enewminerui_189',['~NewMinerUI',['../class_new_miner_u_i.html#a1fa68c2716f38bcabc97a61733c929e4',1,'NewMinerUI']]],
+  ['_7enewmonthdialog_190',['~NewMonthDialog',['../class_new_month_dialog.html#a620df012b866d507e21212f81622ce2a',1,'NewMonthDialog']]]
 ];

@@ -57,10 +57,6 @@ std::string Miner::getName() {
     return name;
 }
 
-//int Miner::getMiners() {
-//    return miners;
-//}
-
 bool Miner::getUnion()
 {
     return tradeUnion;

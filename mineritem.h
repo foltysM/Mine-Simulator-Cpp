@@ -9,10 +9,24 @@ protected:
     std::string name;
     int price;
 public:
+    /**
+     * @brief Konstruktor klasy MinerItem
+     */
     MinerItem();
-    void listItems();
+    /**
+     * @brief Metoda zwracająca nazwę przedmiotu
+     * @return Nazwę przedmiotu
+     */
     std::string getName();
+    /**
+     * @brief Metoda zwracająca cenę przedmiotu
+     * @return Cenę przedmiotu
+     */
     int getPrice();
+    /**
+     * @brief Metoda ustawiająca nazwę przedmiotu
+     * @param n Nazwa przedmiotu
+     */
     void setName(std::string n);
 };
 

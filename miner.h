@@ -32,87 +32,78 @@ public:
      */
     int getKids();
     /**
-     * @brief getName
-     * @return
+     * @brief Metoda zwracająca imię górnika
+     * @return Imię górnika
      */
     std::string getName();
     /**
-     * @brief getProductivity
-     * @return
+     * @brief Metoda zwracająca produktywność górnika
+     * @return Produktywność górnika
      */
     double getProductivity();
     /**
-     * @brief getSalaryAmount
-     * @return
+     * @brief Metoda zwracająca wielkość wypłaty
+     * @return Wielkość wypłaty górnika
      */
     double getSalaryAmount();
     /**
-     * @brief getSeniority
-     * @return
+     * @brief Metoda zwracająca staż górnika
+     * @return Staż górnika
      */
     int getSeniority();
     /**
-     * @brief promotion
-     */
-    void promotion();
-    /**
-     * @brief setSeniority
-     * @param s
+     * @brief Metoda ustawiająca staż górnika
+     * @param s Staż górnika
      */
     void setSeniority(int s);
     /**
-     * @brief getStriking
-     * @return
+     * @brief Metoda zwracająca czy dany górnik strajkuje w danym miesiącu czy nie
+     * @return True, jeżeli strajkuje
      */
     bool getStriking();
     /**
-     * @brief setStriking
-     * @param s
+     * @brief Metoda ustawiająca pole striking, określające czy górnik strajkuje
+     * @param s True, jeżeli górnik będzie strajkować; false jeżeli nie
      */
     void setStriking(bool s);
     /**
-     * @brief getMiners
-     * @return
-     */
-    int getMiners();
-    /**
-     * @brief getUnion
-     * @return
+     * @brief Metoda zwraca czy dany górnik jest w związku zawodowym czy nie
+     * @return True, jeżeli górnik należy do związku zawodowego
      */
     bool getUnion();
     /**
-     * @brief getStrikeOpportunity
-     * @return
+     * @brief Metoda zwracająca skłonność do strajków górnika
+     * @return Wartość oznaczającą skłonność do strajków
      */
     int getStrikeOpportunity();
     /**
-     * @brief getHat
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt klasy MinerHat górnika
+     * @return Wskaźnik na obiekt klasy MinerHat
      */
     MinerHat* getHat();
     /**
-     * @brief getSuit
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt klasy MinerSuit górnika
+     * @return Wskaźnik na obiekt klasy MinerSuit
      */
     MinerSuit* getSuit();
     /**
-     * @brief getLamp
-     * @return
+     * @brief Metoda zwracająca wskaźnik na obiekt klasy MinerLamp górnika
+     * @return Wskaźnik na obiekt klasy MinerLamp
      */
     MinerLamp* getLamp();
     /**
-     * @brief setHat
-     * @param h
+     * @brief Metoda ustawiająca wskaźnik na obiekt klasy MinerHat górnika
+     * @param h Wskaźnik na obiekt klasy MinerHat
      */
     void setHat(MinerHat *h);
     /**
-     * @brief setSuit
-     * @param s
+     * @brief Metoda ustawiająca wskaźnik na obiekt klasy MinerSuit górnika
+     * @param Wskaźnik na obiekt klasy MinerSuit
      */
     void setSuit(MinerSuit *s);
     /**
-     * @brief setLamp
-     * @param l
+     * @brief Metoda ustawiająca wskaźnik na obiekt klasy MinerLamp górnika
+     * @param Wskaźnik na obiekt klasy MinerLamp
      */
     void setLamp(MinerLamp *l);
 };

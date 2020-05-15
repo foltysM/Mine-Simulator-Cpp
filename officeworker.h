@@ -6,6 +6,9 @@
 class OfficeWorker: public AboveGroundWorker
 {
 public:
+    /**
+     * @brief Konstruktor klasy OfficeWorker
+     */
     OfficeWorker();
 
 };

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['randomstrike_149',['randomStrike',['../class_game.html#ace3f9d244375e34ab05eeba0798fa70d',1,'Game']]],
-  ['refreshaccountantsamount_150',['refreshAccountantsAmount',['../class_game.html#ae08f6d63d0712d638572cd1fd810dfe7',1,'Game']]],
-  ['refreshofficeworkersamount_151',['refreshOfficeWorkersAmount',['../class_game.html#a5fddaa9537542458200a86f01e7cfb6b',1,'Game']]],
-  ['removeminer_152',['removeMiner',['../class_mine.html#a029f295b394e7bdeb9a4f0ade31102e0',1,'Mine']]],
-  ['runspecial_153',['runSpecial',['../class_black_coal_mine.html#aa098349f9f7e63120bfde9adaa60476a',1,'BlackCoalMine::runSpecial()'],['../class_brown_coal_mine.html#adb99ca7a2b61ea7d2a8fc7a2505c4eae',1,'BrownCoalMine::runSpecial()'],['../class_mine.html#a4d426344a95276abe058c0e5177000c3',1,'Mine::runSpecial()'],['../class_mixed_coal_mine.html#af07d913beaff4a3d8288cd12903ee715',1,'MixedCoalMine::runSpecial()']]]
+  ['ui_182',['Ui',['../namespace_ui.html',1,'']]],
+  ['upseniority_183',['upSeniority',['../class_mine.html#a7d431c3bbe67b8bcac3efd39c3f404dc',1,'Mine']]],
+  ['useitem_184',['useItem',['../class_above_ground_worker_item.html#a03c14fbeca79a4dbad597eb7ceff0499',1,'AboveGroundWorkerItem::useItem()'],['../class_chair.html#a9331f0f4b948d8126ace7088c05fb0cf',1,'Chair::useItem()'],['../class_computer.html#a69131505c5ca0964db66d79629d370e9',1,'Computer::useItem()'],['../class_desk.html#a1c4be26ef93c4d4ed4d2ee3db485c7ec',1,'Desk::useItem()']]]
 ];

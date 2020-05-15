@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['newminerui_368',['NewMinerUI',['../class_new_miner_u_i.html#a9f92b48ff11c1b62f29ec5a4a6944a27',1,'NewMinerUI']]],
-  ['newmonthdialog_369',['NewMonthDialog',['../class_new_month_dialog.html#ab73af65b5e00897ebc79365fa90e5534',1,'NewMonthDialog']]],
-  ['nextmonth_370',['nextMonth',['../class_main_window.html#afecefc05c1d5db78dc5b8c0307303d6b',1,'MainWindow']]],
-  ['notseasondependentcompany_371',['NotSeasonDependentCompany',['../class_not_season_dependent_company.html#a9c616cbb567b94325c2e1e9f1c34a6b1',1,'NotSeasonDependentCompany']]]
+  ['randomstrike_362',['randomStrike',['../class_game.html#ace3f9d244375e34ab05eeba0798fa70d',1,'Game']]],
+  ['refreshaccountantsamount_363',['refreshAccountantsAmount',['../class_game.html#ae08f6d63d0712d638572cd1fd810dfe7',1,'Game']]],
+  ['refreshofficeworkersamount_364',['refreshOfficeWorkersAmount',['../class_game.html#a5fddaa9537542458200a86f01e7cfb6b',1,'Game']]],
+  ['runspecial_365',['runSpecial',['../class_black_coal_mine.html#aa098349f9f7e63120bfde9adaa60476a',1,'BlackCoalMine::runSpecial()'],['../class_brown_coal_mine.html#adb99ca7a2b61ea7d2a8fc7a2505c4eae',1,'BrownCoalMine::runSpecial()'],['../class_mine.html#a4d426344a95276abe058c0e5177000c3',1,'Mine::runSpecial()'],['../class_mixed_coal_mine.html#af07d913beaff4a3d8288cd12903ee715',1,'MixedCoalMine::runSpecial()']]]
 ];

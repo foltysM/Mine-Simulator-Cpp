@@ -1,6 +1,30 @@
 var searchData=
 [
-  ['initmineritems_99',['initMinerItems',['../class_game.html#a668fa2723f7e99ac87b6c784a53d32ea',1,'Game']]],
-  ['initmines_100',['initMines',['../class_game.html#ab40bd638d1acac81abcb5d8e278a4337',1,'Game']]],
-  ['itemsreduction_101',['itemsReduction',['../class_game.html#a06a043eee8b29bde1941b2b84785c40b',1,'Game']]]
+  ['main_101',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
+  ['main_2ecpp_102',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['mainwindow_103',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a996c5a2b6f77944776856f08ec30858d',1,'MainWindow::MainWindow()']]],
+  ['mainwindow_2ecpp_104',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
+  ['mainwindow_2eh_105',['mainwindow.h',['../mainwindow_8h.html',1,'']]],
+  ['mine_106',['Mine',['../class_mine.html',1,'Mine'],['../class_mine.html#a84f100c1d6797402ab2220d2ad699be2',1,'Mine::Mine()']]],
+  ['mine_2ecpp_107',['mine.cpp',['../mine_8cpp.html',1,'']]],
+  ['mine_2eh_108',['mine.h',['../mine_8h.html',1,'']]],
+  ['miner_109',['Miner',['../class_miner.html',1,'Miner'],['../class_miner.html#a9aa4d6643a2725792e4e696c2b68b74e',1,'Miner::Miner()']]],
+  ['miner_2ecpp_110',['miner.cpp',['../miner_8cpp.html',1,'']]],
+  ['miner_2eh_111',['miner.h',['../miner_8h.html',1,'']]],
+  ['minerhat_112',['MinerHat',['../class_miner_hat.html',1,'MinerHat'],['../class_miner_hat.html#a45513b181d2d15ba4e98ef181c63f360',1,'MinerHat::MinerHat()']]],
+  ['minerhat_2ecpp_113',['minerhat.cpp',['../minerhat_8cpp.html',1,'']]],
+  ['minerhat_2eh_114',['minerhat.h',['../minerhat_8h.html',1,'']]],
+  ['mineritem_115',['MinerItem',['../class_miner_item.html',1,'MinerItem'],['../class_miner_item.html#a9040785bf6829aad00101b37bf6a385a',1,'MinerItem::MinerItem()']]],
+  ['mineritem_2ecpp_116',['mineritem.cpp',['../mineritem_8cpp.html',1,'']]],
+  ['mineritem_2eh_117',['mineritem.h',['../mineritem_8h.html',1,'']]],
+  ['minerlamp_118',['MinerLamp',['../class_miner_lamp.html',1,'MinerLamp'],['../class_miner_lamp.html#a5946e83dc9a0ed7ad5812fae38d52302',1,'MinerLamp::MinerLamp()']]],
+  ['minerlamp_2ecpp_119',['minerlamp.cpp',['../minerlamp_8cpp.html',1,'']]],
+  ['minerlamp_2eh_120',['minerlamp.h',['../minerlamp_8h.html',1,'']]],
+  ['minersuit_121',['MinerSuit',['../class_miner_suit.html',1,'MinerSuit'],['../class_miner_suit.html#a21c4fa0d672257c665b610a8d609e426',1,'MinerSuit::MinerSuit()']]],
+  ['minersuit_2ecpp_122',['minersuit.cpp',['../minersuit_8cpp.html',1,'']]],
+  ['minersuit_2eh_123',['minersuit.h',['../minersuit_8h.html',1,'']]],
+  ['mixedcoalmine_124',['MixedCoalMine',['../class_mixed_coal_mine.html',1,'MixedCoalMine'],['../class_mixed_coal_mine.html#a3e245a774e19e04fbc75e019e253e137',1,'MixedCoalMine::MixedCoalMine()']]],
+  ['mixedcoalmine_2ecpp_125',['mixedcoalmine.cpp',['../mixedcoalmine_8cpp.html',1,'']]],
+  ['mixedcoalmine_2eh_126',['mixedcoalmine.h',['../mixedcoalmine_8h.html',1,'']]],
+  ['moneyforchildren_127',['moneyForChildren',['../class_game.html#a2c4cde598598f1967caa63537c17a307',1,'Game']]]
 ];

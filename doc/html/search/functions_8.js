@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['listitems_356',['listItems',['../class_above_ground_worker_item.html#a507ef94c21f3cec9f14fec344f8fe5f7',1,'AboveGroundWorkerItem::listItems()'],['../class_miner_item.html#aa3e3b66b67c116f6f0f4d00591d858c5',1,'MinerItem::listItems()']]]
+  ['newminerui_357',['NewMinerUI',['../class_new_miner_u_i.html#a9f92b48ff11c1b62f29ec5a4a6944a27',1,'NewMinerUI']]],
+  ['newmonthdialog_358',['NewMonthDialog',['../class_new_month_dialog.html#ab73af65b5e00897ebc79365fa90e5534',1,'NewMonthDialog']]],
+  ['nextmonth_359',['nextMonth',['../class_main_window.html#afecefc05c1d5db78dc5b8c0307303d6b',1,'MainWindow']]],
+  ['notseasondependentcompany_360',['NotSeasonDependentCompany',['../class_not_season_dependent_company.html#a9c616cbb567b94325c2e1e9f1c34a6b1',1,'NotSeasonDependentCompany']]]
 ];
